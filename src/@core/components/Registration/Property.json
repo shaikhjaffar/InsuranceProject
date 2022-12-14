@@ -1,0 +1,12 @@
+{
+    "propertytype":[
+   {
+       "id": "1",
+       "name": "Residential"
+   },
+   {
+       "id": "2",
+       "name": "Commercial"
+   }
+]
+}

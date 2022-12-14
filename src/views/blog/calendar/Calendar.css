@@ -1,0 +1,209 @@
+.col-of-calendar{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    width:100%;
+    height:auto;
+}
+.numbeOfBlog{
+    color: black;
+    font-family: sans-serif;
+}
+.Calendar-Line-Image{
+    width: 100%;
+    margin-top: -1%;
+}
+.Button-of-Calendar{
+    border: 2px solid orange;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    cursor: pointer;
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-weight: bold;
+    width: 10%;
+    font-size: 70%;
+    height: fit-content;
+    }
+.Arrow-Line-Imagel {
+    width: auto;
+    height: 15px;
+    color: rgb(246, 161, 25); 
+    cursor: pointer;
+}
+.Arrow-Line-Imager {
+    width: auto;
+    height: 15px;
+    color: rgb(246, 161, 25); 
+    cursor: pointer;
+}
+.round-button-designl{
+    width: 8px;
+    border-radius: 50%;
+    height: 8px;
+    background-color: orange;
+}
+.round-button-designr{
+    width: 8px;
+    border-radius: 50%;
+    height: 8px;
+    background-color: orange;
+}
+.col-of-calendar2{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    width:100%;
+    height:auto;
+}
+.Calendar-Line-Image2{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: -1%;
+}
+.Button-of-Calendar2{
+    border: 2px solid orange;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    cursor: pointer;
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-weight: bold;
+    width: 10%;
+    font-size: 70%;
+    height: fit-content;
+}
+.Month-names-Left{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin-left: 4%;
+    margin-top: -4%;
+}
+.Month-names-Right{
+    width: 20%;
+  display: flex;
+  align-items: center;
+  margin-left: 62%;
+  margin-top: -4%;
+}
+.Month-Name{
+    margin-left: 10%;
+    background-color:transparent;
+    border-style: solid;
+    border: 0px;
+    font-family: 'Futura Md BT','sans-serif';
+    font-size: 13px;
+    cursor: pointer;
+}
+.button-container{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    gap: 0.5%;
+}
+@media screen and (max-width: 800px){
+    .Month-Name{
+        font-size: 11px;
+    }
+    .Button-of-Calendar2{
+        font-size: 55%;
+    }
+}
+@media screen and (max-width: 650px){
+    .Month-Name{
+        font-size: 9px;
+    }
+    .Button-of-Calendar2{
+        font-size: 45%;
+    }
+}
+.Month-names-mLeftt{
+    display: none;
+}
+.Month-names-mLeftb{
+    display: none;
+}        
+.Month-names-mRightt{
+    display: none;
+}
+.Month-names-mRightb{
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    .Month-names-Left{
+        display: none;
+    }
+    .Month-names-mLeftt{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        margin-left: 4%;
+        margin-top: -6%;
+    }
+    .Month-names-mLeftb{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        margin-left: 4%;
+        margin-top: -1%;
+    }
+    .Month-names-Right{
+        display: none;
+    }
+    .Month-names-mRightt{
+        margin-top: -6%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        margin-left: 64%;
+    }
+    .Month-names-mRightb{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        margin-left: 64%;
+        margin-top: -7%;
+    }
+    .Button-of-Calendar2 {
+        width: 16%;
+        font-size: 45%;
+        height: fit-content;
+    }
+    .Button-of-Calendar {
+        width: 16%;
+        font-size: 45%;
+        height: fit-content;
+    }
+    .Arrow-Line-Imagel {
+        height: 10px;
+    }
+    .Arrow-Line-Imager {
+        height: 10px;
+    }
+    .Month-Name{
+        font-family: 'Futura Md BT','sans-serif';
+        font-size: 10px;
+    }
+    .round-button-designl{
+        width: 5px;
+        height: 5px;
+    }
+    .round-button-designr{
+        width: 5px;
+        height: 5px;
+    }
+}  
+p,h1,h2,h3{
+    font-family: 'Futura  BT',sans-serif;
+}

@@ -1,0 +1,85 @@
+{
+    "designames":[
+   {
+       "id": "1",
+       "name": "Chief Executive officer"
+   },
+   {
+       "id": "2",
+       "name": "Cheif Operational officer"
+   },
+   {
+       "id": "3",
+       "name": "Chief Financial officer"
+   },
+   {
+       "id": "4",
+       "name": "Head of Finance"
+   },
+   {
+       "id": "5",
+       "name": "Managing Partner"
+   },
+   {
+       "id": "6",
+       "name": "Founder"
+   },
+   {
+       "id": "7",
+       "name": "Co-Founder"
+   },
+   {
+       "id": "8",
+       "name": "Cheif Administration officer"
+   },
+   {
+       "id": "9",
+       "name": "Cheif Marketing officer"
+   },
+   {
+       "id": "10",
+       "name": "Director"
+   },
+   {
+       "id": "11",
+       "name": "Executive"
+   },
+   {
+       "id": "12",
+       "name": "Managing Director"
+   },
+   {
+       "id": "13",
+       "name": "Manager"
+   },
+   {
+       "id": "14",
+       "name": "Accounting Clerk"
+   },
+   {
+       "id": "15",
+       "name": "Accountant & Analysts"
+   },
+   {
+       "id": "16",
+       "name": "Accounting Managers"
+   },
+   {
+       "id": "17",
+       "name": "Accounting Assisant"
+   },
+   {
+       "id": "18",
+       "name": "Finance Manager"
+   },
+   {
+       "id": "19",
+       "name": "IT Manager"
+   }
+   ,
+   {
+       "id": "20",
+       "name": "Other"
+   }
+]
+}

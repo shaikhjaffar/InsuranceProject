@@ -1,0 +1,83 @@
+.box {
+    width: 100%;
+    height: 700px;
+    position: fixed;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+
+  }
+  .box b {
+    display: block;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color:#2fc3ce;
+    position: absolute;
+    -webkit-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.05s linear 0s infinite alternate;
+    -moz-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.05s linear 0s infinite alternate;
+    -o-animation: moveX 1.05s linear 0s infinite alternate, moveY 1.05s linear 0s infinite alternate;
+    animation: moveX 1.05s linear 0s infinite alternate, moveY 1.05s linear 0s infinite alternate;
+  }
+  .box span {
+    display: block;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color:#f6a624;
+    position: absolute;
+    -webkit-animation: moveX1 1.05s linear 0s infinite alternate, moveY1 1s linear 0s infinite alternate;
+    -moz-animation: moveX1 1.05s linear 0s infinite alternate, moveY1 1s linear 0s infinite alternate;
+    -o-animation: moveX1 1.05s linear 0s infinite alternate, moveY1 1s linear 0s infinite alternate;
+    animation: moveX1 1.05s linear 0s infinite alternate, moveY1 1s linear 0s infinite alternate;
+  }
+  
+  @-webkit-keyframes moveX {
+    from { left: 0; } to { left: 1050px; }
+  }
+  @-moz-keyframes moveX {
+    from { left: 0; } to { left: 1050px; }
+  }
+  @-o-keyframes moveX {
+    from { left: 0; } to { left: 1050px; }
+  }
+  @keyframes moveX {
+    from { left: 0; } to { left: 1050px; }
+  }
+  @-webkit-keyframes moveY {
+    from { top: 0; } to { top: 350px; }
+  }
+  @-moz-keyframes moveY {
+    from { top: 0; } to { top: 350px; }
+  }
+  @-o-keyframes moveY {
+    from { top: 0; } to { top: 350px; }
+  }
+  @keyframes moveY {
+    from { top: 0; } to { top: 350px; }
+  }
+  
+  @-webkit-keyframes moveX1 {
+    from  { left: 1050px; }  to { left:100px; } 
+  }
+  @-moz-keyframes moveX1 {
+    from  { left: 1050px; } to { left:100px; } 
+  }
+  @-o-keyframes moveX1{
+    from { left: 1050px; } to { left:100px; } 
+  }
+  @keyframes moveX1 {
+    from  { left: 1050px; } to { left:100px; } 
+  }
+  @-webkit-keyframes moveY1 {
+    from { top: 350px; } to { top:100px; } 
+  }
+  @-moz-keyframes moveY1 {
+    from { top: 350px; } to { top:100px; } 
+  }
+  @-o-keyframes moveY1 {
+    from  { top: 350px; } to { top:100px; } 
+  }
+  @keyframes moveY1 {
+    from { top: 350px; } to { top:100px; } 
+  }

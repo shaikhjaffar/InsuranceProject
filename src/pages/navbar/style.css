@@ -1,0 +1,150 @@
+
+.navbar {
+  margin-top: 0.5%;
+  padding-top: 1.2rem;
+    height: 60px;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 11;
+  width: 96%;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(150px);
+border-radius: 10px ;
+border: 1px solid orange;
+  }
+  .nav-menu {
+    list-style: none;
+    float: right;
+    margin-bottom: 30px;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: row;
+     align-items: center; 
+    width: 46%;
+    height: 1rem;
+  }
+  .nav-links {
+    width: 100px;
+    height: 1.5rem;
+    font-family: 'Futura  BT',sans-serif;
+    font-style: normal;
+     font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.1rem;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+  }
+  .nav-links:hover{
+    font-size: 22px;
+    white-space: nowrap;
+  }
+  .button-animate{
+    width: 10vw;
+    position: absolute;
+margin-left: 91%;
+cursor: pointer;
+animation-name: animate;
+animation-duration: 2s;
+animation-iteration-count: 1;
+z-index: 999;
+margin-top: 3%;
+  }
+.bt1{
+  position: absolute;
+  margin-top: 7%
+}
+
+@keyframes animate{
+    0%{
+      top :50px;
+    }
+    50%{
+     top:200px 
+    }
+    100%{
+      top:3px
+    }
+}
+.nav-item .active {
+  font-family: 'Futura  BT',sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    width: 120px;
+    text-decoration:underline
+}
+  .navsvg{
+    position: absolute;
+    z-index: 9999;
+  width: 155px;
+  height:228px; 
+  margin-top: -50px;
+  border-radius: 50%;
+}
+.rectangle-box{
+  position: absolute;
+    margin-top: -7%;
+    right: 60px;
+    width: 95%;
+}
+@media screen and (max-width:1220px) {
+  .nav-menu{
+    margin-right: 40%;
+  } 
+}
+/* @media screen and (max-width:1100px) {
+  .nav-menu{
+    margin-right: 40%;
+  } 
+} */
+@media  screen and (max-width:840px) {
+  .button-animate{
+    animation: none;
+  }
+
+    .nav-links {
+      padding: 1.5rem;
+      width: 100%;
+      display: table;
+    }
+    .nav-menu{
+      display: none;
+    }
+    .navsvg{
+      position: absolute;
+      /* margin-top: -1%; */
+      margin-left:30vw;
+      width: 75px;
+      height:114px; 
+      margin-top: -31px;
+    }
+    .bt1{
+      
+      margin-top: 10%;
+    }
+    .bt2{
+      margin-top: 15%;
+    }
+}
+@media  screen and (max-width:480px) {
+  .button-animate{
+    margin-left: 80%;
+    width: 80px;
+
+  }
+  .navsvg{
+    margin-left: 31vw;
+  }
+  .bt2{
+    margin-top: 20%;
+  }
+
+}
+ 

@@ -1,0 +1,252 @@
+
+.Footimageplace{
+  position:relative;
+  width: 414px;
+  height: 188px;
+  margin-top: 100px;
+}
+.Rectangle{
+  position:relative;
+  width: 100%;
+  border-style: none;
+  border-color: none;
+  margin-top: 3%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-rectangle-top{
+  width:60%;
+}
+.footer-rectangle-bottom{
+  width:60%;
+  transform: rotate(180deg);
+}
+.Style1{
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.footer-style1{
+  position: relative;
+  font-family: 'Futura  BT',sans-serif;
+  font-style: italic; 
+  font-weight: 400; 
+  font-size: 15px;
+  text-align: center;
+  word-spacing: 4px;
+  width:60%;
+}
+.rowfootor{
+  position: relative;
+  padding:10px;              
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+.colfootor{
+  position: relative;
+  width: 20%;
+  float: left;
+  align-items: center;
+  justify-content: center;
+ /* text-align: center; */
+}
+.rowfooter:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.colfootor-h2{
+  position: relative;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+
+.container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.smallrect{
+  position: relative;
+  width: 100px;
+  height: 10px;
+  border-radius:5px;
+  background:white;
+}
+.smallcircle{
+  position: relative;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  background: #ef68ad;
+  border-radius: 200px;
+}
+
+.logoimg{
+  position: absolute;
+  margin-top: 2%;
+width: 13%;
+height:auto;
+}
+.footer-logo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  background: rgba(47, 196, 206, 0.1);
+  border: 0.5px solid #FFFFFF;
+  box-shadow: 1px 3px 2px rgba(47, 166, 206, 0.15), inset 7px 3px 20px #FFFFFF;
+  backdrop-filter: blur(0.5px);
+  margin-left: 2%;
+}
+.footer-logo-sm{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  margin-top: 3%;
+}
+
+
+.sm-logo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:25px;
+  height:auto;
+}
+
+.Cir
+{
+    position: absolute;
+    width: 100%;
+    height:15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Style11{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+}
+ a{
+  text-decoration: none;
+}
+@media screen and (max-width: 1150px) {
+  .rowfootor {
+    padding:10px;              
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .colfootor {
+    width: 20%;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 3%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .rowfootor {
+    padding:10px;              
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .colfootor {
+    width: 25%;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 3%;
+  }
+  .contactno{
+    margin-left:20%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rowfootor {
+    padding:10px;              
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .colfootor {
+    width: 45%;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 3%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .FooterlogoImg{
+    position: relative;
+    width: 200px;
+    height: 100px;
+  }
+  .logoimg{
+     margin-top: -8%;
+  }
+}
+@media screen and (max-width: 475px) {
+  .rowfootor {
+    padding:10px;              
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .colfootor {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoimg{
+    margin-top: -21%;
+ }
+}
+@media screen and (max-width: 400px) {
+  .footer-logo-sm{
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin-top: 3%;
+    margin-left: 0%;
+  }
+  .rowfootor {
+    padding:10px;              
+    width: 100%;
+    display: block;
+    margin-left:20%;
+    align-items: center;
+    justify-content: center;
+  }
+  .colfootor {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+}

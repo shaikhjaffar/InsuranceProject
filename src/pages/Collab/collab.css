@@ -1,0 +1,124 @@
+
+      /* collabanimation animation ******************************/
+    .comp {
+     margin-left: 98px;
+      position:relative;
+       width: 190px !important;
+      height: 100px;
+      box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.2), 
+      -5px -5px 15px rgba(0, 0, 0, 0.3), 
+      5px 5px 15px rgba(255, 255, 255, 0.1);
+      border-radius: 126px;
+      transition: 0.5s;
+      margin-top: 60%;
+    }
+ .siz{
+    margin-top: 25px;
+    margin-left: 35px;
+    width: 110px;
+ }
+ .sizz{
+    margin-top: 15px;
+    margin-left: 49px;
+    width: 80px;
+ }
+ .sizy{
+    margin-top: 25px;
+    margin-left: 40px;
+    width: 120px; 
+    height: 55px;
+ }
+
+ .container-gsap-collab {
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.5);
+   -webkit-backdrop-filter: blur(150px);
+   backdrop-filter: blur(150px);
+   margin-top: 1%;
+   width: 500px;
+   height: 50px;
+   border-radius: 0px 0px 70px 0px;
+   word-wrap: normal;
+   position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+ }
+ 
+ .wordmark-title-collab {
+   border-radius: 0px 0px 70px 0px;
+   color: black;
+   position: relative;
+   max-width: 500px;
+   font-size: 35px;
+   font-weight: bold;
+   height: 50px;
+   background-color: black;
+ }
+ .wordmark-title-collab::after {
+   padding: 10px 60px;
+   content: "Collaborated Clients";
+   font-size: 35px;
+   color: white;
+   mix-blend-mode: difference;
+   white-space: nowrap;
+ }
+ .title-rect1-collab {
+   border-radius: 0px 0px 100px 0px;
+   width: 600px;
+   height: 20px;
+   background: rgba(47, 196, 206, 0.1);
+   border: 0.5px solid #FFFFFF;
+   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+   backdrop-filter: blur(10px);
+   margin-left: 0%;
+   position: absolute;
+   margin-top: -10px;
+ }
+ .title-rect2-collab {
+   border-radius: 0px 0px 100px 0px;
+   width: 150px;
+   height: 20px;
+   background: rgba(47, 196, 206, 0.1);
+   border: 0.5px solid #FFFFFF;
+   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+   backdrop-filter: blur(10px);
+   margin-left: 0%;
+   position: absolute;
+   margin-top: 12px;
+ }
+ .rectangle-titlesvg-collab{
+  width: 140px;
+  height: 100px;
+  margin-left: 60px;
+  margin-top: -120px;
+}
+ @media screen and (max-width: 500px) {
+ .container-gsap-collab {
+   width: 320px;
+   height:40px;
+ }
+ 
+ .wordmark-title-collab {
+   max-width: 320px;
+   height:40px;
+   font-size: 25px;
+ }
+ .wordmark-title-collab::after {
+   padding: 10px 40px;
+   font-size: 25px;
+ }
+ .title-rect1-collab {
+   width: 350px;
+   height: 20px;
+ }
+ .title-rect2-collab {
+   width: 100px;
+   height: 20px;
+ }
+ .rectangle-titlesvg-collab {
+  width: 100px;
+  height: 70px;
+  margin-top: -90px;
+  margin-left: 40px;
+}
+ }
