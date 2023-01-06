@@ -1,9 +1,8 @@
 import React from "react"
 import './Award.css'
-import Award1 from './images/IACAward.png'
-import Award2 from './images/BusinessMint.png'
-import LogoHolder from './images/LogoHolder.png'
-import Rectangle from './images/rectangle.png'
+import Award1 from './images/Asset 2.png'
+import Award2 from './images/awards2-02 1-2.png'
+// import LogoHolder from './images/LogoHolder.png'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
@@ -32,9 +31,9 @@ function HeadingAward() {
     return (
             <div class="container-gsap-award" ref={ headingref } id="container-award">
                 <div class="wordmark-title-award"></div>
-                <div class="title-rect1-award"></div>
-                <div class="title-rect2-award"></div>
-                <img className="rectangle-titlesvg-award" src={Rectangle} alt="BigCo Inc. logo"/>
+                {/* <div class="title-rect1-award"></div>
+                <div class="title-rect2-award"></div> */}
+                {/* <img className="rectangle-titlesvg-award" src={Rectangle} alt="BigCo Inc. logo"/> */}
             </div>
     )
   }
@@ -43,24 +42,27 @@ class Award extends React.Component {
         return (
         <div className="card">
             <HeadingAward />
-            <span className="header">
+            <div className="header">
                 <h2 className="header-heading">Best Fintech Startup of the year 2022</h2>
-            </span>
+                <div className="Awards-page-line"></div>
+            </div>
             <div className="award-main-container">
-                <span className="award-row">
+                <div className="award-row">
                     <div className="award-column">
-                    <div className='container1'>
-                            <img className='logoholder' src={LogoHolder} alt="Logo holder"/>
-                            <img className='imagesize' src={Award1} alt="BigCo Inc. logo"/>
+                    <div className='container-pf-awards'>
+                            <img className='imagesize-of-2' src={Award1} />
+                            <p className="Awards-Avnish2">BUSSINESSMINT</p>
                         </div>
                     </div>
                     <div className="award-column">
-                        <div className='container1'>
-                            <img className='logoholder' src={LogoHolder} alt="Logo holder"/>
-                            <img className='imagesize' src={Award2} alt="BigCo Inc. logo"/>
+                        <div className='container-pf-awards'>
+                            <img className='imagesize' src={Award2} />
+                            <div className="Awards-Avnish">
+                                INTERNATIONAL ACHIEVERS CONFERENCE
+                                </div>
                         </div>
                     </div>
-                </span>
+                </div>
             </div>
         </div>
         )

@@ -4,12 +4,12 @@ import { createRoot } from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
 
 // ** Redux Imports
-import { store } from "./redux/store"
-import { Provider } from "react-redux"
+// import { store } from "./redux/store"
+// import { Provider } from "react-redux"
 
 // ** ThemeColors Context
 
-import { ThemeContext } from "./utility/context/ThemeColors"
+// import { ThemeContext } from "./utility/context/ThemeColors"
 
 // ** ThemeConfig
 // import themeConfig from "./configs/themeConfig"
@@ -38,21 +38,17 @@ import * as serviceWorker from "./serviceWorker"
 // ** Lazy load app
 import Show from "./views/landing1"
 import Hide from './views/landing2'
-import Ball from './@core/components/ball/index'
+import ScrollToTop from "./scroltop"
+// import NavigateButton from "./@core/components/navigateButton"
+// import Ball from './@core/components/ball/index'
 const container = document.getElementById("root")
 const root = createRoot(container)
 
 root.render(
   <BrowserRouter>
-  {/* <Suspense fallback={<LazyApp1 />}> */}
-    <Provider store={store}>
-        <ThemeContext>
-          <Ball/>
+          {/* <Ball/> */}
         <Hide/>
         <Show/>
-        </ThemeContext>
-    </Provider>
-    {/* </Suspense> */}
   </BrowserRouter>
 )
 

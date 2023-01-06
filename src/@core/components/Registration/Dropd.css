@@ -1,6 +1,7 @@
 
 .modal{
   background: rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   font-family: 'Futura Md BT','sans-serif';
 }
@@ -8,15 +9,34 @@
   box-shadow: 5px 10px 10px gray;
   font-family: 'Futura Md BT','sans-serif';
 }
+
+.menu-item-hamnav{
+  font-size: 20px;
+  color: black !important;
+  cursor: pointer;
+}
 .modal-content{
   background: rgba(255,255,255,0.1) ;
+  -webkit-backdrop-filter: blur(120px);
   backdrop-filter: blur(120px);
   font-family: 'Futura Md BT','sans-serif';
 }
+@supports not (backdrop-filter: blur(120px)){
+  
+  .modal-content{
+    background: rgba(255,255,255,0.1) ;
+    background: linear-gradient(0.55turn, #c9f1f4, #f6f9f5, #efb06d);
+    font-family: 'Futura Md BT','sans-serif';
+  }
+}
 .modal-header{
   background: rgba(255,255,255,0.1) !important;
+  -webkit-backdrop-filter: blur(120px);
   backdrop-filter: blur(120px);
   font-family: 'Futura Md BT','sans-serif';
+}
+.btn-grp{
+  z-index: 99;
 }
 .modal-form-label{
     font-size: 20px;
@@ -29,8 +49,8 @@
     background: rgba(249, 249, 249, 0.47);
     font-family: 'Futura Md BT','sans-serif';
     padding: 1.4%;
-    border-radius: 5px;
-    border: 1px solid #f8f8f8;
+    border-radius: 8px;
+    border: 1.5px solid #848484;
 }
 .model-form-heading{
     font-size: 30px;
@@ -73,10 +93,34 @@ input[type=number] {
   -webkit-appearance: textfield;
   appearance: textfield;
 }
+.questionmark-dropform{
+  font-family:sans-serif !important;
+} 
+.button-animate1{
+  width: 10vw;
+  position: relative;
+margin-left: 90%;
+cursor: pointer;
+z-index: 999;
+margin-top: 1%;
 
+}
+.btn-grp1{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  z-index: 9999;
+  width: 1%;
+margin-left: 89%;
+margin-top: 2%;
+}
+.checkbox-dropd{
+  border:2px solid orange;
+  border-radius: 50% !important;
+}
 .css-1s2u09g-control{
   background: rgba(249, 249, 249, 0.47);
-  border: 1px solid #f8f8f8;
+  border: 1.5px solid #848484;
   width:100%;
 }
 /* .button-animate{
@@ -103,22 +147,35 @@ z-index: 999;
 .css-b62m3t-container {
   width: 400px;
 }
-@media screen and (max-width: 500px) {
-  .modal-dialog{
-    box-shadow: 5px 10px 10px gray;
-    font-family: 'Futura Md BT','sans-serif';
-    width:400px;
-  }
-  .css-1s2u09g-control{
-    background: rgba(249, 249, 249, 0.47);
-    border: 1px solid #f8f8f8;
-    width:100%;
-  }
-  .css-b62m3t-container {
-    width: 220px;
-  }
-  .modal-content{
-    width:300px;
-  }
-}
+@media (max-width: 576px){
+  .modal:not(.modal-slide-in) .modal-dialog:not(.modal-fullscreen) {
+   padding-right: 0;
+   padding-left: 0;
+ }
+ }
+ @media screen and (max-width: 500px) {
+   .modal{
+     display: grid !important;
+ align-items: center;
+ justify-content: center;
+   }
+   .btn-grp1{
+    display: none;
+   }
+   .modal-dialog{
+     box-shadow: 5px 10px 10px gray;
+     font-family: 'Futura Md BT','sans-serif';
+   }
+   .css-1s2u09g-control{
+     background: rgba(249, 249, 249, 0.47);
+     border: 1px solid #f8f8f8;
+     width:100%;
+   }
+   .css-b62m3t-container {
+     width: 220px;
+   }
+   .modal-content{
+     width:300px;
+   }
+ }
 

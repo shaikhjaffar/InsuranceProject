@@ -1,105 +1,147 @@
-import {React, useState} from 'react'
-import { slide as Menu } from 'react-burger-menu'
+import {React, useState, useRef, useEffect} from 'react'
 import './sidemenu.css'
+import HamReg from '../../Registration/hamnav'
+
+import * as AiIcons from 'react-icons/ai'
 import { Link, NavLink } from "react-router-dom"
 import './navprodd.css'
+import Bars from './Group 213.png'
+function useOnClickOutside(ref, handler) {
+  useEffect(
+    () => {
+      const listener = (event) => {
+        // Do nothing if clicking ref's element or descendent elements
+        if (!ref.current || ref.current.contains(event.target)) {
+          return
+        }
+        handler(event)
+      }
+      document.addEventListener("mousedown", listener)
+      document.addEventListener("touchstart", listener)
+      return () => {
+        document.removeEventListener("mousedown", listener)
+        document.removeEventListener("touchstart", listener)
+      }
+    },
+    // Add ref and handler to effect dependencies
+    // It's worth noting that because passed in handler is a new ...
+    // ... function on every render that will cause this effect ...
+    // ... callback/cleanup to run every render. It's not a big deal ...
+    // ... but to optimize you can wrap handler in useCallback before ...
+    // ... passing it into this hook.
+    [ref, handler]
+  )
+}
 const Sidebar = () => {
-const options = [
+  const options = [
     {
         id:1,
         cname:"1 Click",
-        name:"Payroll",
-        path:"/product/payroll"
+        name:"Payroll Financing",
+        path:"/product/1-click-payroll"
     },
     {
         id:2,
         cname:"1 Click",
         name:"Salary Advance",
-        path:"/product/salaryadv"
+        path:"/product/1-click-salary-advance"
     },
     {
         id:3,
         cname:"1 Click",
         name:"Insurance Funding",
-        path:"/product/insurancefun"
+        path:"/product/1-click-insurance-funding"
     },  
     {
         id:4,
         cname:"1 Click",
         name:"Project Funding",
-        path:"/product/projectfun"
+        path:"/product/1-click-project-funding"
     },  
     {
         id:5,
         cname:"1 Click",
         name:"L.R.D",
-        path:"/product/lrd"
+        path:"/product/1-click-lease-rental-discounting"
     },  
     {
         id:6,
         cname:"1 Click",
-        name:"Supply Chain Financing",
-        path:"/product/scf"
+        name:"Supply Chain Funding",
+        path:"/product/1-click-supply-chain-financing"
     },  
     {
         id:7,
         cname:"1 Click",
         name:"Working Capital",
-        path:"/product/workingcap"
+        path:"/product/1-click-working-capital"
     },  
     {
         id:8,
         cname:"1 Click",
-        name:"Colateral Free MSME/SME Loan",
-        path:"/product/cf"
+        name:"Collateral Free MSME Loan",
+        path:"/product/1-click-collateral-free-msme"
     },  
     {
         id:9,
         cname:"1 Click",
         name:"H.R Management Systems",
-        path:"/product/hrm"
+        path:"/product/1-click-human-resources-management-systems"
     },  
     {
         id:10,
         cname:"1 Click",
         name:"Entertainment & Production Financing",
-        path:"/product/production"
+        path:"/product/1-click-entertainment-and-production-financing"
     }       
 ]
-  const [isActive, setIsActive] = useState(false)
-  const [isclicked, setClicked] = useState(false)
-  const handleClicked = () => setClicked(!isclicked)
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick(!click)
+const ref = useRef()
+const [sidebar, setSidebar] = useState(false)
+const showSidebar = () => setSidebar(!sidebar)
+useOnClickOutside(ref, () => setSidebar(false))
+  // const [isclicked, setClicked] = useState(false)
+  // const ref1 = useRef()
+  // function handleClicked () {
+  //   setClicked(!isclicked)
+  //   ref1.current.style.rotate = (isActive ? "none" : "180deg")
+  // }
+ 
+
+  // const [click, setClick] = useState(false)
+  // //  const handleClick = () => setClick(!click)
+  // const [show, setShow] = useState(false)
+  // function handleClick() {
+  //   setClick(!click)
+  //   setShow(!show)
+  // }
+ 
   return (
-    <Menu>
-            <a className="menu-item">
+    <div onClick={showSidebar} >
+      <img src={Bars} className='bm-burger-button' onClick={showSidebar}/>
+      <div className={sidebar ? 'side-menu active' : 'side-menu'} ref={ref}>
+      {/* <AiIcons.AiOutlineClose className='bm-burger-button-close' onClick={showSidebar}/> */}
+            <div>
               <NavLink
+              className="menu-item"
                 exact
                 to="/"
                 activeClassName="active"
-                onClick={handleClicked}
+                onClick={ showSidebar }
               >
                 Home
               </NavLink>
-            </a>
-            <div className={isActive === true ? "Navhmtitle  Navhmactive" : "Navhmtitle"}
-              onClick={() => setIsActive(!isActive)} 
+            <div className="Navhmtitle"
               >
-              <div className="Navhm-dd-title">
                 <NavLink
                   exact
-                  to="/product/payroll"
-                  className="navhm-links"
-                  onClick={handleClicked}>
-                  Product <span className='product-icons'>&#129179;</span>
+                  to="#"
+                  className="Navhm-dd-title">
+                  Product
                 </NavLink>
-              </div>
-              {isActive && (
                 <div className='Navhm-dd-data'>
                   {options.map((option) => (
                     <div className='Navhm-dd-item'key ={option.id}>
-                      <span className='itemhm-name'>
+                      <span className='itemhm-name' onClick={ showSidebar }>
                         <Link
                           exact
                           to={option.path}>
@@ -109,51 +151,48 @@ const options = [
                     </div>
                   ))}
                 </div>
-               )}
             </div>
-            <a className="menu-item">
               <NavLink
+              className="menu-item"
                 exact
                 to="/blogs"
                 activeClassName="active"
-                onClick={handleClick}
+                onClick={ showSidebar }
               >
                 Blogs
               </NavLink>
-            </a>
-            <a className="menu-item">
               <NavLink
+              className="menu-item"
                 exact
                 to="/carrer"
                 activeClassName="active"
-                onClick={handleClick}
+                onClick={ showSidebar }
               >
                 Career
               </NavLink>
-            </a>
-            <a className="menu-item">
               <NavLink
+              className="menu-item"
                 exact
                 to="/about-us"
                 activeClassName="active"
-                
-                onClick={handleClick}
+                onClick={ showSidebar }
               >
                 About us
               </NavLink>
-            </a>
-            <a className="menu-item">
               <NavLink
+              className="menu-item"
                 exact
                 to="/contact-us"
                 activeClassName="active"
-                onClick={handleClick}
+                onClick={ showSidebar }
               >
                 Contact us
               </NavLink>
-            </a>
-    </Menu>
-    
+              <a className="menu-item" href="https://www.1clickcapital.com/portal/login.php" onClick={ showSidebar }>Login</a>
+              <HamReg onClick={ showSidebar }/>
+            </div>
+            </div>
+    </div> 
   )
 }
 export default Sidebar

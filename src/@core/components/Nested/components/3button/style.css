@@ -9,10 +9,10 @@ margin-bottom: 5%;
 } */
 .button-product-container{
 display: flex;
-column-gap: 3%;
+column-gap: 5%;
 justify-content: center;
-padding-top: 3%;
-padding-bottom: 3%;
+padding-top: 5%;
+padding-bottom: 5%;
 width: 80%;
 }
 .section2-product{
@@ -25,6 +25,7 @@ height: 100px;
 min-width: 29%;
 background: rgba(255, 255, 255, 0.1);
 border: 0.5px solid white;
+-webkit-backdrop-filter: blur(50px);
 backdrop-filter: blur(50px);
 border-radius: 200px;
 }
@@ -64,7 +65,7 @@ font-size: 1vw;
   background-size: 80%;
   animation: mettalic 6s linear infinite;
   -webkit-text-fill-color: rgba(255, 255, 255, .1);
-  margin-top: -3%;
+  margin-top: 1%;
   }
   @keyframes mettalic
 {
@@ -83,26 +84,8 @@ font-size: 1vw;
     grid-template-columns: auto;
     row-gap: 5%;
     width: 70%;
+    padding-bottom: 10%;
   }
-  /* .enroll-button{
-    height: 50px;
-    width: 29%;
-    border-radius: 100px;
-    }
-    .image-back-white{
-       width: 45px;
-       height: 45px;
-       border-radius: 50%;
-       background-color: white;
-       display:grid;
-       justify-content: center;
-       align-items: center;
-       margin: 1.5px;
-    }
-    .enroll-img{
-        width: 25px;
-        height: 25px;
-    } */
     .enroll-text{
     font-size: 2vw;
     }
@@ -117,7 +100,7 @@ font-size: 1vw;
         margin-top: 5%;
     }
     .Common-word-product{
-      font-size: 12px;
+      font-size: 20px;
       margin-top: 30px;
     }
 }

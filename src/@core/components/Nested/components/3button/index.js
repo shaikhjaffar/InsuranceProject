@@ -1,10 +1,13 @@
 import React from "react"
+
 import Vect1 from '../Vector (1).png'
 import Vect2 from '../Group 24bag tick.png'
 import Vect from '../Vector.png'
 import './style.css'
+import Register from "../../../Registration"
 function Button3() {
  return (
+   <>
     <div className="section2-product">
        <span className="circle-product"></span>
         <div className="button-product-container">
@@ -21,10 +24,8 @@ function Button3() {
             <p className="enroll-text">Avail the Loan Selecting the EMI Option</p>
          </div>
         </div>
-       <span className="circle-product"></span>
-        <p className="Common-word-product"> HOW IT WORKS</p>
-        <div className="rectline2"></div>
     </div>
+    </>
  )
 }
 

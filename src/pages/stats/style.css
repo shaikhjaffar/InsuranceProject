@@ -1,21 +1,24 @@
 .pic{
-    width: 10vw;
-    min-width: 150px;
-    margin-left: 80px;
-    margin-top: 90px;
+    width: 35%;
+    height: auto;
+    }
+    .card10{
+      display: grid;
+align-content: center;
+justify-content: center;
+justify-items: center;
     }
   .heading-stats{
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
-  font-family: 'Futura  BT',sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Futura ',sans-serif;
+  text-align: center;
  }
  .stats{
   display: grid;
   grid-template-columns: auto auto auto auto;
+  padding: 8%;
  }
  
  @media screen and (max-width:1000px) {
@@ -30,8 +33,13 @@
   }
  }
  @media screen and (max-width:480px) {
-  .stats{
-    grid-template-columns: auto;
-    place-items: center;
-  }
+  /* .stats{ */
+    /* grid-template-columns: auto;
+    place-items: center; */
+    .heading-stats{
+   
+      font-size: 17px;
+    
+     }
+  /* } */
  }

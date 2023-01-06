@@ -1,26 +1,15 @@
 
 .header{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
  }
  .header-heading{
   position: relative;
-  font-family: 'Futura Md BT','sans-serif';
+  font-family: 'Futura';
   font-style: italic;
-  font-weight: 600;
-  font-size: 4vw;
-  background-image: -webkit-linear-gradient(160deg, #4b4b4b 30.92%, #FFFFFF 48.36%, #4b4b4b 68.09%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-repeat: initial;
-  background-size: 80%;
-  animation: animate 6s linear infinite;
-  -webkit-text-fill-color: rgba(255, 255, 255, .1);
-  width:80%;
+  font-size: 2.9vw;
   z-index: -1;
-  margin-top: 8%;
+color: rgb(58, 56, 56);
+  margin-top: 3%;
  }
  @keyframes animate
  {
@@ -33,29 +22,44 @@
     background-position: 500%;
   }
  }
- .container1 {
-    width: 100%;
+ .container1-left{
+  margin-left: 20%;
+ }
+ .container1-right{
+  margin-right: 20%;
+ }
+ .container-pf-awards {
+    width: 70%;
     position:relative;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: -1;
+    position:relative;
+    transition: 0.5s;
+    margin-top: 10%;
   }
  .imagesize{
   position: absolute;
-  width: 53%;
+  width: 33.5%;
+  height: auto;
+  /* margin-left: -88%; */
+  left: -12%;
+ }
+ .imagesize-of-2{
+  position: absolute;
+  width: 77%;
   height: auto;
  }
  .logoholder{
   width:85%;
  }
 .award-column {
-  float: left;
-  width: 50%;
-  display: grid;
-  align-items: center;
+  width: 40%;
+  display:flex ;
   justify-content: center;
+  place-items:center;
 }
 .award-row {
   padding:10px;              
@@ -103,9 +107,44 @@
   word-wrap: normal;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 60px;
 }
-
+.Awards-Avnish{
+  position: relative;
+  font-family: 'Futura Md BT','sans-serif';
+  font-weight: 600;
+  font-size: 2.5vw;
+  background-image: -webkit-linear-gradient(160deg, #d9bd20 30.92%, #FFFFFF 48.36%, #d9bd20 68.09%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: initial;
+  background-size: 80%;
+  animation: animate 6s linear infinite;
+  -webkit-text-fill-color: rgba(255, 255, 255, .1);
+  z-index: -1;
+  margin-top: 8%;
+  margin-left: 18%;
+}
+.Awards-Avnish2{
+  position: relative;
+  font-family: 'Futura Md BT','sans-serif';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5vw;
+  background-image: -webkit-linear-gradient(160deg, #d9bd20 30.92%, #FFFFFF 48.36%, #e3c519 68.09%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: initial;
+  background-size: 80%;
+  animation: animate 6s linear infinite;
+  -webkit-text-fill-color: rgba(255, 255, 255, .1);
+  z-index: -1;
+  margin-top: -2%;
+  list-style-type: none;
+}
+.Awards-list{
+  list-style: none;
+}
 .wordmark-title-award {
   border-radius: 15px 0px 70px 0px;
   color: black;
@@ -132,6 +171,7 @@
   background: rgba(47, 196, 206, 0.1);
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin-left: 0%;
   position: absolute;
@@ -146,6 +186,7 @@
   background: rgba(47, 196, 206, 0.1);
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin-left: 0%;
   position: absolute;
@@ -182,9 +223,22 @@
 }
 .rectangle-titlesvg-award {
   width: 90px;
-  height: 70px;
-  margin-top: -170px;
+  height: 35px;
+  margin-top: -135px;
   margin-left: 40px;
 }
 }
  
+.Awards-page-line{
+  position:relative;
+width:55% ;
+height: 2px;
+margin-left: 23%;
+border-radius: 20%;
+background-image: -webkit-linear-gradient(160deg, #4b4b4b 30.92%, #FFFFFF 48.36%, #4b4b4b 68.09%); 
+background-repeat: initial;
+background-size: 80%;
+animation: animate 6s linear infinite;
+-webkit-text-fill-color: rgba(255, 255, 255, .1);
+margin-bottom: 10px;
+} 

@@ -6,7 +6,7 @@
    },
    {
        "id": "2",
-       "name": "Cheif Operational officer"
+       "name": "Chief Operational officer"
    },
    {
        "id": "3",
@@ -30,11 +30,11 @@
    },
    {
        "id": "8",
-       "name": "Cheif Administration officer"
+       "name": "Chief Administration officer"
    },
    {
        "id": "9",
-       "name": "Cheif Marketing officer"
+       "name": "Chief Marketing officer"
    },
    {
        "id": "10",
@@ -66,7 +66,7 @@
    },
    {
        "id": "17",
-       "name": "Accounting Assisant"
+       "name": "Accounting Assistant"
    },
    {
        "id": "18",
@@ -75,7 +75,8 @@
    {
        "id": "19",
        "name": "IT Manager"
-   },
+   }
+   ,
    {
        "id": "20",
        "name": "Other"

@@ -23,7 +23,7 @@ function SalaryAdv() {
               <img
                 className=" imagevec"
                 src={Vect}
-                alt="BigCo Inc. logo"
+              
               />
             </div>
             <div className="insidetext">
@@ -40,7 +40,7 @@ function SalaryAdv() {
               <img
                 className=" imagevec"
                 src={Vect1}
-                alt="BigCo Inc. logo"
+              
               />
             </div>
             <div className="insidetext">
@@ -56,7 +56,7 @@ function SalaryAdv() {
               <img
                 className=" imagevec"
                 src={Vect2}
-                alt="BigCo Inc. logo"
+              
               />
             </div>
             <div className="insidetext">

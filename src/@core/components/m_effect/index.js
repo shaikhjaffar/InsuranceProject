@@ -24,10 +24,10 @@ function Effect() {
      return () => ctx.revert()
    })
    return (
-    <h1 className="motto3" ref={app}>
+    <div className="motto3" ref={app}>
     <span>1 Click To   </span>
     <span className="auto-input"></span>
-    </h1> 
+    </div> 
    )
  }
 export default Effect

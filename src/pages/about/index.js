@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, {useRef, useEffect, useState } from "react"
 // import { NavLink } from "react-router-dom"
 import "@styles/base/components/_card.scss"
 // import {  } from "react"
@@ -6,13 +6,18 @@ import "@styles/base/components/_card.scss"
 import { NavLink } from "react-router-dom"
 import Rectangle from './rectangle.png'
 import { gsap } from "gsap"
+import ButtonsFin from '../../views/about/fintech.png'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 import "./style.css"
 function About() {
+  window.scrollTo(0, -30)
   const [click, setClick] = useState(false)
-
-  const handleClick = () => setClick(!click)
+  const ref1 = useRef()
+  function scroll () {
+    ref1.scrollIntoView()
+    setClick(!click)
+  }
   function HeadingAbout() {
     const headingref = useRef(null)
     useEffect(() => {
@@ -37,27 +42,35 @@ function About() {
     return (
         <div class="container-gsap-about" ref={ headingref } id="container-about">
           <div class="wordmark-title-about"></div>
-          <div class="title-rect1-about"></div>
-          <div class="title-rect2-about"></div>
-          <img className="rectangle-titlesvg-about" src={Rectangle} alt="BigCo Inc. logo"/>
+          {/* <div class="title-rect1-about"></div>
+          <div class="title-rect2-about"></div> */}
+          {/* <img className="rectangle-titlesvg-about" src={Rectangle}/> */}
         </div>
     )
   }
    
         return (
-            <div className="card">
+            <div className="card" ref={ref1}>
               <HeadingAbout/>
               <div className='headings-aboutus'>
                 <p className='text1underline'> Breaking New Ground Every Day </p>
                 <p className='text2center'> Listening to the Financial Needs of Businesses and Simplifying Payroll Funding for Digital India.</p>
               </div>
-            <div className='text3Bold'>
+              <div className='text1underline'>
+  <p>Our MISSION</p>
+  </div>
+  <div className='text2center'>
+    <p className='text2center-p'>To create a business friendly way of leveraging capital to help
+       individuals and institutions amid financial crises</p>
+    </div>
+    <img className='Buttonfin' src={ButtonsFin} alt="button"></img>
+            {/* <div className='text3Bold'>
               <p> India’s first ever digital portal to offer payroll funding, making every business owner’s dream<br></br>
                possible through everyday capital realities.</p>
             </div>
             <div className='text4'>
               <p>1 Click Capital is on a mission to change the way businesses in our country access the funding they need to pay their employees and sustain<br>
-              </br> their business.</p></div>
+              </br> their business.</p></div> */}
         
               <div className='text5'>
                 {/* <p>
@@ -76,7 +89,7 @@ function About() {
                <NavLink
                exact
                to="/about-us"
-               onClick={handleClick}
+               onClick={scroll}
                 className="read-more"
              >
               Read more

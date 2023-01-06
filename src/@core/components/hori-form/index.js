@@ -3,8 +3,13 @@ import './horiform.css'
 import CreatableSelect from 'react-select/creatable'
 import Cities from './Cities.json'
 import Designation from './Designation.json'
+import { NavLink } from 'react-router-dom'
 import { Input, Label, FormGroup} from 'reactstrap'
+// import ReactSwipeButton from "react-swipe-button"
+import SlideButton from 'react-slide-button'
 import axios from 'axios'
+import Button from './Group 218.png'
+import Swal from 'sweetalert2'
  class HoriForm extends Component {
   
   constructor(props) {
@@ -17,13 +22,17 @@ import axios from 'axios'
       companyName:"",
       email:"",
       desig:"",
-      city:""
+      city:"",
+      isHidden:true,
+      isTouch:window.innerWidth,
+      reset:0
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.namehandler = this.namehandler.bind(this)
     this.contacthandler = this.contacthandler.bind(this)
     this.companyhandler = this.companyhandler.bind(this)
     this.emailhandler = this.emailhandler.bind(this)
+    this.checkhandle = this.checkhandle.bind(this)
   }
     getOptions() {
     const data = Cities.Citynames
@@ -59,6 +68,15 @@ import axios from 'axios'
       contact: event.target.value
     })
   }
+  checkhandle(event) {
+    if (event.target.checked) {
+      this.setState({isHidden:false})
+      console.log(this.state.isHidden)
+    } else {
+      this.setState({isHidden:true})
+      console.log(this.state.isHidden)
+    }
+  }
   companyhandler(event) {
     this.setState({
       companyName: event.target.value
@@ -79,27 +97,59 @@ import axios from 'axios'
   this.getOptions()
  }
   handleSubmit() {
+    if (this.state.name === '') {
+      alert('Name field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+       
+    } else if (this.state.email === '') {
+      alert('Email field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+       
+    } else if (this.state.contact === '') {
+      alert('Contact field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+       
+    } else if (this.state.companyName === '') {
+      alert('Company name field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+       
+    } else if (this.state.empdesig === '') {
+      alert('Designation field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+       
+    } else if (this.state.isHidden === true) {
+      alert('Please Agree to privacy policy')
+      this.setState({reset:(this.state.reset + 1)})
+    } else {
+      Swal.fire({
+        title:"Submitted Successfully",
+        html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+        confirmButtonColor: '#FFA500',
+        showCloseButton:true
+    })
+    this.setState({reset:(this.state.reset + 1)})
     const userdata = `first_name=${this.state.name}&last_name=&company_name=${this.state.companyName}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.desig}&city=&product_name=custom_contact&campaign=website`
     try {
       axios({
         method: "post",
-        url: "https://stag.1clickcapital.com/portal/api/registration.php",
+        url: "https://www.1clickcapital.com/portal/api/registration.php",
         data: userdata,
         headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      })
+      this.setState({ 
+        name: "",
+        contact: "",
+        companyName: "",
+        email: "",
+        desig:"",
+        city:"",
+        isHidden:true
       })
     } catch (error) {
       console.log(error)
       alert(error)
     }
-    console.log(this.state)
-    this.setState({ 
-      name: "",
-      contact: "",
-      companyName: "",
-      email: "",
-      desig:"",
-      city:""
-    })
+  }
 }
 
   render() {
@@ -135,7 +185,7 @@ import axios from 'axios'
             {this.state.email === "" ? <label className='contact-label-name'>Email</label> : <label className='contact-label2'>Email</label>  }
           </div>
           <div className='contact-input-container'>
-          <CreatableSelect className='contact-input-box' options={this.state.selectedOption} onChange={this.handlesChange1.bind(this)} />
+          <CreatableSelect className='contact-input-box  ci-container' options={this.state.selectedOption} onChange={this.handlesChange1.bind(this)} placeholder="Select Designation"/>
             <label className='contact-label2'>Designation</label>
           </div>
           {/* <div className='contact-input-container'>
@@ -146,12 +196,26 @@ import axios from 'axios'
             check
             inline
             style={{margintop:"-4%"}}>
-            <Input type="checkbox" className='contact-checkbox'/>
-            <Label check> I Agree to Privacy Policy </Label>
+            <Input type="checkbox" className='contact-checkbox' onChange={this.checkhandle} onClick={this.checkhandle} checked={!this.state.isHidden}/>
+            <Label check><NavLink
+             onClick={scroll}
+            exact
+               to="/Policy">I Agree to <span style={{textDecoration:"underline", color: "red"}}>Privacy Policy</span>
+              </NavLink> </Label>
           </FormGroup>
-          <input type="button" value="Send a request" className='contact-button'  onClick={this.handleSubmit}/>
-          <h5 className='contact-login-text'> Already a user ? <a className="contact-link" href="#">Login</a></h5>
-      </div> 
+          {
+  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button-2' onClick={this.handleSubmit}/> : <div style={{width:"250px"}}>
+<SlideButton 
+  mainText="Swipe To Submit" 
+  overlayText="Submitted" 
+  onSlideDone={this.handleSubmit} 
+  caretClassList="my-caret-class"
+  classList="my-class"
+  overlayClassList="my-overlay-class"
+  reset={this.state.reset}
+/></div>)}
+          <h5 className='contact-login-text'> Already a user <span className='questionmark-horiform'>?</span> <a className="contact-link" href="https://www.1clickcapital.com/portal/login.php">Login</a></h5>
+      </div>
       </form>          
     )
 }

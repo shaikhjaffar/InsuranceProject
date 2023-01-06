@@ -10,6 +10,10 @@
   margin-top: 5%;
   z-index: 10;
 }
+.button-2{
+  width: auto;
+  height: 50px;
+}
 /* .contact-form-msg-p{
   width: 100%;
   text-align: center;
@@ -37,12 +41,12 @@
     background-color: rgba(255,255,255,0.1);
   }
   .contact-input-container:hover .contact-label-name{
-    transform: scale(1.2,1.2);
     font-weight: bold;
-    color: #000000;
-    background: rgba(255,255,255,0);
+    color:gray;
   }
-  
+  .questionmark-horiform{
+    font-family:sans-serif !important;
+  } 
   .contact-input-container:focus-within .contact-label-name {
     margin-top: -3%;
     transform: scale(1.2,1.2);  
@@ -111,6 +115,9 @@
     /* box-shadow: 0 2px 5px 2px #a6a6a6; */
     color: white;
     background: -webkit-linear-gradient(270deg, orange 35%, rgba(0,0,0,0.7) );
+  }
+  .ci-container{
+    border:none !important;
   }
   .contact-link{
     color: orange;

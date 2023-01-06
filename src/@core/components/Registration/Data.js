@@ -3,7 +3,7 @@ const data = {
         sections:[
             {
                 product_id:1,
-                product_title: "1 Click Payroll",
+                product_title: "1 Click Payroll Financing",
                 fields:[
                     {
                         fieldid:1,

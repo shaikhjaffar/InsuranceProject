@@ -1,4 +1,4 @@
-import React from 'react'
+import {React} from 'react'
 // import Foot from './images/Group 146.svg'
 import Rect1 from './images/Rectangle 123.svg'
 import Logo from './images/1 click -Logo for Light BG 4.svg'
@@ -8,95 +8,109 @@ import LinkedIn from './images/LinkedIn.png'
 import Twitter from './images/Twitter.png'
 import './Footer.css'
 import { NavLink } from 'react-router-dom'
-// import "@styles/base/components/_card.scss"
-// import Marquee from '../../@core/components/marquee/index'
-// import Marqueee from '../../@core/components/marquee/index'
+import ScrollToTop from '../../scroltop'
 
 function Footer() {
+ 
   return (
          <div className='main-footer card'>
        <div className='Cir'>
-       <img src={Logo} alt="imagelogo" className='logoimg'></img></div> 
+        <img src={Logo}  className='logoimg'></img>
+       </div> 
        {/* <Marqueee/> */}
        <div className='Style11'>
           <p className='footer-style1'>If you are looking  for speed and ease for raising capital,<br /> you have came to the right place</p>
         </div>    
         <div className='Rectangle'>
-          <img  src={Rect1} alt="BigCo Inc. logo" className="footer-rectangle-top"/> 
+          <img  src={Rect1}  className="footer-rectangle-top"/> 
         </div>
         <div className='rowfootor'>
           <div className='colfootor'>
-            <h2 className='colfootor-h2'>  Quick Links  </h2>
-            <a href="#home"> Home</a><br></br>
-            <a><NavLink
+            <h2 className='colfootor-h2'>Quick Links</h2>
+            <a  ><NavLink
             exact
-               to="/about-us">About
+               to="/" onClick={ () => { window.reload(false) }} className='footor-text'>Home
               </NavLink></a><br></br>
-            <a ><NavLink
+            <a  ><NavLink
             exact
-               to="/product/payroll">Our Product
-              </NavLink></a>
+               to="/about-us" onClick={ () => { window.reload(false) }} className='footor-text'>About
+              </NavLink></a><br></br>
+            <a  ><NavLink
+            exact
+               to="/product/1-click-payroll" onClick={ () => { window.reload(false) }} className='footor-text'>Our Product
+              </NavLink></a><br></br>
+              <a  ><NavLink
+            exact
+               to="/1-click-capital-faq" target="_blank"  className='footor-text'>FAQ
+              </NavLink></a><br></br>
           </div>
           <div className='colfootor'>
             <h2 className='colfootor-h2'>  Other Links  </h2>
-            <a href=""> Privacy policy</a><br></br>
-            <a href="">Trems & Condition</a><br></br>
-            <a><NavLink
+            <a   ><NavLink
+             onClick={scroll}
             exact
-               to="/carrer">Career
+               to="/Policy" target="_blank" className='footor-text'>Privacy Policy
               </NavLink></a><br></br>
-            <a ><NavLink
+            <a  ><NavLink
             exact
-               to="/contact-us">Contact us
-              </NavLink></a>
+               to="/carrer" onClick={ () => { window.reload(false) }}className='footor-text'>Career
+              </NavLink></a><br></br>
+            <a  ><NavLink
+            exact
+               to="/contact-us"  onClick={ () => { window.reload(false) }}className='footor-text'>Contact us
+              </NavLink></a><br></br><br></br>
           </div>
-          <div className='colfootor'>
+          <div className='colfootor colfootor2'>
             <h2 className='colfootor-h2'>  Our Address </h2>
-            <a href="https://www.google.com/maps/place/1+Click+Capital/@19.1113219,72.9080361,15z/data=!4m5!3m4!1s0x0:0xe932828b9f7ade92!8m2!3d19.1113219!4d72.9080361">701-702 Wing A, Supreme Business Park,
+            <a  className='footor-text' target="_blank" href="https://www.google.com/maps/place/1+Click+Capital/@19.1113219,72.9080361,15z/data=!4m5!3m4!1s0x0:0xe932828b9f7ade92!8m2!3d19.1113219!4d72.9080361">701-702  A Wing, Supreme Business Park,
             Hiranandaini gardens,
-            Powai, Mumbai,
-            Maharashtra 400076</a>
+            Powai, Mumbai:400076,
+            Maharashtra</a>
           </div>
-          <div className='colfootor'>
-            <h2 className='colfootor-h2'> Mail_id  </h2>
-            <a href="mailto:contactus@1clickcapital.com">contactus@1clickcapital.com</a><br></br>
-            <a href="mailto:grievance@1clickcapital.com">grievance@1clickcapital.com</a>
+          <div className='colfootor colfootor2'>
+            <h2 className='colfootor-h2'> Contact Details  </h2>
+            <a href="tel:18005325200"  className='footor-text'> 180 05325 200</a><br></br>
+            <a href="mailto:contactus@1clickcapital.com"  className='footor-text'>contactus@1clickcapital.com</a><br></br>
+            <a href="mailto:grievance@1clickcapital.com"  className='footor-text'>grievance@1clickcapital.com</a>
           </div>
-          <div className='colfootor contactno'>
+          {/* <div className='colfootor contactno'>
             <h2 className='colfootor-h2'>  Contact Number  </h2>
-            <a href=""> 180 0532 5200</a>
-          </div>
+            
+          </div> */}
         </div>
         <div className='Rectangle'>
-          <img className='footer-rectangle-bottom' src={Rect1} alt="BigCo Inc. logo"/>  
+          <img className='footer-rectangle-bottom' src={Rect1} />  
         </div>
-        <div className='footer-logo-sm rowfootor'>
-          <div className='footer-logo colfootor'>
-            <a href="https://www.instagram.com/1clickcapital/"><img src={Instagram} alt="BigCo Inc. logo" className='sm-logo'/></a>
+        <div className='footer-logo-sm rowfootor-logo'>
+          <div className='footer-logo colfootor-logo'>
+            <a href="https://www.instagram.com/1clickcapital/" target="_blank"><img src={Instagram}  className='sm-logo'/></a>
           </div>
-          <div className='footer-logo colfootor'>
-            <a href=" https://www.facebook.com/1clickcapital"><img src={Facebook} alt="BigCo Inc. logo" className='sm-logo'/></a>
+          <div className='footer-logo colfootor-logo'>
+            <a href=" https://www.facebook.com/1clickcapital" target="_blank"><img src={Facebook}  className='sm-logo'/></a>
           </div>
-          <div className='footer-logo colfootor'>
-            <a href="https://www.linkedin.com/company/1-click-capital/mycompany/"><img src={LinkedIn} alt="BigCo Inc. logo" className='sm-logo'/></a>
+          <div className='footer-logo colfootor-logo'>
+            <a href="https://www.linkedin.com/company/1-click-capital/mycompany/" target="_blank"><img src={LinkedIn}  className='sm-logo'/></a>
           </div>
-          <div className='footer-logo colfootor'>
-            <a href='https://twitter.com/1clickcapital
-'><img src={Twitter} alt="BigCo Inc. logo" className='sm-logo'/></a>
+          <div className='footer-logo colfootor-logo'>
+            <a href='https://twitter.com/1clickcapital' target="_blank"><img src={Twitter}  className='sm-logo'/></a>
           </div>
         </div>
-          <div className='Style1'>
+          {/* <div className='Style1'>
           <div className='smallrect'></div>
-          </div>
-          <div className='Style1'>
-            <p className="footer-style1">Copyright @ 2022 1 click Capital. All Rights Reserved Powered by C H P FINANCE PRIVATE LIMITED</p>
+          </div> */}
+          <div className='Style2'>
+          <p className="footer-style1">Copyright &#169; 2022 1Click Capital</p>
+            <p className="footer-style1">All Rights Reserved </p>
+            <p className="footer-style1">Powered By</p>
+            <p className="footer-style1">C.H.P FINANCE PRIVATE LIMITED</p>
           </div>
           {/* <div className='Style1'>
           <div className='smallcircle'></div>
           </div> */}
           {/* <div className='Style1'>
-          <img  className="Footimageplace" src={Foot} alt="BigCo Inc. logo"/>
+          <img  className="Footimageplace" src={Foot} />
           </div> */}
+          <ScrollToTop/>
         </div> 
   
   )

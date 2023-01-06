@@ -1,7 +1,8 @@
 import {React, useState, useEffect} from "react"
-import { Link} from 'react-router-dom'
-import image1 from '../calendar/Calendartopline2.png'
-import  Id from './index'
+// import { Link} from 'react-router-dom'
+import image1 from '../calendar/1 click -Logo for Light BG 4.svg'
+import Readmore from '../main/Group 207button.png'
+// import  Id from './index'
  export default function searchMain(props)  {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -27,7 +28,7 @@ import  Id from './index'
   if (error) {
     return <div>Error: {error.message}</div>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <div></div>
   } else {
     return (
       <div className="content-head" key={items.id} >
@@ -37,10 +38,8 @@ import  Id from './index'
        {items.title.rendered}
       </h1>
       <div  className="blog-content-head" dangerouslySetInnerHTML={ {__html:items.excerpt.rendered.replace('[&hellip;]', '')} } />
-      <button className="read-blog-head">
-           <Link
-             to={items.slug} key={items.id}>Read More</Link>
-      </button>
+      <a key={items.id} href={items.link}><img src={Readmore} className="read-blog-head"></img>
+      </a>
     </div>
  </div>
 

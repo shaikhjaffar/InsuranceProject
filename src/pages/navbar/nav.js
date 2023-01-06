@@ -1,19 +1,37 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import "./style.css"
  import Logo from "./index.js"
 import Navdd from "../../@core/components/pbutton/Navdd"
-
+import svg from './1 click -Logo for Light BG 4 (1).png'
+import Sidebar from "../../@core/components/hamburgernav/sidemenu/sidemenu"
 function NavBar() {
-  const [click, setClick] = useState(false)
+  const ref1 = useRef()
+  useEffect(() => {
 
+  function handleScroll() {
+   const position = window.pageYOffset
+    
+   if (position >= 150) {
+       ref1.current.style.display = "Block"
+   } else {
+       ref1.current.style.display = "none"
+   }
+  }
+  window.addEventListener('scroll', handleScroll)
+  }, [])
+ 
+  const [click, setClick] = useState(false)
+ function setActive(value) {
+   setClick(value)
+ }
   const handleClick = () => setClick(!click)
   return (
     <>
-    <div className="btn-grp">
-    </div>
     <Logo/>
       <nav className="navbar">
+      <Sidebar/>
+        <img className="small-nav-logo" ref={ref1}  src={svg} ></img>
         <div className="nav-container">
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -27,7 +45,7 @@ function NavBar() {
                 Home
               </NavLink>
             </li>
-            <Navdd/> 
+            <Navdd active={setActive}/> 
             <li className="nav-item">
               <NavLink
                 exact

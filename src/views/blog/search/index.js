@@ -1,17 +1,19 @@
 
-import {React, useState } from "react"
 
+import {React, useState } from "react"
+import Component from '../main/main'
 import Calendar from '../calendar/Calendarstyledemo'
 import SearchMain from "./searchmain"
+// import Button from '../../../@core/components/button/Button'
 // import Calendar from './Calendarstyledemo'
-export default function Bloghead () {
+export default function Bloghead (props) {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [err, setErr] = useState('')
-
+  const [show, setShow] = useState(true)
   const [message, setMessage] = useState(null)
-  const handleClick = async (event) => {
-    if (event.key === 'Enter') {
+  const handleClick = async () => {
+   
       setIsLoading(true)
     try {
       const response = await fetch('https://blog.1clickcapital.com/wp-json/wp/v2/search?search='.concat(message), {
@@ -34,37 +36,41 @@ export default function Bloghead () {
     } finally {
       setIsLoading(false)
     }
-    }
+    
   }
   const handleClick1 = (event) => {
-    if (event.target.value.length <= 1) {
       if (event.key === "Enter") {
-        setMessage(null)
-        handleClick(event)
-      }
-    } else {
         setMessage(event.target.value)
+        handleClick(event)
+        props.getValue(setShow(true))
+      } else {
+        setMessage(null)
        handleClick(event)
        console.log(data)
+       setShow(false)
+       props.getValue(show)
     }
   }
+ 
+ 
     return (
-      <>
+      <> 
          <div className="search-section">
             <input className="search" type="text" placeholder="Search here" onKeyDown={handleClick1}/>
-            <span className="searchicon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <span className="searchicon" onClick={handleClick1}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg></span>
             </div>
             <Calendar/>
-            {err & <h2>{err}</h2>}
-             {isLoading && <h2>Loading...</h2>}
+            {console.log(err)}
+           {console.log(isLoading)}
              {
               data.map((blogs) => (
                 <SearchMain id={blogs.id}/>
               )
               )
               }
+               {message === null ? <Component/> : <></>}
       </>
 
 )

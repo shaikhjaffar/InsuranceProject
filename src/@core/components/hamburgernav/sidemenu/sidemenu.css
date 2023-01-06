@@ -1,37 +1,33 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 36px;
-  height: 15px;
-  margin-left: 3vw;
-  margin-top: 2vw;
+  width: 60px;
+  height: 60px;
+  margin-left: 2%;
+  margin-top: -1%;
+  z-index: 20;
   display: none;
+  cursor: pointer;
+  position: absolute;
+left: 0%;
+top: 13%;
 }
+/* .bm-burger-button-close {
+  position: absolute;
+  width: 55px;
+  height: 35px;
+  color: orange;
+  margin-left: 60%;
+  margin-top: -10%;
+  z-index: 20;
+  cursor: pointer;
+} */
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background-color:#2FC4CE;
 }
 
-/* Color/shape of burger icon bars on hover*/
-
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-  margin-right: 50%;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background:#2FC4CE ;
-}
-
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
@@ -45,9 +41,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 100%;
 }
 .product-icons{
-  font-size: 30px;
-  vertical-align: middle;
-  color: orange;
+  width: 15px;
+padding-left: 2%;
 }
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
@@ -69,6 +64,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
   
 /* Individual item */
 .bm-item {
@@ -78,11 +74,59 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-align: left;
   text-decoration: none;
   transition: color 0.2s;
-}
 
+}
 .bm-item:hover {
   color: orange;
 }
+.side-menu{
+  overflow-y: auto;
+  background-color: rgba(255,255,255, 0.1);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  width:250px;
+  height:100vh;
+  display: flex;
+  padding-top: 10%;
+  padding-left: 5%;
+  flex-direction: column;
+  z-index: 20;
+  top: 0;
+  position: fixed;
+  left:-150%;
+}
+ @supports not (backdrop-filter: blur(100px)){
+
+ .side-menu{
+  overflow-y: auto;
+  background-color: rgba(255,255,255, 0.1);
+  background: linear-gradient(0.55turn, #c9f1f4, #f6f9f5, #efb06d);
+  width:250px;
+  height:100vh;
+  display: flex;
+  padding-top: 10%;
+  padding-left: 5%;
+  flex-direction: column;
+  z-index: 20;
+  top: 0;
+  position: fixed;
+  left:-150%;
+  transition: 850ms;
+}
+ 
+ }
+.side-menu.active{
+  left:0;
+  transition: 350ms;
+}
+.menu-item{
+  display: block;
+  margin-bottom: 7%;
+  font-size: 20px;
+}
+/* .Navhm-dd-item{
+  margin-bottom: 7% !important;
+} */
 @media screen and (max-width:840px) {
   .bm-burger-button{
     display: block;

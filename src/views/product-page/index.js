@@ -5,6 +5,7 @@ import Footer from "../../pages/Footer/Footer"
 export default class Product extends Component {
  
   constructor(props) {
+  
      super(props)
      const width = window.innerWidth
      this.state = {}

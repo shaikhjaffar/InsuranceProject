@@ -5,7 +5,7 @@ const Show = () => {
  useEffect(() => {
     setTimeout(() => {
         setShowComponent(!showComponent)
-    }, 6000)
+    }, 4500)
  }, [])
   return <>{showComponent && <App/> }</>
 }

@@ -10,9 +10,15 @@
   word-wrap: normal;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 60px;
+  z-index: 33;
 }
-
+.zoomout1{
+transform: scale(1,1);
+}
+.zoomin1{
+  transform: scale(1.3,1.3);
+}
 .wordmark-title-feature {
   border-radius: 15px 0px 70px 0px;
   color: black;
@@ -38,6 +44,7 @@
   background: rgba(47, 196, 206, 0.1);
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin-left: 0%;
   position: absolute;
@@ -50,6 +57,7 @@
   background: rgba(47, 196, 206, 0.1);
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin-left: 0%;
   position: absolute;
@@ -107,14 +115,17 @@
 .Feature-comp{
   width: 35%;
   height: 300px;
+  transition: 1s;
 }
 .Feature-image{
   width: 200%;
 }
-.Feature-comp:hover{
-  transform: scale(1.3,1.3);
-  transition: 0.5s;
-  transition-timing-function: ease-in;
+
+@media screen and (min-width:500px) {
+  .Feature-comp:hover{
+    transform: scale(1.3,1.3);
+    transition: 0.5s;
+  }
 }
 @media screen and (max-width:480px) {
   .Feature-main{
@@ -125,6 +136,10 @@
   }
   .Feature-text{
     width: 130%;
+  }
+  .Feature-comp{
+    width: 35%;
+    height: 180px;
   }
 }
 @media screen and (max-width:700px) {

@@ -3,7 +3,6 @@ import "@styles/base/components/_card.scss"
 import "../style.css"
 import Exra from './exra'
 import {React, useState, useEffect} from "react"
-import Search from '../search/index'
 function Readmore()  {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -42,7 +41,6 @@ function Readmore()  {
     return (
         items.map(blogs => (
           <div className="blog card">
-          <Search/>
           <section className="main"> 
            <div className="content" key={blogs.id}  >
            <div className="image-blog-container">
@@ -68,7 +66,9 @@ function Readmore()  {
              <input type="text" className="blog-comment-details1 blog-detail-size" placeholder="Name required"></input>
              <input type="text" className="blog-comment-details2 blog-detail-size" placeholder="Email required"></input>
              <input type="text" className="blog-comment-details3 blog-detail-size" placeholder="Website"></input>
+             
              </div>
+             <button className="Submit-comment-button">Submit</button>
              </section>
            </div>
         ))

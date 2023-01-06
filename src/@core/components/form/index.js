@@ -4,11 +4,19 @@ import CreatableSelect from 'react-select/creatable'
 import Cities from './Cities.json'
 import Designation from './Designation.json'
 import { Input, Label, FormGroup} from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
+import Button from './Group 218.png'
+import Icon from './1 click -Logo for Light BG 4 (1).png'
+// import BouncingBall from '../ball'
+// import ReactSwipeButton from "react-swipe-button"
+import SlideButton from 'react-slide-button'
+import Swal from 'sweetalert2'
  class Form extends Component {
   
 constructor(props) {
   super(props)
+  const width = window.innerWidth
   this.state = {
     selectOption : [],
     selectedOption : [],
@@ -18,7 +26,12 @@ constructor(props) {
     companyName:"",
     email:"",
     desig:"",
-    city:""
+    city:"",
+    isHidden:true,
+    isTouch:width,
+    isSucees:false,
+    reset:0
+
   }
   this.handleSubmit = this.handleSubmit.bind(this)
   this.fnamehandler = this.fnamehandler.bind(this)
@@ -26,6 +39,9 @@ constructor(props) {
   this.contacthandler = this.contacthandler.bind(this)
   this.companyhandler = this.companyhandler.bind(this)
   this.emailhandler = this.emailhandler.bind(this)
+  this.checkhandle = this.checkhandle.bind(this)
+  this.buttonhandle = this.buttonhandle.bind(this)
+  this.buttonhandle2 = this.buttonhandle.bind(this)
 }
   getOptions() {
   const data = Cities.Citynames
@@ -39,18 +55,22 @@ constructor(props) {
   this.setState({selectOption:option})
   this.setState({selectedOption:options})
 }
-// getsOptions(){
-//   const data = Cities.Citynames
-//   const option = data.map(d => ({
-//     "label" : ""
-//   }))
-//   const datas = Designation.designames
-//   const options = datas.map(ds => ({
-//     "label" : ""
-//   }))
-//   this.setState({selectOption:option})
-//   this.setState({selectedOption:options})
-// }
+checkhandle(event) {
+  if (event.target.checked) {
+    this.setState({isHidden:false})
+    console.log(this.state.isHidden)
+  } else {
+    this.setState({isHidden:true})
+    console.log(this.state.isHidden)
+  }
+}
+buttonhandle() {
+  this.setState({isSucees:true})
+      }
+
+      buttonhandle2() {
+        this.setState({isSucees:false})
+            }
 fnamehandler(event) {
   this.setState({
     fname: event.target.value
@@ -71,6 +91,7 @@ companyhandler(event) {
     companyName: event.target.value
   })
 }
+
 emailhandler(event) {
   this.setState({
     email: event.target.value
@@ -86,38 +107,72 @@ componentDidMount() {
 this.getOptions()
 }
 handleSubmit() {
+     if (this.state.fname === '') {
+      alert('First name field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.lname === '') {
+      alert('Last name field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.email === '') {
+      alert('Email field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.contact === '') {
+      alert('Contact field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.companyName === '') {
+      alert('Company name field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.empdesig === '') {
+      alert('Designation field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.city === '') {
+      alert('City field is Empty')
+      this.setState({reset:(this.state.reset + 1)})
+    } else if (this.state.isHidden === true) {
+      alert('Please Agree to privacy policy')
+    } else {
+      Swal.fire({
+        title:"Submitted Successfully",
+        html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+        confirmButtonColor: '#FFA500',
+        showCloseButton:true
+    })
+      this.setState({reset:(this.state.reset + 1)})
   const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.companyName}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.desig}&city=${this.state.city}&product_name=1_Click_Payroll&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    })
+    this.setState({
+      fname: "",
+      lname: "",
+      contact: "",
+      companyName: "",
+      email: "",
+      desig:"",
+      city:"",
+      isHidden:true
     })
   } catch (error) {
     console.log(error)
     alert(error)
   }
-  console.log(this.state)
-  this.setState({
-    fname: "",
-    lname: "",
-    contact: "",
-    companyName: "",
-    email: "",
-    desig:"",
-    city:""
-  })
 }
+}
+
 
 render() {
 
   return (
   
     <div className='form-div'>
-      <p className="form-msg-p">Striving To Get You The Best Financial Solutions
-          To Grow Your Business With Ease & Stability.</p>
+                  <h3 className="form-head">Get a Free Quote</h3>
             <form>
+            <p className="form-msg-p">Striving To Get You The Best Financial Solutions
+          To Grow Your Business With Ease & Stability.</p>
         <div className='input-container'>
           <input className='input-box'type="text" 
           value={this.state.fname} 
@@ -152,23 +207,38 @@ render() {
           title='Email format is example@companyname.com'/>
           {this.state.email === "" ? <label className='label-name'>Email</label> : <label className='label2'>Email</label>  }
         </div>
-        <div className='input-container'>
-        <CreatableSelect className='input-box' options={this.state.selectedOption} onChange={this.handlesChange1.bind(this)} />
+        <div className='input-container1'>
+        <CreatableSelect className='input-box' options={this.state.selectedOption} onChange={this.handlesChange1.bind(this)} placeholder="Select Designation"/>
           <label className='label2'>Designation</label>
         </div>
-        <div className='input-container'>
-        <CreatableSelect className='input-box' options={this.state.selectOption} onChange={this.handleChange.bind(this)}/>
+        <div className='input-container1'>
+        <CreatableSelect className='input-box' options={this.state.selectOption} onChange={this.handleChange.bind(this)} placeholder="Select City"/>
         <label className='label2'>City</label>
         </div>
         <FormGroup
           check
           inline
-          style={{margintop:"-4%"}}>
-          <Input type="checkbox" className='checkbox'/>
-          <Label check> I Agree to Privacy Policy </Label>
+          style={{margintop:"-4%"}}
+          >
+          <Input type="checkbox" className='checkbox' onChange={this.checkhandle} onClick={this.checkhandle} checked={!this.state.isHidden}/>
+          <Label check><NavLink
+             onClick={scroll}
+            exact
+               to="/Policy">I Agree to <span style={{textDecoration:"underline", color: "red"}} target="_blank">Privacy Policy</span>
+              </NavLink> </Label>
         </FormGroup>
-        <input type="button" value="Send a request" className='button' onClick={this.handleSubmit}/>
-        <h5 className='login-text'> Already a user ? <a className="link" href="#">Login</a></h5>
+        {
+  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button' onClick={this.handleSubmit}/> : <SlideButton 
+  mainText="Swipe To Submit" 
+  overlayText="Submitted" 
+  onSlideDone={this.handleSubmit} 
+  caretClassList="my-caret-class"
+  classList="my-class"
+  overlayClassList="my-overlay-class"
+  reset={this.state.reset}
+/>
+)}
+        <h5 className='login-text'> Already a user <span className='questionmark-form'>?</span> <a className="link" href="https://www.1clickcapital.com/portal/login.php">Login</a></h5>
         </form>    
     </div> 
         

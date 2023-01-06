@@ -10,9 +10,21 @@
     color: black;
     font-family: sans-serif;
 }
+.prev-year{
+    margin-left: 40%;
+    margin-top:1%
+}
+.year{
+    width: 100px;
+    margin-top: -11px;
+    margin-left: -6%;
+    position: absolute;
+}
 .Calendar-Line-Image{
     width: 100%;
     margin-top: -1%;
+    padding: 0% 4%; 
+    height: 25px;
 }
 .Button-of-Calendar{
     border: 2px solid orange;
@@ -57,14 +69,16 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 2%;
     width:100%;
     height:auto;
 }
 .Calendar-Line-Image2{
     width: 90%;
+    padding: 0% 4%; 
     margin-left: 5%;
     margin-top: -1%;
+    height: 21px;
 }
 .Button-of-Calendar2{
     border: 2px solid orange;
@@ -85,7 +99,7 @@
     width: 20%;
     display: flex;
     align-items: center;
-    margin-left: 4%;
+    margin-left: 9%;
     margin-top: -4%;
 }
 .Month-names-Right{
@@ -111,6 +125,7 @@
     width: 100%;
     height: fit-content;
     gap: 0.5%;
+    margin-left: 1%;
 }
 @media screen and (max-width: 800px){
     .Month-Name{

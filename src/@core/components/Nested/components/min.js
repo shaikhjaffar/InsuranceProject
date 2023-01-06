@@ -1,4 +1,4 @@
-import React from "react"
+import {React} from "react"
 import { Link, Outlet, useLocation } from "react-router-dom"
 import PayrollIMG from "./Payroll.png"
 import SalaryAdv from "./SalaryAdv.png"
@@ -14,8 +14,15 @@ import "./Secondpage.css"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+// import { useEffect } from "react"
 
 function Min() {
+//   useEffect(() => {
+    
+//     const element = document.getElementById('product-min')
+//       element.scrollIntoView({ behavior: 'smooth' })
+  
+// }, [])
   const settings = {
     dots: false,
     infinite: false,
@@ -31,7 +38,6 @@ function Min() {
           slidesToShow: 6,
           slidesToScroll: 6,
           infinite: true
-        //   dots: true
         }
       },
       {
@@ -62,77 +68,76 @@ function Min() {
     
     <ul className= "product-nav-menu-vertical">
     <Slider {...settings}>
-                <li className={click === "/product/payroll" ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="payroll"   
+    <li className={click === "/product/1-click-payroll" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-payroll" 
                   onClick={() => { 
                     pname = location.pathname
-                    }}><img src={PayrollIMG} className="pro-image" />
-                    <p className="product-nav-link">Payroll</p>
+                    }}>
+                  <img src={PayrollIMG} className="pro-image" />
+                    <p className="product-nav-link">Payroll Financing</p>
                   </Link>
                 </li>
-
-                <li className={click === "/product/salaryadv"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="salaryadv"  
+                <li className={click === "/product/1-click-salary-advance" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-salary-advance"
                   onClick={() => { 
-                    pname = location.pathname
+                    pname = location.pathname 
                     }}>
                   <img src={SalaryAdv} className="pro-image" />
                   <p className="product-nav-link">Salary Advance</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/insurancefun"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="insurancefun"  
+                <li className={click === "/product/1-click-insurance-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-insurance-funding"
                   onClick={() => { 
-                    pname = location.pathname
+                    pname = location.pathname 
                     }}>
                   <img src={InsuranceFun} className="pro-image  " />
                   <p className="product-nav-link">Insurance Funding</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/projectfun"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="projectfun"  
+                <li className={click === "/product/1-click-project-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-project-funding"
                   onClick={() => { 
-                    pname = location.pathname
+                    pname = location.pathname 
                     }}>
-                <img src={ProjectFun} className="pro-image"/>
-                <p className="product-nav-link">Project Funding</p>
+                    <img src={ProjectFun} className="pro-image"/>
+                    <p className="product-nav-link">Project Funding</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/lrd"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="lrd"  
+                <li className={click === "/product/1-click-lease-rental-discounting" ? "product-nav-item  active-product" : "product-nav-item"}>                  
+                <Link exact to="1-click-lease-rental-discounting"
                   onClick={() => { 
                     pname = location.pathname
-                    }}>
-                      <img src={LRD} className="pro-image " />
-                      <p className="product-nav-link">LRD</p>
+                    }}><img src={LRD} className="pro-image " />                  
+                    <p className="product-nav-link">Lease Rental Discount</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/scf"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="scf"  
+                <li className={click === "/product/1-click-supply-chain-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-supply-chain-financing"
                   onClick={() => { 
                     pname = location.pathname
                     }}>
-                  <img src={SCF} className="pro-image " />
-                  <p className="product-nav-link">Supply Chain Financing</p>
+                  <img src={SCF} className="pro-image " />                  
+                  <p className="product-nav-link"> Supply Chain Financing</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/workingcap"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="workingcap"  
+                <li className={click === "/product/1-click-working-capital" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-working-capital"
                   onClick={() => { 
-                    pname = location.pathname
+                    pname = location.pathname 
                     }}>
                   <img src={WorkingCap} className="pro-image " />
-                  <p className="product-nav-link">Working Cap</p>
+                  <p className="product-nav-link">Working Capital</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/cf"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="cf"  
+                <li className={click === "/product/1-click-collateral-free-msme" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-collateral-free-msme"
                   onClick={() => { 
                     pname = location.pathname
                     }}>
@@ -141,18 +146,18 @@ function Min() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/hrm"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link exact to="hrm"  
+                <li className={click === "/product/1-click-human-resources-management-systems" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link exact to="1-click-human-resources-management-systems"
                   onClick={() => { 
-                    pname = location.pathname
+                    pname = location.pathname 
                     }}>
                   <img src={HRm} className="pro-image" />
                   <p className="product-nav-link">HRMS</p>
                   </Link>
                 </li>
 
-                <li className={click === "/product/production"  ? "product-nav-item  active-product" : "product-nav-item"}>
-                <Link to="production"  
+                <li className={click === "/product/1-click-entertainment-and-production-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <Link to="1-click-entertainment-and-production-financing"
                   onClick={() => { 
                     pname = location.pathname
                     }}>

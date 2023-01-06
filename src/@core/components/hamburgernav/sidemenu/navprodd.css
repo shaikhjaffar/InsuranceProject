@@ -6,10 +6,7 @@
     -webkit-user-select: none;
     user-select: none;
     margin-right: 12px;
-    margin-bottom: 1%;
-}
-.Navhmactive{
-    margin-bottom: 100%;
+    margin-bottom: 130%;
 }
 .Navhm-dd-title{
     width:135%;
@@ -18,10 +15,11 @@
     justify-content: space-between;
     cursor: pointer;
     transition:all 0.2s;
+    font-size: 20px;
 }
 .Navhm-dd-data{
     position:absolute;
-    width: 400px;
+    width: 200px;
     font-weight: 500;
     font-size: 14px;
 }
@@ -30,6 +28,8 @@
     text-align: left;
     cursor: pointer;
     transition:all 0.2s;
+    margin-left: 10%;
+    margin-bottom: 3%;
 }
 .itemhm-name{
     margin-left: 15px;

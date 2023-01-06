@@ -70,7 +70,7 @@ function Stats() {
          <div className='card10 '>
          <img  className="pic" src={CompanyLogo3} alt="BigCo Inc. logo"/>
          <h4 className="heading-stats" >{counterOn && <CountUp start={6000} end={6176}duration={2} delay={0}/>} </h4> 
-        <h4 className='heading-stats'>Transcations</h4>
+        <h4 className='heading-stats'>Transactions</h4>
          </div>
           {/* </Slider> */}
         </div>

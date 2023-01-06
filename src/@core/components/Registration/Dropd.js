@@ -9,6 +9,7 @@ import Employeesize from './Employeesize.json'
 import CreatableSelect from 'react-select/creatable'
 import { Input, Label, FormGroup} from 'reactstrap'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 class Dropd extends Component {
   
   constructor(props) {
@@ -19,7 +20,7 @@ class Dropd extends Component {
         cityOption : [],
         EmpdesgOption : [],
         EmpsizeOption : [],
-        title:"1 Click Payroll",
+        title:"1 Click Payroll Financing",
         field:[
           {
           fieldid:1,
@@ -83,7 +84,8 @@ class Dropd extends Component {
         contact:"",
         tenure:"",
         amount:"",
-        pname:""
+        pname:"",
+        isHidden : true 
       }
       this.handleSubmit = this.handleSubmit.bind(this)
       this.cnamehandler = this.cnamehandler.bind(this)
@@ -94,8 +96,8 @@ class Dropd extends Component {
       this.tenurehandler = this.tenurehandler.bind(this)
       this.amounthandler = this.amounthandler.bind(this)
       this.pnamehandler = this.pnamehandler.bind(this)
-  }
-      
+      this.checkhandle = this.checkhandle.bind(this)
+  } 
   getOptions() {
     const option = data.form.sections.map(d => ({
       label : d.product_title,
@@ -123,6 +125,15 @@ class Dropd extends Component {
     this.setState({cityOption:options1})
     this.setState({EmpdesgOption:options2})
     this.setState({EmpsizeOption:options3})
+  }
+  checkhandle(event) {
+    if (event.target.checked) {
+      this.setState({isHidden:false})
+      console.log(this.state.isHidden)
+    } else {
+      this.setState({isHidden:true})
+      console.log(this.state.isHidden)
+    }
   }
   handleChange(event) {
     this.setState({title:event.label})
@@ -185,7 +196,7 @@ class Dropd extends Component {
     this.getOptions()
   }
   handleSubmit() {
-    if (this.state.title === "1 Click Payroll") {  
+    if (this.state.title === "1 Click Payroll Financing") {  
       if (this.state.cname === '') {
         alert('Company name field is Empty')
          
@@ -207,87 +218,164 @@ class Dropd extends Component {
       } else if (this.state.city === '') {
         alert('City field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
         const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
-  }
-        this.setState({ 
-          title:"1 Click Payroll",
-            field:[
-              {
-              fieldid:1,
-              name:"Company Name",
-              label:"Company Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:2,
-              name:"First Name",
-              label:"First Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:3,
-              name:"Last Name",
-              label:"Last Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:4,
-              name:"Email",
-              label:"Email",
-              required:true,
-              html_element:"email"
-          },
-          {
-              fieldid:5,
-              name:"Contact No",
-              label:"Contact No",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:6,
-              name:"Designation",
-              label:"Designation",
-              required:true,
-              html_element:"dropdown"
-          },
-          {
-              fieldid:7,
-              name:"City",
-              label:"City",
-              required:true,
-              html_element:"dropdown"
-          }
-        ],
-          pid:1,
-          ptype:"",
-          city:"",
-          empdesig:"",
-          empsize:"",
-          cname:"",
-          fname:"",
-          lname:"",
-          email:"",
-          contact:"",
-          tenure:"",
-          amount:"",
-          pname:""
-        })
-         
+  } 
       }                  
     } else if (this.state.title === "1 Click Salary Advance") {
       if (this.state.cname === '') {
@@ -311,87 +399,96 @@ class Dropd extends Component {
       } else if (this.state.city === '') {
         alert('City field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-        this.setState({ 
-          title:"1 Click Payroll",
-            field:[
-              {
-              fieldid:1,
-              name:"Company Name",
-              label:"Company Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:2,
-              name:"First Name",
-              label:"First Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:3,
-              name:"Last Name",
-              label:"Last Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:4,
-              name:"Email",
-              label:"Email",
-              required:true,
-              html_element:"email"
-          },
-          {
-              fieldid:5,
-              name:"Contact No",
-              label:"Contact No",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:6,
-              name:"Designation",
-              label:"Designation",
-              required:true,
-              html_element:"dropdown"
-          },
-          {
-              fieldid:7,
-              name:"City",
-              label:"City",
-              required:true,
-              html_element:"dropdown"
-          }
-        ],
-          pid:1,
-          ptype:"",
-          city:"",
-          empdesig:"",
-          empsize:"",
-          cname:"",
-          fname:"",
-          lname:"",
-          email:"",
-          contact:"",
-          tenure:"",
-          amount:"",
-          pname:""
-        })
-         
       }                  
     } else if (this.state.title === "1 Click Insurance Funding") {
       if (this.state.cname === '') {
@@ -415,86 +512,96 @@ class Dropd extends Component {
       } else if (this.state.city === '') {
         alert('City field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-        this.setState({ 
-          title:"1 Click Payroll",
-            field:[
-              {
-              fieldid:1,
-              name:"Company Name",
-              label:"Company Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:2,
-              name:"First Name",
-              label:"First Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:3,
-              name:"Last Name",
-              label:"Last Name",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:4,
-              name:"Email",
-              label:"Email",
-              required:true,
-              html_element:"email"
-          },
-          {
-              fieldid:5,
-              name:"Contact No",
-              label:"Contact No",
-              required:true,
-              html_element:"textbox"
-          },
-          {
-              fieldid:6,
-              name:"Designation",
-              label:"Designation",
-              required:true,
-              html_element:"dropdown"
-          },
-          {
-              fieldid:7,
-              name:"City",
-              label:"City",
-              required:true,
-              html_element:"dropdown"
-          }
-        ],
-          pid:1,
-          ptype:"",
-          city:"",
-          empdesig:"",
-          empsize:"",
-          cname:"",
-          fname:"",
-          lname:"",
-          email:"",
-          contact:"",
-          tenure:"",
-          amount:"",
-          pname:""
-        })
          
       }
     } else if (this.state.title === "1 Click Lease Rental Discounting") {
@@ -516,87 +623,96 @@ class Dropd extends Component {
       } else if (this.state.ptype === '') {
         alert('Property Type field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:""
-      })
-       
     }
     } else if (this.state.title === "1 Click Project Funding") {
       if (this.state.cname === '') {
@@ -620,86 +736,96 @@ class Dropd extends Component {
       } else if (this.state.amount === '') {
         alert('Amount field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:""
-      })
        
     }
     } else if (this.state.title === "1 Click Supply Chain Funding") {
@@ -724,86 +850,96 @@ class Dropd extends Component {
       } else if (this.state.amount === '') {
         alert('Amount field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:""
-      })
        
     }
     } else if (this.state.title === "1 Click Working Capital") {
@@ -828,86 +964,96 @@ class Dropd extends Component {
       } else if (this.state.amount === '') {
         alert('Amount field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:""
-      })
        
     }
     } else if (this.state.title === "1 Click MSME") {
@@ -932,86 +1078,96 @@ class Dropd extends Component {
       } else if (this.state.amount === '') {
         alert('Amount field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:""
-      })
        
     }
     } else if (this.state.title === "1 Click HRMS") {
@@ -1033,87 +1189,96 @@ class Dropd extends Component {
       } else if (this.state.empsize === '') {
         alert('Employee Size field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
-  }
-      this.setState({ 
-        title:"1 Click Payroll",
-          field:[
-            {
-            fieldid:1,
-            name:"Company Name",
-            label:"Company Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:2,
-            name:"First Name",
-            label:"First Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:3,
-            name:"Last Name",
-            label:"Last Name",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:4,
-            name:"Email",
-            label:"Email",
-            required:true,
-            html_element:"email"
-        },
-        {
-            fieldid:5,
-            name:"Contact No",
-            label:"Contact No",
-            required:true,
-            html_element:"textbox"
-        },
-        {
-            fieldid:6,
-            name:"Designation",
-            label:"Designation",
-            required:true,
-            html_element:"dropdown"
-        },
-        {
-            fieldid:7,
-            name:"City",
-            label:"City",
-            required:true,
-            html_element:"dropdown"
-        }
-      ],
-        pid:1,
-        ptype:"",
-        city:"",
-        empdesig:"",
-        empsize:"",
-        cname:"",
-        fname:"",
-        lname:"",
-        email:"",
-        contact:"",
-        tenure:"",
-        amount:"",
-        pname:"" 
-      })
-       
+  }  
     }
     } else if (this.state.title === "1 Click Entertainment and Production Financial") {
       if (this.state.cname === '') {
@@ -1140,87 +1305,96 @@ class Dropd extends Component {
       } else if (this.state.pname === '') {
         alert('Project Name field is Empty')
          
+      } else if (this.state.isHidden === true) {
+        alert('Please Agree to Privacy policy')
       } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
        const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.cname}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.empdesig}&city=${this.state.city}&tenure=${this.state.tenure}&amount=${this.state.amount}&emp_size=${this.state.empsize}&project_name=${this.state.pname}&property_type=${this.state.ptype}&product_name=${this.state.title}&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
+    this.setState({ 
+      title:"1 Click Payroll Financing",
+        field:[
+          {
+          fieldid:1,
+          name:"Company Name",
+          label:"Company Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:2,
+          name:"First Name",
+          label:"First Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:3,
+          name:"Last Name",
+          label:"Last Name",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:4,
+          name:"Email",
+          label:"Email",
+          required:true,
+          html_element:"email"
+      },
+      {
+          fieldid:5,
+          name:"Contact No",
+          label:"Contact No",
+          required:true,
+          html_element:"textbox"
+      },
+      {
+          fieldid:6,
+          name:"Designation",
+          label:"Designation",
+          required:true,
+          html_element:"dropdown"
+      },
+      {
+          fieldid:7,
+          name:"City",
+          label:"City",
+          required:true,
+          html_element:"dropdown"
+      }
+    ],
+      pid:1,
+      ptype:"",
+      city:"",
+      empdesig:"",
+      empsize:"",
+      cname:"",
+      fname:"",
+      lname:"",
+      email:"",
+      contact:"",
+      tenure:"",
+      amount:"",
+      pname:"",
+      isHidden : true 
+    })
+    
   } catch (error) {
     console.log(error)
     alert(error)
   }
-          this.setState({ 
-            title:"1 Click Payroll",
-              field:[
-                {
-                fieldid:1,
-                name:"Company Name",
-                label:"Company Name",
-                required:true,
-                html_element:"textbox"
-            },
-            {
-                fieldid:2,
-                name:"First Name",
-                label:"First Name",
-                required:true,
-                html_element:"textbox"
-            },
-            {
-                fieldid:3,
-                name:"Last Name",
-                label:"Last Name",
-                required:true,
-                html_element:"textbox"
-            },
-            {
-                fieldid:4,
-                name:"Email",
-                label:"Email",
-                required:true,
-                html_element:"email"
-            },
-            {
-                fieldid:5,
-                name:"Contact No",
-                label:"Contact No",
-                required:true,
-                html_element:"textbox"
-            },
-            {
-                fieldid:6,
-                name:"Designation",
-                label:"Designation",
-                required:true,
-                html_element:"dropdown"
-            },
-            {
-                fieldid:7,
-                name:"City",
-                label:"City",
-                required:true,
-                html_element:"dropdown"
-            }
-          ],
-            pid:1,
-            ptype:"",
-            city:"",
-            empdesig:"",
-            empsize:"",
-            cname:"",
-            fname:"",
-            lname:"",
-            email:"",
-            contact:"",
-            tenure:"",
-            amount:"",
-            pname:"" 
-          })
-           
       }
     }
     console.log(this.state)             
@@ -1359,11 +1533,11 @@ class Dropd extends Component {
             <br/><center><FormGroup
                 check
                 inline>
-                <Input type="checkbox" id='termschkbx' />
+                <Input type="checkbox" id='termschkbx' className='checkbox-dropd' onChange={this.checkhandle} onClick={this.checkhandle} checked={!this.state.isHidden}/>
                 <Label check> I Agree to Privacy Policy </Label>
               </FormGroup></center>
             <br/><center> <input type="button" value="Send a request" className='modal-form-button' id="sub1" onClick={this.handleSubmit}/></center>
-            <br /><center><h5><a className="link" href="/some/valid/uri">Already a user ?</a></h5></center>
+            <br /><center><h5><a className="link" href="/some/valid/uri">Already a user <span className='questionmark-dropform'>?</span></a></h5></center>
           </div>  
         </div> 
       </form>        

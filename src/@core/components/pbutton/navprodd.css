@@ -1,5 +1,5 @@
 
-.Navhmtitle{
+/* .Navhmtitle{
     width:100px;
     height: max-content;
     position: relative;
@@ -8,15 +8,15 @@
     margin-right: 12px;
     margin-top: 0%;
     margin-bottom: 10%;
-}
-.Navhm-dd-title{
+} */
+/* .Navhm-dd-title{
     width:15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     transition:all 0.2s;
-}
+} */
 .Navhm-dd-data{
     position:absolute;
     width: 400px;
@@ -27,8 +27,8 @@
     box-shadow: inset -2px -2px 2px rgba(88, 208, 216, 0.25), inset 2px 2px 2px rgba(246, 166, 36, 0.25);
     backdrop-filter: blur(50px);
     /* Note: backdrop-filter has minimal browser support */
-    border-radius: 10px;
-    color: #000000;
+    /* border-radius: 10px;
+    color: #000000; */
 }
 .Navhm-dd-item{
     position:relative;
@@ -67,6 +67,7 @@
     padding: 0px 20px 0px 10px;
     background: linear-gradient(92.44deg, rgba(0, 0, 0, 0.2) 5%, rgba(255, 255, 255, 0) 15.27%, rgba(255, 255, 255, 0) 49.92%, rgba(255, 255, 255, 0) 87.61%, rgba(0, 0, 0, 0.2) 94.83%), linear-gradient(180deg, #A04D04 0%, #F6A624 6.52%, #E67009 47.36%, #6F3400 97.93%, #000000 100%);
     color: #f4f4f4;
+    font-size: large;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 a{
