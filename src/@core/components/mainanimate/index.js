@@ -1,7 +1,7 @@
 import React, {useEffect} from "react"
 // import { gsap } from "gsap"
 import './style.css'
-import VideoDesktop from './16-9-m.mp4'
+import VideoDesktop from './16-9-h3.mp4'
 import VM from './9-16 FIN-l.mp4'
 // import Circle from './logologo.png'
 // import Icon from './Vectorhand.png'
