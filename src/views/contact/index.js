@@ -47,7 +47,7 @@ function Contact () {
               </NavLink></a><br></br>
             <a><NavLink
             exact
-               to="/product/1-click-payroll" className='footor-text'>Our Product
+               to="/products/1-click-payroll" className='footor-text'>Our Product
               </NavLink></a><br></br>
               <a><NavLink
             exact

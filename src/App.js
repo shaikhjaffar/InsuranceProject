@@ -35,7 +35,7 @@ function App() {
                       <Route path='/' element={<Home/>} />
                        <Route path='/Policy' element={<Policy/>} />
                        <Route path='1-click-capital-faq' element={<FAQ/>} />
-                      <Route path='/product/' element={<><Product/><ScrollToTop/></>}>
+                      <Route path='/products/' element={<><Product/><ScrollToTop/></>}>
                       <Route path='1-click-payroll' element={<Payroll/>} />
                       <Route path='1-click-collateral-free-msme' element={<CF/>} />
                       <Route path='1-click-project-funding' element={<ProjectFun/>} />

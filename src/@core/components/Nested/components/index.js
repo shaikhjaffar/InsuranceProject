@@ -32,7 +32,7 @@ function SecondPage() {
     <div className="card" id="product">
   
     <ul className="product-nav-menu">
-                <li className={click === "/product/1-click-payroll" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-payroll" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-payroll" 
                   onClick={() => { 
                     pname = location.pathname
@@ -41,7 +41,7 @@ function SecondPage() {
                     <p className="product-nav-link">Payroll Financing</p>
                   </Link>
                 </li>
-                <li className={click === "/product/1-click-salary-advance" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-salary-advance" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-salary-advance"
                   onClick={() => { 
                     pname = location.pathname 
@@ -51,7 +51,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-insurance-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-insurance-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-insurance-funding"
                   onClick={() => { 
                     pname = location.pathname 
@@ -61,7 +61,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-project-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-project-funding" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-project-funding"
                   onClick={() => { 
                     pname = location.pathname 
@@ -71,7 +71,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-lease-rental-discounting" ? "product-nav-item  active-product" : "product-nav-item"}>                  
+                <li className={click === "/products/1-click-lease-rental-discounting" ? "product-nav-item  active-product" : "product-nav-item"}>                  
                 <Link exact to="1-click-lease-rental-discounting"
                   onClick={() => { 
                     pname = location.pathname
@@ -80,7 +80,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-supply-chain-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-supply-chain-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-supply-chain-financing"
                   onClick={() => { 
                     pname = location.pathname
@@ -90,7 +90,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-working-capital" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-working-capital" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-working-capital"
                   onClick={() => { 
                     pname = location.pathname 
@@ -100,7 +100,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-collateral-free-msme" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-collateral-free-msme" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-collateral-free-msme"
                   onClick={() => { 
                     pname = location.pathname
@@ -110,7 +110,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-human-resources-management-systems" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-human-resources-management-systems" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link exact to="1-click-human-resources-management-systems"
                   onClick={() => { 
                     pname = location.pathname 
@@ -120,7 +120,7 @@ function SecondPage() {
                   </Link>
                 </li>
 
-                <li className={click === "/product/1-click-entertainment-and-production-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
+                <li className={click === "/products/1-click-entertainment-and-production-financing" ? "product-nav-item  active-product" : "product-nav-item"}>
                 <Link to="1-click-entertainment-and-production-financing"
                   onClick={() => { 
                     pname = location.pathname

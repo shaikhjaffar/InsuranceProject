@@ -37,7 +37,7 @@ function Footer() {
               </NavLink></a><br></br>
             <a  ><NavLink
             exact
-               to="/product/1-click-payroll" onClick={ () => { window.reload(false) }} className='footor-text'>Our Product
+               to="/products/1-click-payroll" onClick={ () => { window.reload(false) }} className='footor-text'>Our Product
               </NavLink></a><br></br>
               <a  ><NavLink
             exact

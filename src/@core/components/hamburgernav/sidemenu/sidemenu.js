@@ -38,61 +38,61 @@ const Sidebar = () => {
         id:1,
         cname:"1 Click",
         name:"Payroll Financing",
-        path:"/product/1-click-payroll"
+        path:"/products/1-click-payroll"
     },
     {
         id:2,
         cname:"1 Click",
         name:"Salary Advance",
-        path:"/product/1-click-salary-advance"
+        path:"/products/1-click-salary-advance"
     },
     {
         id:3,
         cname:"1 Click",
         name:"Insurance Funding",
-        path:"/product/1-click-insurance-funding"
+        path:"/products/1-click-insurance-funding"
     },  
     {
         id:4,
         cname:"1 Click",
         name:"Project Funding",
-        path:"/product/1-click-project-funding"
+        path:"/products/1-click-project-funding"
     },  
     {
         id:5,
         cname:"1 Click",
         name:"L.R.D",
-        path:"/product/1-click-lease-rental-discounting"
+        path:"/products/1-click-lease-rental-discounting"
     },  
     {
         id:6,
         cname:"1 Click",
         name:"Supply Chain Funding",
-        path:"/product/1-click-supply-chain-financing"
+        path:"/products/1-click-supply-chain-financing"
     },  
     {
         id:7,
         cname:"1 Click",
         name:"Working Capital",
-        path:"/product/1-click-working-capital"
+        path:"/products/1-click-working-capital"
     },  
     {
         id:8,
         cname:"1 Click",
         name:"Collateral Free MSME Loan",
-        path:"/product/1-click-collateral-free-msme"
+        path:"/products/1-click-collateral-free-msme"
     },  
     {
         id:9,
         cname:"1 Click",
         name:"H.R Management Systems",
-        path:"/product/1-click-human-resources-management-systems"
+        path:"/products/1-click-human-resources-management-systems"
     },  
     {
         id:10,
         cname:"1 Click",
         name:"Entertainment & Production Financing",
-        path:"/product/1-click-entertainment-and-production-financing"
+        path:"/products/1-click-entertainment-and-production-financing"
     }       
 ]
 const ref = useRef()
