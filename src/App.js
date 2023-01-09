@@ -33,8 +33,8 @@ function App() {
                   <NavigateButton/>
                   <Routes>
                       <Route path='/' element={<Home/>} />
-                       <Route path='/Policy' element={<Policy/>} />
-                       <Route path='1-click-capital-faq' element={<FAQ/>} />
+                       <Route path='/privacy-policy' element={<Policy/>} />
+                       <Route path='faqs' element={<FAQ/>} />
                       <Route path='/products/' element={<><Product/><ScrollToTop/></>}>
                       <Route path='1-click-payroll' element={<Payroll/>} />
                       <Route path='1-click-collateral-free-msme' element={<CF/>} />
@@ -49,7 +49,7 @@ function App() {
                       </Route>
                       <Route path='/blogs' element={<Blog/>}/>
                  <Route path='*' element={<PagenotFound />}/>
-                  <Route path='/carrer' element={<Stats/>} />
+                  <Route path='/career' element={<Stats/>} />
             <Route path='/about-us' element={<About/>} />
             <Route path='/contact-us' element={<Contactus/>} />
         </Routes>

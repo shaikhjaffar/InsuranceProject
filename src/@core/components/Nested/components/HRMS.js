@@ -8,9 +8,7 @@ function HRMS() {
     <>
     <helmet>
   <title>Human Resources Management System, hrms |1 Click Capital</title>
-   <meta name="description" content="HRMS system is a combination of software and services that deals with 360 degree of internal Human Resources functions throughout an employees work cycle."
-/>
-  
+   <meta name="description" content="HRMS system is a combination of software and services that deals with 360 degree of internal Human Resources functions throughout an employees work cycle."/>
 <link rel="canonical" href="https://1clickcapital.com/products/1-click-human-resources-management-systems" />
 <link href="/fonts/futura-md-bt.css" rel="stylesheet"></link>
   </helmet>

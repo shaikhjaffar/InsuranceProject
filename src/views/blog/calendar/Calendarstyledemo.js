@@ -195,25 +195,25 @@ function Calendarstyle() {
           <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 12) setName(ms.name); handleClick2('12', year)  })}>Dec</h4>
         </div>
         <div className='Month-names-mLeftt'>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 1) setName(ms.name) })}>Jan</h4>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 2) setName(ms.name) })}>Feb</h4>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 3) setName(ms.name) })}>Mar</h4>
+        <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 1) setName(ms.name); handleClick2('01', year) })}>Jan</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 2) setName(ms.name); handleClick2('02', year) })}>Feb</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 3) setName(ms.name); handleClick2('03', year)  })}>Mar</h4>
         </div>
         <div className='Month-names-mRightt'>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 7) setName(ms.name) })}>Jul</h4>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 8) setName(ms.name) })}>Aug</h4>
-          <h4 className='Month-Name'onClick={() => mstate.map((ms) => { if (ms.id === 9) setName(ms.name) })}>Sep</h4>
+        <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 7) setName(ms.name); handleClick2('07', year)  })}>Jul</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 8) setName(ms.name); handleClick2('08', year)  })}>Aug</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 9) setName(ms.name); handleClick2('09', year)  })}>Sep</h4>
         </div>
         <img className="Calendar-Line-Image2" src={Line1}/>
         <div className='Month-names-mLeftb'>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 4) setName(ms.name) })}>Apr</h4>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 5) setName(ms.name) })}>May</h4>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 6) setName(ms.name) })}>Jun</h4>
+        <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 4) setName(ms.name); handleClick2('04', year)  })}>Apr</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 5) setName(ms.name); handleClick2('05', year)  })}>May</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 6) setName(ms.name); handleClick2('06', year)  })}>Jun</h4>
         </div>
         <div className='Month-names-mRightb'>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 10) setName(ms.name) })}>Oct</h4>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 11) setName(ms.name) })}>Nov</h4>
-          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 12) setName(ms.name) })}>Dec</h4>
+        <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 10) setName(ms.name); handleClick2('10', year)  })}>Oct</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 11) setName(ms.name); handleClick2('11', year)  })}>Nov</h4>
+          <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 12) setName(ms.name); handleClick2('12', year)  })}>Dec</h4>
         </div>
       </div>  
      

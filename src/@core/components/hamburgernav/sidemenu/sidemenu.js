@@ -164,7 +164,7 @@ useOnClickOutside(ref, () => setSidebar(false))
               <NavLink
               className="menu-item"
                 exact
-                to="/carrer"
+                to="/career"
                 activeClassName="active"
                 onClick={ showSidebar }
               >

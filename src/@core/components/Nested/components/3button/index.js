@@ -4,7 +4,7 @@ import Vect1 from '../Vector (1).png'
 import Vect2 from '../Group 24bag tick.png'
 import Vect from '../Vector.png'
 import './style.css'
-import Register from "../../../Registration"
+// import Register from "../../../Registration"
 function Button3() {
  return (
    <>

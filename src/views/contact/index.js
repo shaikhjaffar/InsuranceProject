@@ -51,14 +51,14 @@ function Contact () {
               </NavLink></a><br></br>
               <a><NavLink
             exact
-               to="/1-click-capital-faq" target="_blank"  className='footor-text'>FAQ
+               to="/faqs" target="_blank"  className='footor-text'>FAQ
               </NavLink></a><br></br>
           </div>
           <div className='colfootor'>
             <h2 className='colfootor-h2'>  Other Links  </h2>
             <a><NavLink
             exact
-               to="/Policy" className='footor-text'>Privacy policy
+               to="/privacy-policy" className='footor-text'>Privacy policy
               </NavLink></a><br></br>
             <a><NavLink
             exact

@@ -8,7 +8,7 @@ function SCFiance() {
     <helmet>
  <title>Supply chain finance technology based financing |1 Click Capital</title>
   <meta name="description" content="SCF, financial supply chain management is a combination of technology based financing that lowers cost, improves competency for all parties involved."/>
-  <link rel="canonical" href="https://1clickcapital.com"/>
+  <link rel="canonical" href="https://1clickcapital.com/products/1-click-supply-chain-financing"/>
   <link href="/fonts/futura-md-bt.css" rel="stylesheet"></link>
  </helmet>
     <div className="main-product-page">

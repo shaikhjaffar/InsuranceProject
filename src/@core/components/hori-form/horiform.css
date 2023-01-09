@@ -13,6 +13,7 @@
 .button-2{
   width: auto;
   height: 50px;
+  cursor: pointer;
 }
 /* .contact-form-msg-p{
   width: 100%;

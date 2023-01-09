@@ -8,7 +8,7 @@ function Workingcapital() {
       <helmet>
  <title>Working capital for day to day financing |1 Click Capital</title>
   <meta name="description" content="Working capital works as unsecured business loan it is that money used to conduct the day to day functions and operations of a business."/>
-  <link rel="canonical" href="https://1clickcapital.com"/>
+  <link rel="canonical" href="https://1clickcapital.com/products/1-click-working-capital"/>
   <link href="/fonts/futura-md-bt.css" rel="stylesheet"></link>
  </helmet>
     <div className="main-product-page">

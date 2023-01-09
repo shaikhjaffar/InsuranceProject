@@ -8,6 +8,7 @@ import EmpDesignation from './EmpDesignation.json'
 import Employeesize from './Employeesize.json'
 import CreatableSelect from 'react-select/creatable'
 import { Input, Label, FormGroup} from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 class Dropd extends Component {
@@ -196,6 +197,10 @@ class Dropd extends Component {
     this.getOptions()
   }
   handleSubmit() {
+    const FNAME_REGEX = new RegExp(/^[a-zA-Z\s]*$/gmi)
+    const LNAME_REGEX = new RegExp(/^[a-zA-Z\s]*$/gmi)
+    const PHONE_REGEX = new RegExp(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/gmi)
+    const EMAIL_REGEX = new RegExp(/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}/gmi)
     if (this.state.title === "1 Click Payroll Financing") {  
       if (this.state.cname === '') {
         alert('Company name field is Empty')
@@ -220,6 +225,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -401,6 +418,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -514,6 +543,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -625,6 +666,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -738,6 +791,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -852,6 +917,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -966,6 +1043,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -1080,6 +1169,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -1191,6 +1292,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -1307,6 +1420,18 @@ class Dropd extends Component {
          
       } else if (this.state.isHidden === true) {
         alert('Please Agree to Privacy policy')
+      } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
       } else {
         Swal.fire({
           title:"Submitted Successfully",
@@ -1429,7 +1554,7 @@ class Dropd extends Component {
                         <label className='modal-form-label'>{inputData.label}</label><br/>
                         <input  key={inputData.index} type={inputData.html_element} name={inputData.name} 
                          value={this.state.fname} onChange={this.fnamehandler}
-                        className="model-form-data" pattern="[A-Za-z]+"
+                        className="model-form-data" pattern="^[a-zA-Z\s]*$"
                         title='Use only Alphabets'/>
                       </div>
                     )   
@@ -1439,7 +1564,7 @@ class Dropd extends Component {
                         <label className='modal-form-label'>{inputData.label}</label><br/>
                         <input  key={inputData.index} type={inputData.html_element} name={inputData.name} 
                          value={this.state.lname} onChange={this.lnamehandler}
-                        className="model-form-data" pattern="[A-Za-z]+"
+                        className="model-form-data" pattern="^[a-zA-Z\s]*$"
                         title='Use only Alphabets'/>
                       </div>
                     )   
@@ -1449,8 +1574,8 @@ class Dropd extends Component {
                         <label className='modal-form-label'>{inputData.label}</label><br/>
                         <input  key={inputData.index} type="tel" name={inputData.name} 
                          value={this.state.contact} onChange={this.contacthandler}
-                        className="model-form-data" pattern="[0-9]{0,10}" 
-                        title="Enter Numbers only in format eg:9999988888 contact number contains only 10 didgits"/>
+                        className="model-form-data" pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" 
+                        title="Enter Numbers only in format eg:9999988888 contact number contains only 10 didgits" maxLength={13}/>
                       </div>
                     )   
                   } else if (inputData.name === "Tenure") {  
@@ -1534,7 +1659,11 @@ class Dropd extends Component {
                 check
                 inline>
                 <Input type="checkbox" id='termschkbx' className='checkbox-dropd' onChange={this.checkhandle} onClick={this.checkhandle} checked={!this.state.isHidden}/>
-                <Label check> I Agree to Privacy Policy </Label>
+                <Label check><NavLink
+             onClick={scroll}
+            exact
+               to="/privacy-policy">I Agree to <span style={{textDecoration:"underline", color: "red"}} target="_blank">Privacy Policy</span>
+              </NavLink> </Label>
               </FormGroup></center>
             <br/><center> <input type="button" value="Send a request" className='modal-form-button' id="sub1" onClick={this.handleSubmit}/></center>
             <br /><center><h5><a className="link" href="/some/valid/uri">Already a user <span className='questionmark-dropform'>?</span></a></h5></center>

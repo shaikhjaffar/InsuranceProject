@@ -41,7 +41,7 @@ function Footer() {
               </NavLink></a><br></br>
               <a  ><NavLink
             exact
-               to="/1-click-capital-faq" target="_blank"  className='footor-text'>FAQ
+               to="/faqs" target="_blank"  className='footor-text'>FAQ
               </NavLink></a><br></br>
           </div>
           <div className='colfootor'>
@@ -49,7 +49,7 @@ function Footer() {
             <a   ><NavLink
              onClick={scroll}
             exact
-               to="/Policy" target="_blank" className='footor-text'>Privacy Policy
+               to="/privacy-policy" target="_blank" className='footor-text'>Privacy Policy
               </NavLink></a><br></br>
             <a  ><NavLink
             exact

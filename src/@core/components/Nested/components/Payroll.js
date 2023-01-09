@@ -12,7 +12,7 @@ function Payroll() {
 <title> Collateral free payroll financing in 24 hours | 1 Click Capital</title>
 <meta name="description" content="1 Click Capital is India's 1st payroll financing company that helps employee payroll. We can become your payroll funding partner."/>
 <link rel="canonical" href="https://1clickcapital.com/products/1-click-payroll" />
-<link href="/fonts/futura-md-bt.css" rel="stylesheet"></link>
+<link href="/fonts/futura-md-bt.css" rel="stylesheet"/>
 </helmet>
     <div className="main-product-page">
     <div className="heading-box">

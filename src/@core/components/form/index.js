@@ -107,8 +107,12 @@ componentDidMount() {
 this.getOptions()
 }
 handleSubmit() {
+  const FNAME_REGEX = new RegExp(/^[a-zA-Z\s]*$/gmi)
+  const LNAME_REGEX = new RegExp(/^[a-zA-Z\s]*$/gmi)
+  const PHONE_REGEX = new RegExp(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/gmi)
+  const EMAIL_REGEX = new RegExp(/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}/gmi)
      if (this.state.fname === '') {
-      alert('First name field is Empty')
+      alert('First name field is Empty ')
       this.setState({reset:(this.state.reset + 1)})
     } else if (this.state.lname === '') {
       alert('Last name field is Empty')
@@ -130,19 +134,32 @@ handleSubmit() {
       this.setState({reset:(this.state.reset + 1)})
     } else if (this.state.isHidden === true) {
       alert('Please Agree to privacy policy')
-    } else {
-      Swal.fire({
-        title:"Submitted Successfully",
-        html: "<center>Thank You for Interest, we will get in touch with you.</center>",
-        confirmButtonColor: '#FFA500',
-        showCloseButton:true
-    })
+    } else if (FNAME_REGEX.test(this.state.fname) === false) {
+        alert('Entered First Name is not in correct Format')
+        this.setState({reset:(this.state.reset + 1)})
+      } else if (LNAME_REGEX.test(this.state.lname) === false) {
+          alert('Entered Last Name is not in correct Format')
+          this.setState({reset:(this.state.reset + 1)})
+      } else if (PHONE_REGEX.test(this.state.contact) === false) {
+          alert('Entered Contact Number is not in correct Format')
+            this.setState({reset:(this.state.reset + 1)})
+      } else if (EMAIL_REGEX.test(this.state.email) === false) {
+          alert('Entered Email-Id is not in correct Format.Email format is example@companyname.com')
+      this.setState({reset:(this.state.reset + 1)})
+      } else {
+        Swal.fire({
+          title:"Submitted Successfully",
+          html: "<center>Thank You for Interest, we will get in touch with you.</center>",
+          confirmButtonColor: '#FFA500',
+          showCloseButton:true
+      })
+
       this.setState({reset:(this.state.reset + 1)})
   const userdata = `first_name=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.companyName}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.desig}&city=${this.state.city}&product_name=1_Click_Payroll&campaign=website`
   try {
     axios({
       method: "post",
-      url: "https://www.1clickcapital.com/portal/api/registration.php",
+      url: "https://stag.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
@@ -176,22 +193,22 @@ render() {
         <div className='input-container'>
           <input className='input-box'type="text" 
           value={this.state.fname} 
-          onChange={this.fnamehandler} required pattern="[A-Za-z]+"
+          onChange={this.fnamehandler} required pattern="^[a-zA-Z\s]*$"
           title="Use Aplhabets in Name no numbers"/>
           {this.state.fname === "" ? <label className='label-name' >First Name</label> : <label className='label2'>First Name</label>  }
         </div>
         <div className='input-container'>
           <input className='input-box'type="text" 
           value={this.state.lname} 
-          onChange={this.lnamehandler} required pattern="[A-Za-z]+"
+          onChange={this.lnamehandler} required pattern="^[a-zA-Z\s]*$"
           title="Use Aplhabets in Name no numbers"/>
           {this.state.lname === "" ? <label className='label-name' >Last Name</label> : <label className='label2'>Last Name</label>  }
         </div>
         <div className='input-container'>
           <input className='input-box' type="tel" 
           value={this.state.contact} 
-          onChange={this.contacthandler} required  pattern="[0-9]{0,10}" 
-          title="Enter Numbers only in format eg:9999988888 contact number contains only 10 didgits"/>
+          onChange={this.contacthandler} required  pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" 
+          title="Enter Numbers only in format eg:9999988888 contact number contains only 10 didgits" maxLength={13}/>
           {this.state.contact === "" ? <label className='label-name'>Contact No</label> : <label className='label2'>Contact No</label>  }
         </div>
         <div className='input-container'>
@@ -224,7 +241,7 @@ render() {
           <Label check><NavLink
              onClick={scroll}
             exact
-               to="/Policy">I Agree to <span style={{textDecoration:"underline", color: "red"}} target="_blank">Privacy Policy</span>
+               to="/privacy-policy">I Agree to <span style={{textDecoration:"underline", color: "red"}} target="_blank">Privacy Policy</span>
               </NavLink> </Label>
         </FormGroup>
         {
