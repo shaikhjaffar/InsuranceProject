@@ -67,25 +67,32 @@ function About() {
     <p>To create a business friendly way of leveraging capital to help
        individuals and institutions amid financial crises</p>
     </div>
+    
+  <div className='text1underline'>
+  <p>Our VISION</p>
+  </div>
+  <div className='text2center'>
+    <p>To become one of the top Fin-tech companies with global presence.</p>
+    </div>
+    
+  <div className='text1underline'>
+  <p>Our VALUES</p>
+  </div>
+  <div className='text2center'>
+    <p>We believe we are a true FINTECH.</p>
+    </div>
     <img className='Buttonfin' src={ButtonsFin} alt="button"></img>
       <div className='headings-aboutus'>
         <p className='text1underline'> Breaking New Ground Every Day </p>
         <p className='text2center'> Listening to the Financial Needs of Businesses and Simplifying Payroll Funding for Digital India.</p>
       </div>
         <div className='text3Bold'>
-          <p>1 Click Capital is a NBFC verified by the Reserve Bank of India. </p>
+          <p>1 Click Capital powered by CHP Finance Private Limited is an NBFC verified by the Reserve Bank of India. </p>
         </div>
         <div className='text2center'><p>
         Primary Office Registered: Delhi & Gurugram<br></br>
         Headquarters: Mumbai
  </p></div>
-
-  <div className='text1underline'>
-  <p>Our VISION</p>
-  </div>
-  <div className='text2center'>
-    <p>To become one of the top fintech companies with global presence.</p>
-    </div>
 
   <div className='advisor-heading'>
   Leadership

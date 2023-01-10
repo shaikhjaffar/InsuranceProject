@@ -9,6 +9,7 @@
     text-decoration-line: underline;
      color: #373737;
      line-height: initial;
+     margin-bottom: 1%;
  }
  .text2center{
     font-family: 'Futura  BT',sans-serif;
@@ -27,6 +28,7 @@ padding-left: 13%;
  .text2center-p{
   text-align: center;
   width: 75%;
+  margin-bottom: 1%;
  }
  .text3Bold{
     font-family: 'Futura  BT',sans-serif;
@@ -39,6 +41,7 @@ letter-spacing: 0.02em;
 color: #373737;
 margin-top: 1%;
 line-height: initial;
+padding: 0% 12%;
  }
  .text4{
     font-family: 'Futura  BT',sans-serif;
