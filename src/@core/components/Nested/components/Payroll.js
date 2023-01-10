@@ -46,7 +46,7 @@ function Payroll() {
 <p className='para1-data'>Interest Rates are as low as 1.5% per month depending on your credit history and business revenue. Importantly, you only pay for the financing you use.</p>
       </div>
       <div className="para1-salaryadv">
-        <h3>Documnets Required to process your application:</h3>
+        <h3>Documents Required to process your application:</h3>
         <ul>
           <li>Company Pan Card Proof</li>
           <li>Bank Statement of 1 Year</li>

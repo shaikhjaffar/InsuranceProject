@@ -159,7 +159,7 @@ handleSubmit() {
   try {
     axios({
       method: "post",
-      url: "https://stag.1clickcapital.com/portal/api/registration.php",
+      url: "https://www.1clickcapital.com/portal/api/registration.php",
       data: userdata,
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     })
