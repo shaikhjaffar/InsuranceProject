@@ -8,11 +8,8 @@ function Readmore()  {
   const [isLoaded, setIsLoaded] = useState(false)
   const [items, setItems] = useState([])
   useEffect(() => {
-// console.log(data.split(" ").splice(-1))
     const pathname = window.location.pathname
-    console.log(pathname)
         const value = pathname.split("/").splice(-1)
-      console.log(value)
     fetch("https://blog.1clickcapital.com/wp-json/wp/v2/posts?slug=".concat(value))
       .then(res => res.json())
       .then(
@@ -30,7 +27,6 @@ function Readmore()  {
     const tag = items.map(blogs => (
       blogs.tags  
     ))
-    console.log(tag)
 
   if (error) {
     return <div>Error: {error.message}</div>

@@ -10,14 +10,12 @@ import Readmore from '../main/Group 207button.png'
 
   
   useEffect(() => {
-    console.log(props)
     fetch("https://blog.1clickcapital.com/wp-json/wp/v2/posts/".concat(props.id))
       .then(res => res.json())
       .then(
         (result) => {
           setIsLoaded(true)
           setItems(result)
-          console.log(result)
         },
         (error) => {
           setIsLoaded(true)

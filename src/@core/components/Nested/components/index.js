@@ -24,7 +24,6 @@ function SecondPage() {
 // }, [])
     const location = useLocation()
     let pname = location.pathname
-    console.log(pname)
     const click = pname
   return (
   

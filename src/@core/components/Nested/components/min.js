@@ -61,7 +61,6 @@ function Min() {
 
   const location = useLocation()
   let pname = location.pathname
-  console.log(pname)
   const click = pname
   return (
     <div className="card">

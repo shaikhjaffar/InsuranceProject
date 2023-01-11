@@ -71,10 +71,8 @@ import Swal from 'sweetalert2'
   checkhandle(event) {
     if (event.target.checked) {
       this.setState({isHidden:false})
-      console.log(this.state.isHidden)
     } else {
       this.setState({isHidden:true})
-      console.log(this.state.isHidden)
     }
   }
   companyhandler(event) {
@@ -158,7 +156,6 @@ import Swal from 'sweetalert2'
         isHidden:true
       })
     } catch (error) {
-      console.log(error)
       alert(error)
     }
   }

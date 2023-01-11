@@ -130,10 +130,8 @@ class Dropd extends Component {
   checkhandle(event) {
     if (event.target.checked) {
       this.setState({isHidden:false})
-      console.log(this.state.isHidden)
     } else {
       this.setState({isHidden:true})
-      console.log(this.state.isHidden)
     }
   }
   handleChange(event) {
@@ -390,7 +388,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   } 
       }                  
@@ -515,7 +512,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
       }                  
@@ -640,7 +636,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
          
@@ -763,7 +758,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
     }
@@ -888,7 +882,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
        
@@ -1014,7 +1007,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
        
@@ -1140,7 +1132,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
        
@@ -1266,7 +1257,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
        
@@ -1389,7 +1379,6 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }  
     }
@@ -1517,16 +1506,13 @@ class Dropd extends Component {
     })
     
   } catch (error) {
-    console.log(error)
     alert(error)
   }
       }
-    }
-    console.log(this.state)             
+    }            
   }
     
   render() {
-    // { console.log(this.state.field) }
     return (
       <form >
         <div>
@@ -1536,7 +1522,6 @@ class Dropd extends Component {
             {/* <h2 className='model-form-heading'>{this.state.title}</h2> */}
             {
               this.state.field.map(inputData => {
-                // console.log("inputData", inputData)
                 switch (inputData.html_element) {
                   case "textbox":   
                   if (inputData.name === "Company Name") {  

@@ -58,10 +58,8 @@ constructor(props) {
 checkhandle(event) {
   if (event.target.checked) {
     this.setState({isHidden:false})
-    console.log(this.state.isHidden)
   } else {
     this.setState({isHidden:true})
-    console.log(this.state.isHidden)
   }
 }
 buttonhandle() {
@@ -174,7 +172,6 @@ handleSubmit() {
       isHidden:true
     })
   } catch (error) {
-    console.log(error)
     alert(error)
   }
 }

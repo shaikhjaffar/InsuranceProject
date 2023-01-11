@@ -10,7 +10,6 @@ import Facebook from './images/Facebook.png'
 import LinkedIn from './images/LinkedIn.png'
 import Twitter from './images/Twitter.png'
 import Form from "../../@core/components/hori-form/index"
-import Forms from "../../@core/components/hori-form/contact"
 import Button from "../../@core/components/Registration/index"
 import { NavLink } from 'react-router-dom'
 function Contact () {
@@ -23,11 +22,7 @@ function Contact () {
                      </helmet>
                      <Button/>
             <div className='main-footer card'>
-           
                  <Form />
-                 <div style={{display:"none"}}>
-                 <Forms />
-                 </div>
                  <div className='Stylecont'>
           <p className='footer-style1'>If you are looking  for speed and ease for raising capital,<br /> you have came to the right place</p>
         </div>    

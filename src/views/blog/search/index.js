@@ -27,9 +27,6 @@ export default function Bloghead (props) {
         throw new Error(`Error! status: ${response.status}`)
       }
       const result = await response.json()
-      console.log('result is: ', JSON.stringify(result, null, 4))
-      console.log('https://blog.1clickcapital.com/wp-json/wp/v2/search?search='.concat(message))
-      console.log(message)
       setData(result)
     } catch (err) {
       setErr(err.message)
@@ -46,7 +43,6 @@ export default function Bloghead (props) {
       } else {
         setMessage(null)
        handleClick(event)
-       console.log(data)
        setShow(false)
        props.getValue(show)
     }

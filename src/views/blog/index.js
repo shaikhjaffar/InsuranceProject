@@ -11,7 +11,6 @@ function Blog () {
    const [show, setShow] = useState(true)
     function getValue(value) {
      setShow(!value)
-     console.log(!value)
     }
     return (
       <>

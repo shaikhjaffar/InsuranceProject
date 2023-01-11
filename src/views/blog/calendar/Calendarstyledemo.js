@@ -62,8 +62,6 @@ function Calendarstyle() {
                 throw new Error(`Error! status: ${response.status}`)
               }
               const result = await response.json()
-              // console.log('result is: ', JSON.stringify(result, null, 4))
-              // console.log('https://blog.1clickcapital.com/wp-json/wp/v2/posts?after='.concat(after, before))
               setData(result)
             } catch (err) {
               setErr(err.message)
