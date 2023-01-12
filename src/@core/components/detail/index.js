@@ -64,4 +64,5 @@ import { useNavigate } from "react-router-dom"
         </div>
     )
    }
+  //  wkhdwhcli
    export default Detail
