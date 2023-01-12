@@ -3,9 +3,13 @@ import React from "react"
 import Vect1 from '../Vector (1).png'
 import Vect2 from '../Group 24bag tick.png'
 import Vect from '../Vector.png'
+
 import './style.css'
+import { Button } from "reactstrap"
+import { useNavigate } from "react-router-dom"
 // import Register from "../../../Registration"
 function Button3() {
+   const navigate = useNavigate()
  return (
    <>
     <div className="section2-product">
@@ -24,6 +28,7 @@ function Button3() {
             <p className="enroll-text">Avail the Loan Selecting the EMI Option</p>
          </div>
         </div>
+        <Button onClick={() => navigate('/insurance')}>Apply </Button>
     </div>
     </>
  )
