@@ -16,15 +16,15 @@ function Button3() {
        <span className="circle-product"></span>
         <div className="button-product-container">
          <div className="enroll-button">
-           <span className="image-back-white"><img className="enroll-img" src={Vect}></img></span>
+           <span className="image-back-white"><img className="enroll-img" src={Vect} alt="ProductProfile"></img></span>
             <p className="enroll-text">Click on Registration Button and Fill Required Details.</p>
          </div>
          <div className="enroll-button">
-            <span className="image-back-white"><img className="enroll-img" src={Vect1}></img></span>
+            <span className="image-back-white"><img className="enroll-img" src={Vect1} alt="ProductBook"></img></span>
             <p className="enroll-text">Upload Important Documents</p>
          </div>
          <div className="enroll-button">
-          <span className="image-back-white"><img className="enroll-img" src={Vect2}></img></span> 
+          <span className="image-back-white"><img className="enroll-img" src={Vect2} alt="ProductBag"></img></span> 
             <p className="enroll-text">Avail the Loan Selecting the EMI Option</p>
          </div>
         </div>

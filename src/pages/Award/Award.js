@@ -50,13 +50,13 @@ class Award extends React.Component {
                 <div className="award-row">
                     <div className="award-column">
                     <div className='container-pf-awards'>
-                            <img className='imagesize-of-2' src={Award1} />
+                            <img className='imagesize-of-2' src={Award1} alt="1-Click-Bussinessmint-Award"/>
                             <p className="Awards-Avnish2">BUSSINESSMINT</p>
                         </div>
                     </div>
                     <div className="award-column">
                         <div className='container-pf-awards'>
-                            <img className='imagesize' src={Award2} />
+                            <img className='imagesize' src={Award2} alt="1-Click-International-Achievers-Conference-Award"/>
                             <div className="Awards-Avnish">
                                 INTERNATIONAL ACHIEVERS CONFERENCE
                                 </div>

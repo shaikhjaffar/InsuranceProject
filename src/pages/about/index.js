@@ -4,7 +4,7 @@ import "@styles/base/components/_card.scss"
 // import {  } from "react"
 // import Heading from "../../@core/components/headingeffect"
 import { NavLink } from "react-router-dom"
-import Rectangle from './rectangle.png'
+// import Rectangle from './rectangle.png'
 import { gsap } from "gsap"
 import ButtonsFin from '../../views/about/fintech.png'
 import { ScrollTrigger } from "gsap/ScrollTrigger"

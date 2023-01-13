@@ -213,7 +213,7 @@ import Swal from 'sweetalert2'
               </NavLink> </Label>
           </FormGroup>
           {
-  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button-2' onClick={this.handleSubmit}/> : <div style={{width:"250px"}}>
+  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button-2' onClick={this.handleSubmit} alt="SubmitButton"/> : <div style={{width:"250px"}}>
 <SlideButton 
   mainText="Swipe To Submit" 
   overlayText="Submitted" 

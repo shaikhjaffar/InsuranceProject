@@ -15,7 +15,7 @@ const Logo = () => {
    }, [])
   return (
     <div ref={app} className="navsvg-div">
-      <img   src={svg} className="navsvg"/>
+      <img   src={svg} className="navsvg"  alt="1-Click-Capital-Logo"/>
     </div>
   )
 }

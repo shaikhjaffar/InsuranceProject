@@ -36,7 +36,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname
                     }}>
-                  <img src={PayrollIMG} className="pro-image" />
+                  <img src={PayrollIMG} className="pro-image" alt="1-Click-Payroll-Financing"/>
                     <p className="product-nav-link">Payroll Financing</p>
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname 
                     }}>
-                  <img src={SalaryAdv} className="pro-image" />
+                  <img src={SalaryAdv} className="pro-image"  alt="1-Click-Salary-Advance"/>
                   <p className="product-nav-link">Salary Advance</p>
                   </Link>
                 </li>
@@ -55,7 +55,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname 
                     }}>
-                  <img src={InsuranceFun} className="pro-image  " />
+                  <img src={InsuranceFun} className="pro-image  "  alt="1-Click-Insurance-funding"/>
                   <p className="product-nav-link">Insurance Funding</p>
                   </Link>
                 </li>
@@ -65,7 +65,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname 
                     }}>
-                    <img src={ProjectFun} className="pro-image"/>
+                    <img src={ProjectFun} className="pro-image"  alt="1-Click-Project-Funding"/>
                     <p className="product-nav-link">Project Funding</p>
                   </Link>
                 </li>
@@ -74,7 +74,7 @@ function SecondPage() {
                 <Link exact to="1-click-lease-rental-discounting"
                   onClick={() => { 
                     pname = location.pathname
-                    }}><img src={LRD} className="pro-image " />                  
+                    }}><img src={LRD} className="pro-image "  alt="1-Click-Lease-Rental-Discounting"/>                  
                     <p className="product-nav-link">L.R.D</p>
                   </Link>
                 </li>
@@ -84,7 +84,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname
                     }}>
-                  <img src={SCF} className="pro-image " />                  
+                  <img src={SCF} className="pro-image "  alt="1-Click-Supply-Chain-Financing"/>                  
                   <p className="product-nav-link">Supply Chain Financing</p>
                   </Link>
                 </li>
@@ -94,7 +94,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname 
                     }}>
-                  <img src={WorkingCap} className="pro-image " />
+                  <img src={WorkingCap} className="pro-image "  alt="1-Click-Working-Capital"/>
                   <p className="product-nav-link">Working Capital</p>
                   </Link>
                 </li>
@@ -104,7 +104,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname
                     }}>
-                  <img src={CF} className="pro-image " />
+                  <img src={CF} className="pro-image "  alt="1-Click-Collateral-Free-MSME/SME"/>
                   <p className="product-nav-link">MSME/SME</p>
                   </Link>
                 </li>
@@ -114,7 +114,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname 
                     }}>
-                  <img src={HRm} className="pro-image" />
+                  <img src={HRm} className="pro-image"  alt="1-Click-Human-Resource-Management-System"/>
                   <p className="product-nav-link">HRMS</p>
                   </Link>
                 </li>
@@ -124,7 +124,7 @@ function SecondPage() {
                   onClick={() => { 
                     pname = location.pathname
                     }}>
-                  <img src={Production} className="pro-image " />
+                  <img src={Production} className="pro-image "  alt="1-Click-Entertainment-and-Production-Financing"/>
                   <p className="product-nav-link">Entmt & Production</p>
                   </Link>
                 </li>     

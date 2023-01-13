@@ -31,7 +31,7 @@ function NavBar() {
     <Logo/>
       <nav className="navbar">
       <Sidebar/>
-        <img className="small-nav-logo" ref={ref1}  src={svg} ></img>
+        <img className="small-nav-logo" ref={ref1}  src={svg}  alt="1-Click-Capital-Logo"></img>
         <div className="nav-container">
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">

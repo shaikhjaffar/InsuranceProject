@@ -80,9 +80,9 @@ function Calendarstyle() {
                    handleClick2(actualMonth, year)
                }
              
-          }} src={Arrow1}/>
+          }} src={Arrow1} alt='Arrow-Left'/>
           <button   className='Button-of-Calendar'>{year}</button>
-          <img className="Arrow-Line-Imager " src={Arrow2} onClick={() => {
+          <img className="Arrow-Line-Imager " src={Arrow2}  alt='Arrow-Right' onClick={() => {
             if (year < current.getFullYear()) {
               setYear(year + 1)
                 handleClick2(actualMonth, year)
@@ -90,11 +90,11 @@ function Calendarstyle() {
           }}/>
         </div>
         
-        <img className="Calendar-Line-Image" src={Line1} />
+        <img className="Calendar-Line-Image" src={Line1} alt='Blog-Underline'/>
       </div>
       <div className='col-of-calendar2'>
         <div className='button-container'>
-          <img className="Arrow-Line-Imagel" src={Arrow1} 
+          <img className="Arrow-Line-Imagel" src={Arrow1} alt='Arrow-Left'
             onClick={() => {
               if (name === "January") {
                 setName("December")
@@ -135,7 +135,7 @@ function Calendarstyle() {
               }
                 }}/>
           <button className='Button-of-Calendar2 ' ref={refbutton}>{name}</button>
-          <img className="Arrow-Line-Imager" src={Arrow2}
+          <img className="Arrow-Line-Imager" src={Arrow2}  alt='Arrow-Right'
             onClick={() => {
               if (name === "January") {
                 setName("February")
@@ -202,7 +202,7 @@ function Calendarstyle() {
           <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 8) setName(ms.name); handleClick2('08', year)  })}>Aug</h4>
           <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 9) setName(ms.name); handleClick2('09', year)  })}>Sep</h4>
         </div>
-        <img className="Calendar-Line-Image2" src={Line1}/>
+        <img className="Calendar-Line-Image2" src={Line1} alt='Blog-Underline'/>
         <div className='Month-names-mLeftb'>
         <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 4) setName(ms.name); handleClick2('04', year)  })}>Apr</h4>
           <h4 className='Month-Name' onClick={() => mstate.map((ms) => { if (ms.id === 5) setName(ms.name); handleClick2('05', year)  })}>May</h4>
@@ -218,13 +218,13 @@ function Calendarstyle() {
      {/* {data.length === 0 ? setIsLoading(true) : setIsLoading(false)} */}
     {data.length !== 0 ? data.map((blogs) => ( 
           <div className="content-head" key={blogs.id} >
-          <img className="blog-image-head"  src={blogs.yoast_head_json.og_image[0].url}></img>
+          <img className="blog-image-head"  src={blogs.yoast_head_json.og_image[0].url} alt='1-Click-Blog-Image'></img>
         <div className="blog-head-container">
           <h1 className="blog-title-head">
            {blogs.title.rendered}
           </h1>
           <div  className="blog-content-head" dangerouslySetInnerHTML={ {__html:blogs.excerpt.rendered.replace('[&hellip;]', '')} } />
-          <a key={blogs.id} href={blogs.link}><img src={Readmore} className="read-blog-head"></img>
+          <a key={blogs.id} href={blogs.link}><img src={Readmore} className="read-blog-head" alt='Readmore-Button'></img>
       </a>
         </div>
      </div>

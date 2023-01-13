@@ -71,43 +71,43 @@ function Product () {
           <HeadingProduct />
          <div className="card1-div">
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={Payroll}/>
+                <img className="product-pro-image" src={Payroll}  alt="1-Click-Payroll-Financing"/>
                 <p className=" product-round-corners-text">1 Click Payroll Financing is an industry-first, low-cost, short-term unsecured business loan for Payroll financing or payroll funding solution that assists corporates in meeting their payroll obligations on time.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={Salary}/>
+                <img className="product-pro-image" src={Salary} alt="1-Click-salary-Advance"/>
                 <p className=" product-round-corners-text">It is a short-term loan usually paid back within 2 to 3 months. It gives immediate access to liquidity when an employee is in a need of contingency salary.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={Insurance}/>                  
+                <img className="product-pro-image" src={Insurance} alt="1-Click-Insurance-Funding"/>                  
                 <p className=" product-round-corners-text">1 Click Insurance Funding offers loans to individuals against the surrender value of their insurance policies. It also offers loans to individuals for paying their insurance premiums.</p> 
               </div>
               <div className="product-content-container zoomout fadeOut">            
-                <img className="product-pro-image" src={Project}/>                  
+                <img className="product-pro-image" src={Project}  alt="1-Click-Project-Funding"/>                  
                 <p className=" product-round-corners-text">1 Click Capital’s Project Funding is a complete financial solution to fund your project start to end.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={LRD}/>                 
+                <img className="product-pro-image" src={LRD} alt="1-Click-Lease-Rental-Discounting"/>                 
                 <p className=" product-round-corners-text">With 1 Click Capitals Lease Rental Discount (LRD) get quick access to capital against your leased property with the rental receipts working as collateral. </p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={SCF}/>
+                <img className="product-pro-image" src={SCF} alt="1-Click-Supply-Chain-Financing"/>
                 <p className=" product-round-corners-text">SCF is a combination of technology based collateral free business loan that lowers cost and improves competency for all parties involved. It funds the entire line of supply chain aspects.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="product-pro-image" src={Working}/>   
+                <img className="product-pro-image" src={Working} alt="1-Click-Working-Capital"/>   
                 <p  className=" product-round-corners-text">Working capital is that money used to conduct the day to day functions and operations of a business. Get funding to support the everyday requirements of day to day business.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="productproimg" src={CR}/>  
+                <img className="productproimg" src={CR}  alt="1-Click-Collateral-Free-MSME/SME"/>  
                 <p  className=" product-rctext">1 Click Capital’s Collateral free MSME or SME loan is a credit service offered to micro, small or medium enterprises without putting down assets for collateral to raise funds.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="productproimg" src={HRm}/>   
+                <img className="productproimg" src={HRm}  alt="1-Click-Human-Resource-Management0-System"/>   
                   <p  className=" product-rctext2">Human Resources Management System or HRMS refers to a combination of software and services that deals with 360 degree of internal Human Resources functions throughout an employees work cycle.</p>
               </div>
               <div className="product-content-container zoomout fadeOut">
-                <img className="productproimg" src={Production}/>
+                <img className="productproimg" src={Production}  alt="1-Click-Entertainment-and-Project-Funding"/>
                 <p  className=" product-rctext2">1 Click Capital’s Entertainment & Project Funding (E&PF) is a complete financial solution to fund your project start to end.</p>
               </div>
             </div>

@@ -72,32 +72,32 @@ function Featuresanimation() {
             <HeadingFeature />
             <div className='Feature-main'>
              <div  className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F1}></img>
+                <img className='Feature-image' src={F1}  alt="1-Click-Limited-paperwork"></img>
                 <p className='Feature-text'>1 Click Capital recognizes the value of your time and resources, so we ask for minimal
                         paperwork to process your application.</p>
              </div>
              <div className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F2}></img>
+                <img className='Feature-image' src={F2} alt="1-Click-Speed-and-Ease"></img>
                 <p className='Feature-text'>Uncertainty is undoubtedly the most formidable 
                         foe of preparation. It is our aim to bring clarity to your application within
                         48 hours of submission.</p>
              </div>
              <div className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F3}></img>
+                <img className='Feature-image' src={F3} alt="1-Click-24x7-Utilisation"></img>
                 <p className='Feature-text'>You can use your funds any time of the  day or night 24x7 as soon as your limit
                         is generated in the 1 Click System</p>
              </div>
              <div className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F4}></img>
+                <img className='Feature-image' src={F4} alt="1-Click-Low-Cost"></img>
                 <p className='Feature-text'>Interest rates are as low as 1.5 percent, you just pay for the funding you use.</p>
              </div>
              <div className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F5}></img>
+                <img className='Feature-image' src={F5} alt="1-Click-Immediate-Access"></img>
                 <p className='Feature-text'>Enjoy immediate access to funds as soon as you’ve been approved.
                         All you have to do is ask for it</p>
              </div>
              <div className='Feature-comp zoomout1 '>
-                <img className='Feature-image' src={F6}></img>
+                <img className='Feature-image' src={F6} alt="1-Click-Quick-Approval"></img>
                 <p className='Feature-text'>We aim to process your application within 48 hours for your convenience and ease.</p>
              </div>
             </div>

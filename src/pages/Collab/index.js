@@ -139,109 +139,109 @@ function Collab() {
           {/* <div className='tempdiv'></div> */}
            <Slider {...settings} style={{marginTop:"4%"}}>
            <div className="comp" >
-            <img  className="siz" src={CompanyLo1}/>
+            <img  className="siz" src={CompanyLo1} alt="Apollo-Tyres"/>
             </div>
             <div className="comp">
-            <img className="siz" src={CompanyLo2}/>
+            <img className="siz" src={CompanyLo2} alt="Diageasy"/>
             </div>
             <div className="comp">
-            <img className="siz" src={CompanyLo12}/>
+            <img className="siz" src={CompanyLo12} alt="Exponentia-ai"/>
             </div>
             <div className="comp">
-            <img className="siz" src={CompanyLo13}/>
+            <img className="siz" src={CompanyLo13} alt="KanBiosys"/>
             </div>
             <div className="comp" >
-            <img  className="siz" src={CompanyLo14}/>
+            <img  className="siz" src={CompanyLo14} alt="The-Connections"/>
             </div>
             <div className="comp" >
-            <img  className="eightimage" src={CompanyLo7}/>
+            <img  className="eightimage" src={CompanyLo7} alt="Digikore-Studios"/>
             </div>
             <div className="comp">
-            <img className="eightimage" src={CompanyLo8}/>
+            <img className="eightimage" src={CompanyLo8} alt="Innovative-Techhub-Pvt-Ltd"/>
             </div>
             <div className="comp">
-            <img className="sizz" src={CompanyLo6}/>
+            <img className="sizz" src={CompanyLo6} alt="Mecwin"/>
             </div>
             <div className="comp">
-            <img className="sizz" src={CompanyLo9} />
+            <img className="sizz" src={CompanyLo9} alt="Urban-Jungle" />
             </div>
             <div className="comp">
-            <img className="tenimage" src={CompanyLo10}/>
+            <img className="tenimage" src={CompanyLo10} alt="Dice"/>
             </div>
             <div className="comp">
-            <img className="siz" src={CompanyLo15}/>
+            <img className="siz" src={CompanyLo15} alt="Credence"/>
             </div>
             <div className="comp">
-            <img className="eighteenimage" src={CompanyLo18}/>
+            <img className="eighteenimage" src={CompanyLo18} alt="Navigant"/>
             </div>
             <div className="comp" >
-            <img  className="twentyimage" src={CompanyLo20}/>
+            <img  className="twentyimage" src={CompanyLo20} alt="Kundan-Industries"/>
             </div>
             <div className="comp">
-            <img className="nineteenimage" src={CompanyLo19}/>
+            <img className="nineteenimage" src={CompanyLo19} alt="Marketxcel"/>
             </div>
             <div className="comp">
-            <img className="twentyoneimage" src={CompanyLo21}/>
+            <img className="twentyoneimage" src={CompanyLo21} alt="ATS"/>
             </div>
             <div className="comp">
-            <img className="twentytwoimage" src={CompanyLo22} />
+            <img className="twentytwoimage" src={CompanyLo22} alt="UNH-Managemnet-Services-Pvt-Ltd" />
             </div>
             <div className="comp">
-            <img className="twentyfiveimage" src={CompanyLo25}/>
+            <img className="twentyfiveimage" src={CompanyLo25} alt="Nandan"/>
             </div>
             <div className="comp">
-            <img className="twentythreeimage" src={CompanyLo23}/>
+            <img className="twentythreeimage" src={CompanyLo23} alt="NextG"/>
             </div>
             <div className="comp">
-            <img className="twentysiximage" src={CompanyLo26}/>
+            <img className="twentysiximage" src={CompanyLo26} alt="CredFine"/>
             </div>
             <div className="comp">
-            <img className="twentysevenimage" src={CompanyLo27} />
+            <img className="twentysevenimage" src={CompanyLo27} alt="TeamHR" />
             </div>
             <div className="comp">
-            <img className="twentyeightimage" src={CompanyLo28}/>
+            <img className="twentyeightimage" src={CompanyLo28} alt="KHFM"/>
             </div>
             <div className="comp">
-            <img className="twentynineimage" src={CompanyLo29}/>
+            <img className="twentynineimage" src={CompanyLo29} alt="AutoLine"/>
             </div>
             <div className="comp">
-            <img className="thirtyfourimage" src={CompanyLo34}/>
+            <img className="thirtyfourimage" src={CompanyLo34} alt="My-Mudra"/>
             </div>
             <div className="comp" >
-            <img  className="thirtyfiveimage" src={CompanyLo35}/>
+            <img  className="thirtyfiveimage" src={CompanyLo35} alt="JW-Marriot"/>
             </div>
             <div className="comp" >
-            <img  className="thirtysiximage" src={CompanyLo36}/>
+            <img  className="thirtysiximage" src={CompanyLo36} alt="Syska"/>
             </div>
             <div className="comp">
-            <img className="thirtyimage" src={CompanyLo30}/>
+            <img className="thirtyimage" src={CompanyLo30} alt="TeachNook"/>
             </div>
             <div className="comp" >
-            <img  className="thirtyoneimage" src={CompanyLo31}/>
+            <img  className="thirtyoneimage" src={CompanyLo31} alt="CityLift"/>
             </div>
             <div className="comp">
-            <img className="seventeenimage" src={CompanyLo17}/>
+            <img className="seventeenimage" src={CompanyLo17} alt="Delta"/>
             </div>
             <div className="comp">
-            <img className="thirtythreeimage" src={CompanyLo33}/>
+            <img className="thirtythreeimage" src={CompanyLo33} alt="Mediqart"/>
             </div>
             <div className="comp">
-            <img className="thirtytwoimage" src={CompanyLo32}/>
+            <img className="thirtytwoimage" src={CompanyLo32} alt="Exampur"/>
             </div>
             <div className="comp">
-            <img className="sixtenimage" src={CompanyLo16} />
+            <img className="sixtenimage" src={CompanyLo16} alt="Barista" />
             </div>
             <div className="comp">
-            <img className="twentyfourimage" src={CompanyLo24}/>
+            <img className="twentyfourimage" src={CompanyLo24} alt="Infiquity"/>
             </div>
             <div className="comp">
-            <img className="thirdimage" src={CompanyLo3} />
+            <img className="thirdimage" src={CompanyLo3} alt="Ayouth-vedi" />
             </div>            
             <div className="comp">
-            <img className="sizy" src={CompanyLo5}/>
+            <img className="sizy" src={CompanyLo5} alt="Azure-Hospitality"/>
             </div>
             <div className="comp">
-            <img className="image11" src={CompanyLo11}/>
+            <img className="image11" src={CompanyLo11} alt="Akkado"/>
             </div>
             </Slider>
             </div>

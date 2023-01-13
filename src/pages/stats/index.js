@@ -53,24 +53,24 @@ function Stats() {
        
        {/* <Slider {...settings}> */}
          <div className='card10'>
-         <img className="pic"src={CompanyLogo} alt="BigCo Inc. logo"/>
-         <h1 className="heading-stats">{counterOn && <CountUp start={100} end={413}duration={2} delay={0}/>} </h1>
+         <img className="pic"src={CompanyLogo} alt="Happy-Corporates"/>
+         <h3 className="heading-stats">{counterOn && <CountUp start={100} end={413}duration={2} delay={0}/>} </h3>
         <h1 className='heading-stats'> Happy Corporates</h1>
          </div>
          <div className='card10 '>
-          <img className="pic" src={CompanyLogo1} alt="BigCo Inc. logo"/>
-         <h2 className="heading-stats" >{counterOn && <CountUp start={3700} end={3762}duration={2} delay={0}/>} </h2>
-        <h2 className='heading-stats'>Individuals</h2>
+          <img className="pic" src={CompanyLogo1} alt="Individuals"/>
+         <h3 className="heading-stats" >{counterOn && <CountUp start={3700} end={3762}duration={2} delay={0}/>} </h3>
+        <h1 className='heading-stats'>Individuals</h1>
          </div>
          <div className='card10 '>
-         <img className="pic"src={CompanyLogo2} alt="BigCo Inc. logo"/>
+         <img className="pic"src={CompanyLogo2} alt="Sectors"/>
          <h3 className="heading-stats">{counterOn && <CountUp start={0} end={14}duration={2} delay={0}/>} </h3>
-        <h3 className='heading-stats'>Sectors</h3>
+        <h1 className='heading-stats'>Sectors</h1>
          </div>
          <div className='card10 '>
-         <img  className="pic" src={CompanyLogo3} alt="BigCo Inc. logo"/>
-         <h4 className="heading-stats" >{counterOn && <CountUp start={6000} end={6176}duration={2} delay={0}/>} </h4> 
-        <h4 className='heading-stats'>Transactions</h4>
+         <img  className="pic" src={CompanyLogo3} alt="Transactions"/>
+         <h3 className="heading-stats" >{counterOn && <CountUp start={6000} end={6176}duration={2} delay={0}/>} </h3> 
+        <h1 className='heading-stats'>Transactions</h1>
          </div>
           {/* </Slider> */}
         </div>

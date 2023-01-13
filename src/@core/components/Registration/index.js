@@ -23,9 +23,9 @@ function Register(props) {
       }
   return (
     <div className='btn-grp'id='register' ref={ref1} >
-      <img src={Register1}  className="button-animate bt1"  onClick={toggle}></img>
+      <img src={Register1}  className="button-animate bt1"  onClick={toggle} alt="1-Click-Registration"></img>
       <a  href="https://www.1clickcapital.com/portal/login.php">
-      <img src={login} id="login"  className="button-animate bt2" alt="login"></img>
+      <img src={login} id="login"  className="button-animate bt2" alt="1-Click-Login"></img>
 </a>
       <Modal isOpen={modal} toggle={toggle} className={className}>
       <ModalHeader>

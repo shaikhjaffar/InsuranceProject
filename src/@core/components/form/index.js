@@ -7,7 +7,7 @@ import { Input, Label, FormGroup} from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import Button from './Group 218.png'
-import Icon from './1 click -Logo for Light BG 4 (1).png'
+// import Icon from './1 click -Logo for Light BG 4 (1).png'
 // import BouncingBall from '../ball'
 // import ReactSwipeButton from "react-swipe-button"
 import SlideButton from 'react-slide-button'
@@ -242,7 +242,7 @@ render() {
               </NavLink> </Label>
         </FormGroup>
         {
-  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button' onClick={this.handleSubmit}/> : <SlideButton 
+  (this.state.isTouch >= 650 ? <img value="Send a request" src={Button} className='button' onClick={this.handleSubmit} alt="SubmitButton"/> : <SlideButton 
   mainText="Swipe To Submit" 
   overlayText="Submitted" 
   onSlideDone={this.handleSubmit} 

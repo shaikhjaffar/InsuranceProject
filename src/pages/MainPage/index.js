@@ -4,8 +4,8 @@ import Form from "../../@core/components/form"
 // import { Card } from "reactstrap"
  import './main.css'
 import Effect from "../../@core/components/m_effect"
- import  Recsvg  from "@src/assets/images/pages/rectangle.svg"
-import Register from "../../@core/components/Registration"
+//  import  Recsvg  from "@src/assets/images/pages/rectangle.svg"
+// import Register from "../../@core/components/Registration"
 //  import topsvg from "./Group 80.png"
 // import topsvg from "./rectangle.png"
  

@@ -1,7 +1,6 @@
 import {React, useState, useRef, useEffect} from 'react'
 import './sidemenu.css'
 import HamReg from '../../Registration/hamnav'
-
 import * as AiIcons from 'react-icons/ai'
 import { Link, NavLink } from "react-router-dom"
 import './navprodd.css'
@@ -117,7 +116,7 @@ useOnClickOutside(ref, () => setSidebar(false))
  
   return (
     <div onClick={showSidebar} >
-      <img src={Bars} className='bm-burger-button' onClick={showSidebar}/>
+      <img src={Bars} className='bm-burger-button' onClick={showSidebar} alt="HamburgerBars"/>
       <div className={sidebar ? 'side-menu active' : 'side-menu'} ref={ref}>
       {/* <AiIcons.AiOutlineClose className='bm-burger-button-close' onClick={showSidebar}/> */}
             <div>

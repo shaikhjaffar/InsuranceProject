@@ -26,7 +26,7 @@ function navigateButton () {
         window.scrollTo(0, 0)
     }
     return (
-     <img ref={ref1} onClick={navigateToTop} className="arrow-up-navigate" src={Arrow}/>
+     <img ref={ref1} onClick={navigateToTop} className="arrow-up-navigate" src={Arrow} alt="MovetoTop"/>
     )
 }
 

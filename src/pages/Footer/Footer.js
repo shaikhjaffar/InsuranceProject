@@ -15,14 +15,14 @@ function Footer() {
   return (
          <div className='main-footer card'>
        <div className='Cir'>
-        <img src={Logo}  className='logoimg'></img>
+        <img src={Logo}  className='logoimg'  alt="1-Click-Capital-Logo"></img>
        </div> 
        {/* <Marqueee/> */}
        <div className='Style11'>
           <p className='footer-style1'>If you are looking  for speed and ease for raising capital,<br /> you have came to the right place</p>
         </div>    
         <div className='Rectangle'>
-          <img  src={Rect1}  className="footer-rectangle-top"/> 
+          <img  src={Rect1}  className="footer-rectangle-top"  alt="Footer-Top"/> 
         </div>
         <div className='rowfootor'>
           <div className='colfootor'>
@@ -79,20 +79,20 @@ function Footer() {
           </div> */}
         </div>
         <div className='Rectangle'>
-          <img className='footer-rectangle-bottom' src={Rect1} />  
+          <img className='footer-rectangle-bottom' src={Rect1}  alt="Foote-Bottom"/>  
         </div>
         <div className='footer-logo-sm rowfootor-logo'>
           <div className='footer-logo colfootor-logo'>
-            <a href="https://www.instagram.com/1clickcapital/" target="_blank"><img src={Instagram}  className='sm-logo'/></a>
+            <a href="https://www.instagram.com/1clickcapital/" target="_blank"><img src={Instagram}  className='sm-logo'  alt="1-Click-Instagram"/></a>
           </div>
           <div className='footer-logo colfootor-logo'>
-            <a href=" https://www.facebook.com/1clickcapital" target="_blank"><img src={Facebook}  className='sm-logo'/></a>
+            <a href=" https://www.facebook.com/1clickcapital" target="_blank"><img src={Facebook}  className='sm-logo' alt="1-Click-facebook"/></a>
           </div>
           <div className='footer-logo colfootor-logo'>
-            <a href="https://www.linkedin.com/company/1-click-capital/mycompany/" target="_blank"><img src={LinkedIn}  className='sm-logo'/></a>
+            <a href="https://www.linkedin.com/company/1-click-capital/mycompany/" target="_blank"><img src={LinkedIn}  className='sm-logo' alt="1-Click-LinkedIn"/></a>
           </div>
           <div className='footer-logo colfootor-logo'>
-            <a href='https://twitter.com/1clickcapital' target="_blank"><img src={Twitter}  className='sm-logo'/></a>
+            <a href='https://twitter.com/1clickcapital' target="_blank"><img src={Twitter}  className='sm-logo' alt="1-Click-Twitter"/></a>
           </div>
         </div>
           {/* <div className='Style1'>

@@ -70,11 +70,11 @@ function Collabtionanimation() {
             <img
               src={PayrollIMG}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Payroll-Financing"
             />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
-                Payroll{" "}
+                Payroll Financing{" "}
               </span>
             </li>
           </div>
@@ -82,7 +82,7 @@ function Collabtionanimation() {
             <img
               src={SalaryAdv}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Salary-Advance"
             />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
@@ -94,7 +94,7 @@ function Collabtionanimation() {
             <img
               src={InsuranceFun}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Insurance-Funding"
             />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
@@ -106,7 +106,7 @@ function Collabtionanimation() {
             <img
               src={ProjectFun}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Project-Fundinf"
             />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
@@ -115,7 +115,7 @@ function Collabtionanimation() {
             </li>
           </div>
           <div className="card15" onClick={() => handletab(5)}>
-            <img src={LRD} className="Product-image" alt="BigCo Inc. logo" />
+            <img src={LRD} className="Product-image" alt="1-Click-Lease-Rental-Discounting" />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
                 LRD{" "}
@@ -123,7 +123,7 @@ function Collabtionanimation() {
             </li>
           </div>
           <div className="card15" onClick={() => handletab(6)}>
-            <img src={SCF} className="Product-image" alt="BigCo Inc. logo" />
+            <img src={SCF} className="Product-image" alt="1-Click-Supply-Chain-Financing" />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
                 Supply Chain Financing{" "}
@@ -134,7 +134,7 @@ function Collabtionanimation() {
             <img
               src={WorkingCap}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Working-CApital"
             />
             <li role="presentation"className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
@@ -143,7 +143,7 @@ function Collabtionanimation() {
             </li>
           </div>
           <div className="card15" onClick={() => handletab(8)}>
-            <img src={CF} className="Product-image" alt="BigCo Inc. logo" />
+            <img src={CF} className="Product-image" alt="1-Click-Collateral-Free-MSME/SME" />
             <li role="presentation"className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
                 MSME/SME{" "}
@@ -151,7 +151,7 @@ function Collabtionanimation() {
             </li>
           </div>
           <div className="card15" onClick={() => handletab(9)}>
-            <img src={HRm} className="Product-image" alt="BigCo Inc. logo" />
+            <img src={HRm} className="Product-image" alt="1-Click-Human-Resource-Management-System" />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
                 HRMS{" "}
@@ -162,7 +162,7 @@ function Collabtionanimation() {
             <img
               src={Production}
               className="Product-image"
-              alt="BigCo Inc. logo"
+              alt="1-Click-Entertainment-and-Production-Financing"
             />
             <li role="presentation" className="presentation">
               <span className={showtab === 1 ? "nav-link-active" : "pll"}>
@@ -199,7 +199,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -216,7 +216,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -232,7 +232,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -291,7 +291,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -308,7 +308,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -324,7 +324,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -381,7 +381,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -398,7 +398,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -414,7 +414,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -492,7 +492,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -509,7 +509,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -525,7 +525,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -582,7 +582,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -599,7 +599,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -615,7 +615,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -688,7 +688,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -705,7 +705,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -721,7 +721,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -782,7 +782,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -799,7 +799,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -815,7 +815,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -879,7 +879,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -896,7 +896,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -912,7 +912,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -976,7 +976,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -993,7 +993,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -1009,7 +1009,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
@@ -1078,7 +1078,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect}
-                        alt="BigCo Inc. logo"
+                        alt="ProductProfile"
                       />
                     </div>
                     <div className="insidetext">
@@ -1095,7 +1095,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect1}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBook"
                       />
                     </div>
                     <div className="insidetext">
@@ -1111,7 +1111,7 @@ function Collabtionanimation() {
                       <img
                         className=" imagevec"
                         src={Vect2}
-                        alt="BigCo Inc. logo"
+                        alt="ProductBag"
                       />
                     </div>
                     <div className="insidetext">
