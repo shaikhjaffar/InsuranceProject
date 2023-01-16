@@ -38,7 +38,6 @@ const MainPage = () => {
             </div>
           </div>
           <div className="column">
-          <img className="bottomsvg" src={Recsvg}></img>
             <div className="main-form">
               <Form />
             </div>

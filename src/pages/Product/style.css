@@ -22,7 +22,7 @@
     margin-left: 165px;
     margin-top: -75px;
     color: black;
-    font-size: 15px;
+    font-size: 17px;
   }
   .product-rctext{
     position: relative;
@@ -109,7 +109,7 @@
     display: grid;
  }
 .product-round-corners-text {
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 150px;
   margin-top: -70px;
 }

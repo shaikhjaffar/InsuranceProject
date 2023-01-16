@@ -25,6 +25,7 @@
     margin-left: 141px;
     height: 150px;
     background:white;
+    -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     box-shadow:4px -7.5px 7px #e4e4e4, inset 1px 0px 2px #ffa200;
   }
@@ -181,7 +182,7 @@ margin-top: 7px;
 width: 60%;
 margin-top: -8%;
 margin-left: 20%;
-font-size: 95%;
+font-size: 20px;
 }
 /* .right{
   margin-left: 50%;
@@ -196,7 +197,8 @@ font-size: 95%;
 
 @media screen and (max-width: 550px) {
   .about-text{
-    font-size: 60%;
+    width: 65%;
+    font-size: 15px;
     margin-left: 28%;
   }
 }

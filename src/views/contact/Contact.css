@@ -48,7 +48,7 @@
   position: relative;
   font-family: 'Futura  BT',sans-serif;
   font-weight: 400; 
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   word-spacing: 4px;
   width:60%;
@@ -165,7 +165,7 @@
   text-decoration: none;
 }
 .footor-text{
-  font-size: 12px;
+  font-size: 15px;
   color: darkslategray;
 }
 @media screen and (max-width: 800px) {
