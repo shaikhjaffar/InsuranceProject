@@ -25,12 +25,7 @@ import FAQ from './views/FAQ/FAQ'
 import NavigateButton from "./@core/components/navigateButton"
 import Ball from "./@core/components/ball"
 import ScrollToTop from "./scroltop"
-import Application from "./@core/components/detail/application"
-import Insurance from "./@core/components/detail/index"
-import AbsoluteAssigment from "./@core/components/detail/absolute"
-import India from "./@core/components/detail/indiafirst"
-import India2 from "./@core/components/detail/indiaNext"
-function App() {  
+function App() {
     return (
       <>          
                   <NavBar />
@@ -44,6 +39,7 @@ function App() {
                       <Route path='/step4' element={<India/>} />
                       <Route path='/step5' element={<India2/>} />
                        <Route path='/privacy-policy' element={<Policy/>} />
+                       <Route path='/Insurance' element={<Insurance/>} />
                        <Route path='faqs' element={<FAQ/>} />
                       <Route path='/products/' element={<><Product/><ScrollToTop/></>}>
                       <Route path='1-click-payroll' element={<Payroll/>} />

@@ -14,6 +14,12 @@ position: -webkit-sticky;
 position: sticky;
 top: 60px;
   }
+  .apply-button{
+    width: 15%;
+    height: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
   @supports not (backdrop-filter: blur(120px)){
     .product-nav-menu {
       position: relative;

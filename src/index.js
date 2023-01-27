@@ -39,6 +39,8 @@ import * as serviceWorker from "./serviceWorker"
 import Show from "./views/landing1"
 import Hide from './views/landing2'
 import ScrollToTop from "./scroltop"
+import { Suspense } from "react"
+import Loader from "./@core/components/Insurance/otpstep"
 // import NavigateButton from "./@core/components/navigateButton"
 // import Ball from './@core/components/ball/index'
 const container = document.getElementById("root")
@@ -46,9 +48,13 @@ const root = createRoot(container)
 
 root.render(
   <BrowserRouter>
+  <Suspense fallback={<Loader/>}>
+
+ 
           {/* <Ball/> */}
         <Hide/>
         <Show/>
+        </Suspense>
   </BrowserRouter>
 )
 

@@ -2,7 +2,10 @@ import React from 'react'
 import './Secondpage.css'
 import Button3 from './3button'
 import ScrollToTop from '../../../../scroltop'
+import apply from './Apply.png'
+import { useNavigate } from 'react-router-dom'
 function Insurance() {
+  const navigate = useNavigate()
   return (
     <>
       <helmet>
@@ -17,6 +20,7 @@ function Insurance() {
    <div className="rectline1"></div>
     </div>
           <Button3/>
+           <img src={apply} className="apply-button" onClick={() => navigate('/Insurance')}/>
           <h2 className="Common-word-product2"> HOW IT WORKS</h2>
         <div className="rectline2"></div>
         <div className="para1">

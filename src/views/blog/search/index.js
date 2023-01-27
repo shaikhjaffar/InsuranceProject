@@ -12,6 +12,10 @@ export default function Bloghead (props) {
   const [err, setErr] = useState('')
   const [show, setShow] = useState(true)
   const [message, setMessage] = useState(null)
+  // const [message1, setMessage1] = useState()
+
+  // console.log(message1)
+  // console.log(setMessage1)
   const handleClick = async () => {
    
       setIsLoading(true)
