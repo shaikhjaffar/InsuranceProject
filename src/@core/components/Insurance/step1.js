@@ -15,7 +15,6 @@ import './style.css'
     Capt:"",
     PNumber:""
    })
-
     const AdharNumber = document.getElementById('adharNumber').value
     const PolicyNumber = document.getElementById('policyNumber').value
     const Captcha = document.getElementById('captcha').value

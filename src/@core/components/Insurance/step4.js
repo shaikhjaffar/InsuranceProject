@@ -7,10 +7,13 @@ function Step4() {
     useEffect(() => {
         window.scrollTo(0, 0)
          }, [])
+         const Link = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
     return (
          <>
           <h2 className="app-header">Absolute Assignment Deed</h2>
-          <iframe src={Loan1} className="pdf-frame" width="70%" height="600px"></iframe>
+          <iframe src={("https://docs.google.com/viewer?url=").concat(Link, "&embedded=true")} className="pdf-frame" width="70%" height="600px" title="Absolute Assignment Deed">
+</iframe>
+          {/* <iframe src={Loan1} ></iframe> */}
           {/* <link rel="import" href={Loan1}></link> */}
           {/* <embed src={Loan1}
 width="70%"

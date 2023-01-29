@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext} from "react"
+import { useState, useEffect} from "react"
 import { Button, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter, Spinner } from 'reactstrap'
 import Step1 from "./step1"
 import Step2 from "./step2"
@@ -7,11 +7,13 @@ import Step4 from "./step4"
 import Step5 from "./step5"
 import Next from './Next.png'
 import Submit1 from './submit.png'
-import Loader from "./otpstep"
+// import Loader from "./otpstep"
 import Swal from "sweetalert2"
+
+// import axios from 'axios'
 // import swal from '@sweetalert/with-react'
-export const NoteContext = createContext()
-function Insurance(props) {
+
+function Insurance() {
 
   const [data, setdata] = useState('')
   const [data1, setdata1] = useState('')
@@ -20,6 +22,8 @@ function Insurance(props) {
   const [value1, setvalue1] = useState('')
   const [message, setMessage] = useState('')
   const [value, setvalue] = useState('')
+  const [Mobile1, setmobile1] = useState('')
+  const [Mobile2, setmobile2] = useState('')
   const [message1, setMessage1] = useState('')
   const [active2, setactive2] = useState(false)
 //  const [otpStep, setOtpStep] = useState(false)
@@ -32,19 +36,16 @@ function Insurance(props) {
   const [showOTp1, setshowOTp1] = useState(false)
   const [showWitness, setShowWitness] = useState(false)
   const [count, setCount] = useState(0)
-  const [Step1Data, setStep1Data] = useState({
-    Capt:"",
-    asnr_aadhar:"",
-    asnr_mobile_no:"",
-    asnr_policy_no:""
-   })
+  const [Step1Data, setStep1Data] = useState({})
   const [witnessDetail, setShowWitnessDetail] = useState({
        Relation: "",
-       AdharNumber: ""
+       AdharNumber: "",
+       MobileNumber:""
   })
   const [witness2Detail, setShowWitness2Detail] = useState({
     Relation: "",
-    AdharNumber: ""
+    AdharNumber: "",
+    MobileNumber:""
 })
 // const [data, setData] = useState([])
 // const [isLoading, setIsLoading] = useState(false)
@@ -72,51 +73,180 @@ function Insurance(props) {
     }
   }
 
-function Submit () {
-//   const AdharNumber = document.getElementById('adharNumber').value.toString()
-// const PolicyNumber = document.getElementById('policyNumber').value.toString()
-const Captcha = document.getElementById('captcha').value
-// const MobileNumber = document.getElementById('mobileNumber').value.toString()
-setStep1Data(myValue => ({
-  ...myValue,
-  Capt:Captcha,
-  asnr_aadhar:data2,
-  asnr_mobile_no:data1,
-  asnr_policy_no:data
-})) 
-console.log(Step1Data)
-}
- const S1 = {
-  AdharNumber:data2,
-  ploicyNumber:data,
-  MobileNumber:data1
- }
-function AlertOtp() {
-  Swal.fire({
-    title: 'Adhar Verification',
-    html:' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-    ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-    ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-    ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-    ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-    ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>',
-    focusConfirm: true,
-    inputAttributes: {
-        autocapitalize: 'off',
-        autocorrect: 'off',
-        type:'number'
-      },
-    preConfirm: () => {
-        setStep('step2')
-        setactive2(true)
-        Submit()
-        
+  // function AlertOtp() {
+  //   Swal.fire({
+  //     title: 'Adhar Verification',
+  //     html:'<div class="insurance-otp"> ' +
+  //     '<input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+  //     '</div>',
+  //     focusConfirm: true,
+  //     inputAttributes: {
+  //         autocapitalize: 'off',
+  //         autocorrect: 'off',
+  //         type:'number'
+  //       },
+  //     preConfirm: () => {
+  //       otpData()
+  //         const requestOptions = {
+  //           method: 'POST',
+  //           headers: { 'Content-Type': 'application/json' },
+  //           body: JSON.stringify(Step1Data)
+  //         }
+  //         fetch('http://jaffar.com:8081/insurance/ajx/aadhar-otp-self', requestOptions)
+  //           .then(response => response.json())
+  //             setStep('step2')
+  //             setactive2(true)
+  //     }
+  //   })
+  // }
+    
+
+  // const Captcha = document.getElementById('captcha').value
+    // const updateData = newData => {
+    //   setStep1Data({...Step1Data, ...newData})
+    // }
+
+  // function SubmitData() {
+  //   setStep1Data(myValue => ({
+  //     ...myValue,
+  //     ...updateValueSubmit
+  //   })) 
+  // }
+  // function OtpData() {
+  //   updateValueSubmit = {
+  //     Capt:"",
+  //     asnr_aadhar:data2,
+  //     asnr_mobile_no:"9878765678",
+  //     asnr_policy_no:"7977878",
+  //     asnr_company_name :"indiafirst",
+  //     ajx_typ:"",
+  //     aadhar_otp:"453672",
+  //     ajx_typ:"otp_check_self"
+  //   }
+  //    setStep1Data(myValue => ({
+  //      ...myValue,
+  //      ...updateValueSubmit
+  //    })) 
+  // }
+  // function setSubmitData (callback) {
+  //   let updateValueSubmit = {}
+  //   updateValueSubmit = {
+  //     Capt:"",
+  //     asnr_aadhar:document.getElementById('adharNumber').value,
+  //     asnr_mobile_no:"9878765678",
+  //     asnr_policy_no:"7977878",
+  //     asnr_company_name :"indiafirst",
+  //     ajx_typ:"",
+  //     aadhar_otp:"453672",
+  //     ajx_typ:"check_policy"
+  //   } 
+  //      setStep1Data(myValue => ({
+  //     ...myValue,
+  //   ...updateValueSubmit
+  //   })) 
+  //   callback()
+  // }
+
+  function Submit (value) {   
+   
+    //   const AdharNumber = document.getElementById('adharNumber').value.toString()
+    // const PolicyNumber = document.getElementById('policyNumber').value.toString()
+   
+    // const MobileNumber = document.getElementById('mobileNumber').value.toString()
+  
+    // try {
+    //   axios({
+    //     method: "post",
+    //     url: "http://jaffar.com:8081/insurance/ajx/insurance-funding-new",
+    //     data:Step1Data,
+    //     headers: { "Content-Type": "application/json"}
+    //   })
+    
+    // } catch (error) {
+    //   alert(error)
+    // }
+    console.log(value)
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(value)
     }
-  })
-
-
-}
-
+    fetch('http://jaffar.com:8081/insurance/ajx/insurance-funding-new', requestOptions)
+      .then(response => response.json())
+      // .then(
+      //   (result) => {   
+      //     result.success ? AlertOtp() : alert(result.error)
+      //   })
+    }
+  
+   
+    const otpData = () => {
+      const updatedObj = { ...Step1Data, 
+        Capt:"",
+        asnr_aadhar:document.getElementById('adharNumber').value,
+        asnr_mobile_no:"9878765678",
+        asnr_policy_no:"7977878",
+        asnr_company_name :"indiafirst",
+        ajx_typ:"",
+        aadhar_otp:"453672",
+        ajx_typ:"otp_check_self"
+      }
+      setStep1Data(updatedObj)
+      console.log(updatedObj)
+      
+    }
+    function AlertOtp() {
+      Swal.fire({
+        title: 'Adhar Verification',
+        html:'<div class="insurance-otp"> ' +
+        '<input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        '</div>',
+        focusConfirm: true,
+        inputAttributes: {
+            autocapitalize: 'off',
+            autocorrect: 'off',
+            type:'number'
+          },
+        preConfirm: () => {
+          otpData()
+            const requestOptions = {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(Step1Data)
+            }
+            fetch('http://jaffar.com:8081/insurance/ajx/aadhar-otp-self', requestOptions)
+              .then(response => response.json())
+                setStep('step2')
+                setactive2(true)
+        }
+      })
+    }
+    const updateValue = () => {
+      const updatedObj = { ...Step1Data, 
+        Capt:"",
+        asnr_aadhar:document.getElementById('adharNumber').value,
+        asnr_mobile_no:"9878765678",
+        asnr_policy_no:"7977878",
+        asnr_company_name :"indiafirst",
+        ajx_typ:"",
+        ajx_typ:"check_policy"
+      }
+      setStep1Data(updatedObj)
+      console.log(updatedObj)
+      Submit(updatedObj)
+      AlertOtp()
+    }
+//854851711588
   // function handleClick () {
   //   setOtpStep(true)
   //   fetch("http://192.168.0.181:8080/jaffar_servlet/jaffar_serv")
@@ -166,7 +296,8 @@ function AlertOtp() {
 //     setIsLoading(false)
    
 //   }
-  
+// const userdata = `=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.companyName}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.desig}&city=${this.state.city}&product_name=1_Click_Payroll&campaign=website`
+
 // }
   // if (step === 'step4') {
   //   document.getElementById('4').style.backgroundColor = "red"
@@ -185,10 +316,12 @@ function AlertOtp() {
   setCount(count + 1)
   const adharnumber = document.getElementById('witness1-adharnumber').value
   const relation = document.getElementById('witness1-relation').value
+  const MobileNumber1 = document.getElementById('witness1-Mobilenumber').value
   setShowWitnessDetail(existingValues => ({
     ...existingValues,
     Relation:relation,
-    AdharNumber:adharnumber
+    AdharNumber:adharnumber,
+    MobileNumber:MobileNumber1
   }))        
  }
  function witness2detail() {
@@ -196,10 +329,13 @@ function AlertOtp() {
    setCount(count + 1)
   const adharnumber = document.getElementById('witness2-adharnumber').value
   const relation = document.getElementById('witness2-relation').value
+  const MobileNumber1 = document.getElementById('witness2-Mobilenumber').value
   setShowWitness2Detail(existingValues => ({
     ...existingValues,
     Relation:relation,
-    AdharNumber:adharnumber
+    AdharNumber:adharnumber,
+    MobileNumber:MobileNumber1
+
   }))
  }
     useEffect(() => {
@@ -235,9 +371,7 @@ function AlertOtp() {
 // } else if (!isLoading) {
 //   return <div><Spinner/></div>
 // } else {
-
   return (
-     <NoteContext.Provider value={S1}>
     <div className="card">
         <div className="Insurance-step">{
       active2 ?  <p>You are At : {step}</p> : <></>
@@ -325,8 +459,8 @@ function AlertOtp() {
                 </div> : <></>
                 } */}
                 <img src={Submit1}  className="In-absolute-button" data-info="step1-button" onClick={() => {
-                  AlertOtp()
-                  Submit()
+                // setSubmitData(Submit)
+                updateValue()
                 }}/>
                 </div>
             )
@@ -349,6 +483,12 @@ function AlertOtp() {
           const result = event.target.value.replace(/[^a-z]/gi, '')
           setMessage(result)
         }}  id="witness1-relation"></input>
+         <label>Mobile Number</label>
+       <input className='spacing stop input-insurance'style={{minHeight:"40px", color:"black"}}  value={Mobile1}
+              onChange={(event) => {
+               const result1 = event.target.value.replace(/\D/g, '')
+               setmobile1(result1)
+             }} id="witness1-Mobilenumber"></input>
        {
         showOTp ? <div><label>Enter OTP</label><input className='spacing stop input-insurance'style={{minHeight:"40px"}}></input></div> : <></>
        }
@@ -378,6 +518,12 @@ function AlertOtp() {
          const result = event.target.value.replace(/[^a-z]/gi, '')
          setMessage1(result)
        }} id="witness2-relation"></input>
+        <label>Mobile Number</label>
+       <input className='spacing stop input-insurance'style={{minHeight:"40px", color:"black"}}  value={Mobile2}
+              onChange={(event) => {
+               const result1 = event.target.value.replace(/\D/g, '')
+               setmobile2(result1)
+             }} id="witness2-Mobilenumber"></input>
        {
         showOTp1 ? <div><label>Enter OTP</label><input className='spacing stop input-insurance' style={{minHeight:"40px"}}></input> </div> : <></>
        }
@@ -407,7 +553,7 @@ function AlertOtp() {
    </div>
    <div className="app-form-input">
    <label>Mobile Number</label>
-   <label>989732829</label>
+   <label>{witnessDetail.MobileNumber}</label>
   {/* <input></input> */}
    </div>
    <div className="app-form-input">
@@ -438,7 +584,7 @@ function AlertOtp() {
    </div>
    <div className="app-form-input">
    <label>Mobile Number</label>
-   <label>345678909809</label>
+   <label>{witness2Detail.MobileNumber}</label>
   {/* <input></input> */}
    </div>
    <div className="app-form-input">
@@ -476,8 +622,6 @@ function AlertOtp() {
         }
       })()}
    </div>
-   {props.Children}
-   </NoteContext.Provider>
  )
 }
  export default Insurance
