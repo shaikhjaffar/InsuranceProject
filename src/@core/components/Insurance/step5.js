@@ -3,7 +3,8 @@ import {Button} from "reactstrap"
 import Next from './submit.png'
 import './style.css'
 import Swal from "sweetalert2"
-import Loan2 from './Absolute Assignment Deed.pdf' 
+import Loan2 from './newLoan Agreement-V1 2.pdf'
+
 import PolicyHolder from './policyHolder.png'
 import Witness1 from './witness1.png'
 import Witness2 from './witness2.png'
@@ -48,16 +49,16 @@ function Step5() {
       useEffect(() => {
      window.scrollTo(0, 0)
       }, [])
-      const Link = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      // const Link = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
     return (
       
         Esign ? <div className="outer-frame"><span className="crossButton-Esign" onClick={() => {
           setEsign(false)
           }}>X</span><iframe className="essign-frame" src="https://app.digio.in/#/gateway/login/DID230123150029681ECVEXFII7OP5J2/vI3atY/8976412394">
           </iframe></div>  : <><h2 className="app-header">Loan Agreement</h2>
-          <iframe src={("https://docs.google.com/viewer?url=").concat(Link, "&embedded=true")} className="pdf-frame" width="70%" height="600px" title="Loan Agreement">
-</iframe>
-        {/* <iframe src={Loan2} className="pdf-frame"  width="70%"></iframe> */}
+          {/* <iframe src={("https://docs.google.com/viewer?url=").concat(Link, "&embedded=true")} className="pdf-frame" width="70%" height="600px" title="Loan Agreement">
+</iframe> */}
+        <iframe src={Loan2} className="pdf-frame"  width="70%"></iframe>
         {/* <embed src={Loan2}  type="application/pdf" ></embed> */}
         {/* <object data="https://drive.google.com/viewerng/viewer?embedded=true&url=./Absolute Assignment Deed.pdf" type="application/pdf">
         <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=./Absolute Assignment Deed.pdf" type='application/pdf'/>

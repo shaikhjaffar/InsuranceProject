@@ -14,6 +14,9 @@ function Blog () {
     }
     return (
       <>
+      <helmet>
+      <meta name='robots' content='noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+      </helmet>
       <Register/>
       <div className="blog card">
         <section className="search-calendar">

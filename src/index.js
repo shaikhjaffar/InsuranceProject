@@ -49,8 +49,6 @@ const root = createRoot(container)
 root.render(
   <BrowserRouter>
   <Suspense fallback={<Loader/>}>
-
- 
           {/* <Ball/> */}
         <Hide/>
         <Show/>

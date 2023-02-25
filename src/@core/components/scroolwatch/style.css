@@ -1,0 +1,12 @@
+.parent-watch{
+    width: 120px;
+    height: 200px;
+    overflow-y: scroll;
+}
+.parent-watch span{
+    width: 100%;
+    display: inline-block;
+    height: 30%;
+    background-color: aliceblue;
+    margin-top: 5%;
+}

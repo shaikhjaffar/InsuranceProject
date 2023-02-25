@@ -1,21 +1,50 @@
 
 import { Button, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 // import { Document, Page } from 'react-pdf'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import Swal from 'sweetalert2'
+// import { element } from 'prop-types'
 // import { Button} from 'reactstrap';
-import INRegister from './Next.png'
+// import INRegister from './Next.png'
 // import INReset from './Inreset.png'
 // import { useNavigate } from "react-router-dom"
 // import Swal from 'sweetalert2'
 // import Pdf from "./Loan Agreement-V1.pdf"
 
 // export const UserContext = createContext()
-function Step2() {
+function Step2(props, {dataOfAdhar}) {
+  const [modal, setModal] = useState(false)
   const [message, setMessage] = useState('')
   const [value, setvalue] = useState('')
+  const [enterData, setEnterData] = useState({
+    pname:"",
+    email:"",
+    pancard:"",
+    current:"",
+    tenure:"",
+    emi:"",
+    bankHolderName:"",
+    AccountNumber:"",
+    Ifsc:""
+
+  })
+  const [AssignorDetail, setAssignorDetail] =  useState({})
+  useEffect(() => {
+   setAssignorDetail({...dataOfAdhar})
+  }, [])
+  // const [showWitnessButton, setShowWitnessButton] = useState(false)
   // const [user, setUser] = useState("Jaffar")
   // console.log(user)
   // console.log(setUser)
+  function ValidatePAN() {
+    const txtPANCard = document.getElementById("pancard")
+    const regex = /([A-Z]){5}([0-9]){4}([A-Z]){1}$/
+    if (regex.test(txtPANCard.value.toUpperCase())) {
+        return true
+    } else {
+        return false
+    }
+}
   function callEmi () {
     
     const Stenure = document.getElementById('tenure').value
@@ -27,8 +56,48 @@ function Step2() {
           // const x = y + Roi
           const EMI = (y + Roi) / z
      document.getElementById('Emi').innerText = Math.round((EMI + Number.EPSILON) * 100) / 100
-
   }
+
+  // function changeGender() {
+  //   const RadioButtons = document.querySelectorAll('input[name="gender"]')
+  //   for (const RadioButton of RadioButtons) {
+  //       if (RadioButton.checked) {
+  //         if (RadioButton.value === "Male") {
+  //           const Dropdowns = document.getElementById('gender-title')
+  //           Dropdowns.value = "Mr"
+  //         } else if (RadioButton.value === "Female") {
+  //           const Dropdowns = document.getElementById('gender-title')
+  //           Dropdowns.value = "Mrs"
+  //         }  else {
+  //           const Dropdowns = document.getElementById('gender-title')
+  //           Dropdowns.value = "Mx"
+  //         }
+  //       }
+     
+  //   }
+  // }
+  //  function changeGenderTitle() {
+  //   const Dropdowns = document.getElementById('gender-title').value
+  //   const RadioButtons = document.querySelectorAll('input[name="gender"]')
+  //   for (const RadioButton of RadioButtons) {
+  //     RadioButton.checked = true 
+  //     if (Dropdowns === "Mr") {
+  //       RadioButton.value = "Male"
+  //       console.log(RadioButton.value)
+  //     } else if (Dropdowns === "Mrs") {
+  //       RadioButton.value = "Female"
+  //       console.log(RadioButton.value)
+  //     } else {
+  //       RadioButton.value = "other"
+  //       console.log(RadioButton.value)
+       
+  //     }
+  //   }
+     
+  //  }
+  
+
+  const toggle = () => setModal(!modal)
   function CopyAddress() {
     const ref1 = document.getElementById('per-add')
     const ref2 = document.getElementById('check')
@@ -39,6 +108,23 @@ function Step2() {
       ref3.value = ""
     }
    }
+  
+    function getNewData () {
+      setEnterData({...enterData,
+        pname:document.getElementById('pname').innerText,
+        email:document.getElementById('email').value,
+        pancard:document.getElementById('pancard').value,
+        current:document.getElementById('cur-add').value,
+        tenure:document.getElementById('tenure').value,
+        emi:document.getElementById('Emi').innerText,
+        bankHolderName:message,
+        AccountNumber:value,
+        Ifsc:document.getElementById('ifsc').value
+      })
+      
+      
+  }
+
 //  function showPDf () {
    
 //  }
@@ -47,36 +133,42 @@ function Step2() {
       // <UserContext.Provider value={user}>
         // {console.log(user)}
         <>
-       
-          <h2 className="app-header">Personal Detail</h2>
+          {/* import React, { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'; */}
+           <h2 className="app-header" style={{letterSpacing:"1px"}}>IndiaFirst<span style={{color:"orange"}}>Life</span>&nbsp;Insurance Funding</h2>
+          <h3 className="app-header">Personal Detail</h3>
           <div className="personal-detail">
             <div className="app-form-input">
             <label>Policy Holder Name</label>
            {/* <input></input> */}
-           <label>Jaffar</label>
+           <label id='pname'>Jaffar</label>
             </div>
             <div className="app-form-input">
            <label>Email</label>
-           <label>Tusharmalik@gmail.com</label>
+           <input className="input-insurance" id='email' onFocus={console.log({AssignorDetail})} type="email"></input>
            </div>
-           <div className="app-form-input">
+           {/* <div className="app-form-input">
             <label>Select Gender</label>
-            <span><input type="radio" name='gender' value='Male'/>Male</span>
-            <span> <input type="radio" name='gender' value='Female'/>Female</span>
-           <span><input type="radio" name='gender' value='other'/>Other</span>
-           </div>
+            <span><input type="radio" name='gender'onClick={changeGender} value='Male'/>Male</span>
+            <span> <input type="radio" name='gender'  value='Female' onClick={changeGender}/>Female</span>
+           <span><input type="radio" name='gender' value='other' onClick={changeGender}/>Other</span>
+           </div> */}
            <div className="app-form-input">
            <label>Select Gender Title</label>
            <select id='gender-title'>
-            <option value="" disabled selected hidden >Title</option>
-            <option value="3">Mr</option>
-            <option value="6">Mx</option>
-            <option value="9">Mrs</option>
+            {/* <option value="" disabled selected hidden >Title</option> */}
+            <option value="Mr">Mr</option>
+            <option value="Mx">Mx</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Mrs">Miss</option>
           </select>
            </div>
            <div className="app-form-input">
+
            <label>Pan Card</label>
-           <input className="input-insurance"></input>
+           <input className="input-insurance" name='txtPANCard' id='pancard' minLength={10} maxLength={10} onChange={() => {
+            document.getElementById('pancard').value.toUpperCase()
+           }} style={{textTransform: "uppercase"}}></input>
            </div>
            <div className="app-form-input">
            <label>Adhar Card</label>
@@ -164,9 +256,54 @@ function Step2() {
             </div>
             <div className="app-form-input">
             <label>IFSC Code</label>
-           <input className="input-insurance"></input>
+           <input className="input-insurance" id='ifsc'></input>
             </div>
             </div>
+            <div>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Policy Holder Detail</ModalHeader>
+        <ModalBody>
+        <h5>Personal Detail</h5>
+         <label>Name:&nbsp;{enterData.pname}</label><br></br>
+         <label>Email:&nbsp;{enterData.email}</label><br></br>
+         {/* <label>Gender Title:&nbsp;{document.getElementById('gender-title').value}</label><br></br> */}
+         <label>PanCard:&nbsp;{enterData.pancard}</label><br></br>
+         <label>Current Addres:&nbsp;{enterData.current}</label><br></br>
+         <label>Tenure:&nbsp;{enterData.tenure}</label><br></br>
+         <label>Emi:&nbsp;{enterData.emi}</label>
+         <h5>Bank Detail</h5>
+         <label>Account Holder Name:&nbsp;{enterData.bankHolderName}</label><br></br>
+         <label>Account Number:&nbsp;{enterData.AccountNumber}</label><br></br>
+         <label>IFSC:&nbsp;{enterData.Ifsc}</label>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={() => {
+           toggle()
+           props.child(true)
+          }}>
+            Submit Detail
+          </Button>{' '}
+          <Button color="secondary" onClick={toggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+            <button style={{width:"20%", marginLeft:"70%"}} className="witness-button" onClick={() => {
+                 if (message === "" || value === "" || document.getElementById('ifsc').value === "") {
+                  Swal.fire('All Fields are madatory')
+                } else {
+                  const Email = document.getElementById('email').checkValidity()
+                  const Pancard =  ValidatePAN()
+                  if (Email && Pancard) {
+                    toggle()
+                    getNewData()
+                  } else {
+                    Email ? alert('Invalid Pancard') : alert('Enter Valid Email')
+                  }
+                }
+               
+            }}>Confirm Filled Detail</button>
           </>
     )
    

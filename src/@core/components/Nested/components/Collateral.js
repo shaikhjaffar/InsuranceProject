@@ -2,7 +2,9 @@ import React from "react"
 import "./Secondpage.css"
 import Button3 from './3button'
 import ScrollToTop from "../../../../scroltop"
+import { useNavigate } from "react-router-dom"
 function Collateral() {
+  const navigate = useNavigate()
   return (
     <>
      <helmet>
@@ -29,6 +31,9 @@ function Collateral() {
       </div>
     </div>
     <ScrollToTop/>
+     <button onClick={() => {
+       navigate('/Schedulemeeting')
+     }}>Schedule a meeting to our Counsellor</button>
     </>
   )
 }

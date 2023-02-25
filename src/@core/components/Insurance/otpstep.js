@@ -7,7 +7,6 @@ import './style.css'
     return (
         <>
         <div className="parent-loader">
-    
       <h2>Please Wait a Minute</h2>
            <span className="loader-circle">
             <span className="loader-circle1" >

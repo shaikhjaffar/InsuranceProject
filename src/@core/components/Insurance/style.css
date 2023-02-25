@@ -42,6 +42,19 @@ height: auto;
 cursor: pointer;
 
 }
+.application-form input:invalid{
+    font-size: 20px;
+    transition: 0.5s all;
+    color: red;
+}
+.application-form input{
+    color: green;
+}
+.application-form input::placeholder{
+    color: black;
+    opacity: 0;
+    font-size: small;
+}
 .witness-button{
     background: rgba(47, 196, 206, 0.1);
     border: 0.5px solid #FFFFFF;
@@ -123,9 +136,9 @@ height: 500px;
         position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
-  height: 100vh;
+  height: 100%;
   background: rgba(47, 196, 206, 0.1);
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 0px 2px #2FA6CE, inset 1px 0px 3px #FFFFFF;
@@ -315,6 +328,14 @@ label{
 .application-form label{
       font-size: 1.4vw;
 }
+     .mobile-toogle {
+        transition: 0.5s all;
+        position: absolute;
+top: 250px;
+right: 15%;
+font-size: 13px;
+      }
+
  @media screen and (max-width:500px) {
     .application-form label{
         font-size: 2.5vw;
@@ -333,7 +354,7 @@ transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     color: aliceblue;
 }
 .swal2-input{
-    width: 12%;
+    width: 60%;
 }
 .In-absolute-witness{
     width: 120px;

@@ -20,6 +20,19 @@ top: 60px;
     margin-bottom: 20px;
     cursor: pointer;
   }
+  .meeting-button{
+    width: 30%;
+    font-size: 1.3vw;
+    background:linear-gradient(0.75turn,#c67b2a,white,#1f585c);
+  transition:0.5s all;
+    padding: 0px 2%;
+  }
+  .meeting-button:hover{
+    border-radius: 10px;
+    /* color:rgb(222, 44, 222); */
+    background:linear-gradient(0.25turn,#dac7b4,white,#b8eaee);
+    box-shadow: 3px 3px 0px 0px #c9f1f4, 0px 0px 4px 4px #c67b2a;
+  }
   @supports not (backdrop-filter: blur(120px)){
     .product-nav-menu {
       position: relative;

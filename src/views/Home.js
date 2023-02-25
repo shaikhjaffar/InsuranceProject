@@ -9,7 +9,6 @@ import Footer from "../pages/Footer/Footer"
 import Marqueee from "../@core/components/marquee"
 import Register from "../@core/components/Registration/Register2"
 // import Ball from "../@core/components/ball"
-
 // import RippleButton from "../@core/components/ripple-button/index"
 const Home = () => {
   return (

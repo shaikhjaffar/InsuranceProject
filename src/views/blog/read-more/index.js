@@ -25,7 +25,7 @@ function Readmore()  {
   }, [])
 
     const tag = items.map(blogs => (
-      blogs.tags  
+      blogs.tags
     ))
 
   if (error) {
@@ -33,11 +33,11 @@ function Readmore()  {
   } else if (!isLoaded) {
     return <div>Loading...</div>
   } else {
-       
+
     return (
         items.map(blogs => (
           <div className="blog card">
-          <section className="main"> 
+          <section className="main">
            <div className="content" key={blogs.id}  >
            <div className="image-blog-container">
          <img className="blog-image"  src={blogs.yoast_head_json.og_image[0].url}></img>
@@ -48,7 +48,7 @@ function Readmore()  {
        </div>
          <div  className="extra-content" dangerouslySetInnerHTML={ {__html:blogs.content.rendered} } />
          </div>
-         </section> 
+         </section>
          <span className="black-line"></span>
           <h3 className="option-heading">You Might also like</h3>
           <section className="more">
@@ -62,16 +62,16 @@ function Readmore()  {
              <input type="text" className="blog-comment-details1 blog-detail-size" placeholder="Name required"></input>
              <input type="text" className="blog-comment-details2 blog-detail-size" placeholder="Email required"></input>
              <input type="text" className="blog-comment-details3 blog-detail-size" placeholder="Website"></input>
-             
+
              </div>
              <button className="Submit-comment-button">Submit</button>
              </section>
            </div>
         ))
-      
+
     )
   }
- 
+
 }
 
  export default Readmore

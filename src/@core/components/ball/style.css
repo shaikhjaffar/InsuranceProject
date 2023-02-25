@@ -13,17 +13,33 @@
       filter: blur(20px);
     }
   }
-  .box b {
-    display: block;
+  .ball1 {
     width: 40%;
     height: 70%;
+    display: block;
     border-radius: 50%;
     background-color:#2fc3ce;
     position: absolute;
-    -webkit-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+    }
+ 
+  .animation{
+        -webkit-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
     -moz-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
     -o-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
     animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+  }
+  .animationNot{
+    animation: none;
+  }
+  @keyframes decreasesize {
+      0%{
+        width: 40%;
+        height: 70%;
+      }
+      100%{
+        width: 20%;
+        height: 35%;
+      }
   }
   .box span {
     display: block;

@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react"
-import { Button, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter, Spinner } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Spinner } from 'reactstrap'
+// import axios from "axios"
 import Step1 from "./step1"
 import Step2 from "./step2"
 import Step3 from "./step3"
@@ -7,7 +8,7 @@ import Step4 from "./step4"
 import Step5 from "./step5"
 import Next from './Next.png'
 import Submit1 from './submit.png'
-// import Loader from "./otpstep"
+import Loader from "./otpstep"
 import Swal from "sweetalert2"
 
 // import axios from 'axios'
@@ -26,7 +27,7 @@ function Insurance() {
   const [Mobile2, setmobile2] = useState('')
   const [message1, setMessage1] = useState('')
   const [active2, setactive2] = useState(false)
-//  const [otpStep, setOtpStep] = useState(false)
+ const [otpStep, setOtpStep] = useState(false)
   const [active3, setactive3] = useState(false)
   const [active4, setactive4] = useState(false)
   const [active5, setactive5] = useState(false)
@@ -36,6 +37,7 @@ function Insurance() {
   const [showOTp1, setshowOTp1] = useState(false)
   const [showWitness, setShowWitness] = useState(false)
   const [count, setCount] = useState(0)
+  const [mobile, setMobile] = useState(false)
   const [Step1Data, setStep1Data] = useState({})
   const [witnessDetail, setShowWitnessDetail] = useState({
        Relation: "",
@@ -47,11 +49,18 @@ function Insurance() {
     AdharNumber: "",
     MobileNumber:""
 })
+ const [show, setShow] = useState(false)
+ const [AdharData, setAdharData] = useState({
+ })
 // const [data, setData] = useState([])
 // const [isLoading, setIsLoading] = useState(false)
 // const [err, setErr] = useState('')
   const [showWitness2, setShowWitness2] = useState(false)
-    
+     useEffect(() => {
+    window.scrollTo(0, 0)
+     }, [step])
+
+     //function for preventing auto-relod
   const handleBeforeUnload = (e) => {
     e.preventDefault()
     const message =
@@ -59,6 +68,9 @@ function Insurance() {
     e.returnValue = message
     return message
   }
+   function getValue (value) {
+    setShow(value)
+   }
   useEffect(() => {
     window.addEventListener("beforeunload", handleBeforeUnload)
     return () => {
@@ -66,6 +78,7 @@ function Insurance() {
     }
   }, [])
   // const navigate = useNavigate()
+  //modal
   function toggle() {
     setModal(!modal)
     if (modal === false) {
@@ -151,10 +164,7 @@ function Insurance() {
   //   })) 
   //   callback()
   // }
-
-  function Submit (value) {   
-   
-    //   const AdharNumber = document.getElementById('adharNumber').value.toString()
+     //   const AdharNumber = document.getElementById('adharNumber').value.toString()
     // const PolicyNumber = document.getElementById('policyNumber').value.toString()
    
     // const MobileNumber = document.getElementById('mobileNumber').value.toString()
@@ -170,46 +180,33 @@ function Insurance() {
     // } catch (error) {
     //   alert(error)
     // }
-    console.log(value)
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(value)
-    }
-    fetch('http://jaffar.com:8081/insurance/ajx/insurance-funding-new', requestOptions)
-      .then(response => response.json())
-      // .then(
-      //   (result) => {   
-      //     result.success ? AlertOtp() : alert(result.error)
-      //   })
-    }
-  
-   
+
     const otpData = () => {
+      const OtpData = document.getElementById('otpData').value.toString()
       const updatedObj = { ...Step1Data, 
-        Capt:"",
         asnr_aadhar:document.getElementById('adharNumber').value,
         asnr_mobile_no:"9878765678",
         asnr_policy_no:"7977878",
         asnr_company_name :"indiafirst",
-        ajx_typ:"",
-        aadhar_otp:"453672",
+        aadhar_otp:OtpData,
         ajx_typ:"otp_check_self"
       }
       setStep1Data(updatedObj)
       console.log(updatedObj)
-      
+      return updatedObj
+
     }
     function AlertOtp() {
+      setOtpStep(false)
       Swal.fire({
         title: 'Adhar Verification',
         html:'<div class="insurance-otp"> ' +
-        '<input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-        ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        '<input  autocomplete="off" class="swal2-input" id="otpData" maxlength="6"/>' +
+        // ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        // ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        // ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        // ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
+        // ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
         '</div>',
         focusConfirm: true,
         inputAttributes: {
@@ -218,33 +215,99 @@ function Insurance() {
             type:'number'
           },
         preConfirm: () => {
-          otpData()
+          setStep('step2')
+          setactive2(true)
+          const Data = otpData()
             const requestOptions = {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(Step1Data)
+              body: JSON.stringify(Data)
             }
-            fetch('http://jaffar.com:8081/insurance/ajx/aadhar-otp-self', requestOptions)
+            fetch('http://indiafirst.1clickcapital.com/ajx/aadhar-otp-self', requestOptions)
               .then(response => response.json())
-                setStep('step2')
-                setactive2(true)
+              .then(
+                (result) => {
+                  console.log(result)
+                  setAdharData(result)
+                  // setStep('step2')
+                  // setactive2(true)
+                },
+                (error) => {
+                  alert(error)
+                }
+              )
+
+
         }
       })
     }
-    const updateValue = () => {
-      const updatedObj = { ...Step1Data, 
-        Capt:"",
-        asnr_aadhar:document.getElementById('adharNumber').value,
-        asnr_mobile_no:"9878765678",
-        asnr_policy_no:"7977878",
-        asnr_company_name :"indiafirst",
-        ajx_typ:"",
-        ajx_typ:"check_policy"
+    let MainMessage = ""
+    function toCheckValid() {
+      const Input = document.querySelectorAll('.test')
+      let Value = false
+       for (let i = 0; i < Input.length; i++) {
+        if (Input[i].checkValidity()) {
+          Input[1].value.length >= 10 && Input[2].value.length >= 12 ? Value = true  : Value = false
+          // Value = true
+        } else {
+            MainMessage = MainMessage.concat(' ', Input[i].placeholder)
+           return false
+        }
+       }
+       return Value
+    }
+    function Submit (value) {
+      console.log(value)
+      // try {
+      //   axios({
+      //     method: "post",
+      //     url: "https://indiafirstapi.1clickcapital.com/policy/check",
+      //     headers: {'Content-Type': 'application/json' },
+      //     body: value
+      //   })
+      //   .then(
+      //     (result) => {
+      //       result.success ? AlertOtp() : alert(result.error)
+      //      setOtpStep(false)
+      //     })
+      //   } catch (error) {
+      //   alert(error)
+      // }
+      console.log(value)
+    const MyValue = JSON.stringify({
+      policyNumber: "12345678",
+  mobileNumber: "8976412394",
+  aadhaarNumber: 660184035137,
+  companyName: "IndiaFirstLife"
+    })
+      const requestOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json' },
+        body: MyValue,
+        redirect: 'follow'
       }
-      setStep1Data(updatedObj)
-      console.log(updatedObj)
-      Submit(updatedObj)
-      AlertOtp()
+      setOtpStep(true)
+      fetch('https://indiafirstapi.1clickcapital.com/policy/check', requestOptions)
+      .then(response => response.text())
+        .then(
+          (result) => {
+            result.success ? AlertOtp() : alert(result.error)
+           setOtpStep(false)
+          })
+      }
+    function toCheckEmpty () {
+      if (data === "" || data1 === "" || data2 === "") {
+        Swal.fire('All Fields are madatory')
+      } else {
+          const updatedObj = {
+            policyNumber: "12345678",
+            mobileNumber: "8976412394",
+            aadhaarNumber: 660184035137,
+            companyName: "IndiaFirstLife"
+          }
+          setStep1Data(updatedObj)
+          toCheckValid() ? Submit(updatedObj) : alert('Please Enter Valid Detail')
+      }
     }
 //854851711588
   // function handleClick () {
@@ -335,12 +398,9 @@ function Insurance() {
     Relation:relation,
     AdharNumber:adharnumber,
     MobileNumber:MobileNumber1
-
   }))
  }
-    useEffect(() => {
-    window.scrollTo(0, 0)
-     }, [step])
+
 //   function AlertOtp() {
     
 //         Swal.fire({
@@ -371,6 +431,7 @@ function Insurance() {
 // } else if (!isLoading) {
 //   return <div><Spinner/></div>
 // } else {
+
   return (
     <div className="card">
         <div className="Insurance-step">{
@@ -386,7 +447,7 @@ function Insurance() {
         () => {
           if (active2 === true) {
             setStep('step2')
-            
+            // step = 'step2' ? document.getElementById('2').style.backgroundColor = "red" : null
           }
         }}><span className="line-step"></span></div> : <div className="step">2</div>
       }
@@ -395,7 +456,7 @@ function Insurance() {
         () => {
           if (active3 === true) {
             setStep('step3')
-            
+            document.getElementById('3').style.backgroundColor = "red"
           }
         }}><span className="line-step"></span></div> : <div className="step">3</div>
       }
@@ -404,8 +465,7 @@ function Insurance() {
         () => {
           if (active4 === true) {
             setStep('step4')
-          
-            
+        
           }
         }}><span className="line-step"></span></div> : <div className="step">4</div>
       }
@@ -422,35 +482,36 @@ function Insurance() {
           case 'step1':
             return (
                 <div style={{minHeight:"100vh", overflowY:"hidden"}}>
-                   {/* {
-                  otpStep ? <OtpStep/> : <></>
-                } */}
+                   {
+                  otpStep ? <Loader/> : <></>
+                }
+                 <h2 className="app-header" style={{letterSpacing:"1px"}}>IndiaFirst<span style={{color:"orange"}}>Life</span></h2>
+                 {
+               mobile ? <p className="mobile-toogle">Please enter the mobile number registered in your policy</p> : <></>
+              }
               <div className="application-form" >
-               <label>Select Company Name</label>
-               <select>
-                <option value="India First">India First</option>
-               </select>
-              <label>Enter Policy  Number</label>
-              <input className="input-insurance" id="policyNumber" value={data}
+              <label htmlFor="policyNumber">Enter Policy  Number</label>
+              <input className="input-insurance test" id="policyNumber" required value={data} maxLength={8} minLength={8}
                onChange={(event) => {
                 const result = event.target.value.replace(/\D/g, '')
                 setdata(result)
               }}></input>
-              <label>Enter Mobile Number<br></br>(Registered with IndiaFirst)</label>
-              <input  className="input-insurance" maxLength={11} id="mobileNumber" style={{height: "30px"}}
+             
+              <label htmlFor="mobileNumber">Enter Mobile Number<br></br>(Registered with IndiaFirst)</label>
+              <input  className="input-insurance test" minLength={10}  maxLength={10} id="mobileNumber" onFocus={() => { setMobile(true) }} onBlur={() => { setMobile(false) }}  placeholder="Please enter the mobile number registered in your policy" required style={{height: "30px"}}
               value={data1}
               onChange={(event) => {
                const result1 = event.target.value.replace(/\D/g, '')
                setdata1(result1)
              }}></input>
-              <label>Enter Adhar Card Number</label>
-              <input  className="input-insurance" id="adharNumber" maxLength={12} value={data2}
+              <label htmlFor="adharNumber">Enter Adhar Card Number</label>
+              <input  className="input-insurance test" id="adharNumber" required maxLength={12} minLength={12} value={data2} placeholder="Adhar Number"
                onChange={(event) => {
                 const result2 = event.target.value.replace(/\D/g, '')
                 setdata2(result2)
               }}></input>
-          <label>12345</label>
-          <input  className="input-insurance" id="captcha" placeholder="enter captcha"></input>
+          {/* <label>12345</label>
+          <input  className="input-insurance" id="captcha" required placeholder="enter captcha"></input> */}
           </div>
                 {/* {
                   otpStep ?  <div>
@@ -460,14 +521,17 @@ function Insurance() {
                 } */}
                 <img src={Submit1}  className="In-absolute-button" data-info="step1-button" onClick={() => {
                 // setSubmitData(Submit)
-                updateValue()
+                // updateValue()
+                // console.log(toCheckEmpty())
+
+                 toCheckEmpty()
                 }}/>
                 </div>
             )
           case 'step2':
             return (
-                <><Step2/> 
-                            <div>
+                <>{show ? <></> : <Step2 child={getValue} dataOfAdhar={AdharData}/>}
+  <div>
         <Modal isOpen={modal} toggle={toggle}>
     <ModalHeader toggle={toggle}>Witness Authentication</ModalHeader>
     <ModalBody>
@@ -537,7 +601,9 @@ function Insurance() {
       </Button>
     </ModalFooter>
   </Modal>
-</div> {
+</div>
+
+{
   showWitness ? <section  className='witness-detail'>
   <h2 className="app-header">Witness1 Detail</h2> 
   <div className="personal-detail">
@@ -566,7 +632,7 @@ function Insurance() {
    <label>powai</label>
    </div>
    </div>
-   </section> : <button className="witness-button" onClick={toggle}>Click here to fill witness1 detail</button>
+   </section> : <button className="witness-button" style={show ? {display:"block"} : {display:"none"}} onClick={toggle}>Click here to fill witness1 detail</button>
 }
  {
   showWitness2 ? <section className='witness-detail'>
@@ -599,7 +665,7 @@ function Insurance() {
    {
      count === 2 ?  <img src={Next}  className="In-absolute-button" onClick={() => { setStep('step3'); setactive3(true) }}/> : <></>
    }
-   </section> : <button className="witness-button" onClick={toggle1}>Click here to fill witness2 detail</button>
+   </section> : <button className="witness-button" style={show ? {display:"block"} : {display:"none"}} onClick={toggle1}>Click here to fill witness2 detail</button>
 }     
                 </>
             )

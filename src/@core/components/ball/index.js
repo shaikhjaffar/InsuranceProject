@@ -1,35 +1,33 @@
 
-import { useEffect, useRef} from 'react'
+import { useRef, useState} from 'react'
 
 import './style.css'
 function Ball () {
    const ref = useRef(null)
    const ref1 = useRef(null)
-  //  const [mousePos, setMousePos] = useState({})
-  
-   useEffect(() => {
-    //  const handleMouseMove = (event) => {
-    //    setMousePos({ x: event.clientX, y: event.clientY })
    
-    //  }
+   const [x2, setX] = useState(0)
+  const [y2, setY] = useState(0)
  
-   //   window.addEventListener('mousemove', handleMouseMove)
-  //  const ball1 = ref.current
-  //  const ball2 = ref1.current
-  //  console.log(ball1)
-  //  ball1.addEventListener('onmouseover', handleMouseMove)
-  //  ball2.addEventListener('onmouseover', handleMouseMove)
-     return () => {
-      //  window.removeEventListener(
-      //    'mousemove',
-      //    handleMouseMove
-      //  )
-      //  ball1.removeEventListener('onmouseover', handleMouseMove)
-      //  ball2.removeEventListener('onmouseover', handleMouseMove)
-     }
-   }, [])
+ 
+  window.addEventListener('mousemove', (event) => {
+     setX(event.clientX)
+     setY(event.clientY)
+     const MyElement = document.getElementById('ball1')
+     MyElement.classList.replace('animation', 'animationNot') 
+   })
+   document.addEventListener('scroll', () => {
+    const MyElement = document.getElementById('ball1')
+     MyElement.classList.replace('animationNot', 'animation') 
+   })
+
+  
    return (
-    <div className="box"><b ref={ref}></b>
+    <div className="box"> 
+      <b className='ball1 animation' id='ball1' ref={ref} style={{
+        top:y2 - 250,
+        left:x2 - 250
+    }}></b>
     <span ref={ref1}></span>
     </div>
    )
