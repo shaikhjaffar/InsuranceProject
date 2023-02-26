@@ -52,9 +52,6 @@ function Insurance() {
  const [show, setShow] = useState(false)
  const [AdharData, setAdharData] = useState({
  })
-// const [data, setData] = useState([])
-// const [isLoading, setIsLoading] = useState(false)
-// const [err, setErr] = useState('')
   const [showWitness2, setShowWitness2] = useState(false)
      useEffect(() => {
     window.scrollTo(0, 0)
@@ -77,7 +74,6 @@ function Insurance() {
       window.removeEventListener("beforeunload", handleBeforeUnload)
     }
   }, [])
-  // const navigate = useNavigate()
   //modal
   function toggle() {
     setModal(!modal)
@@ -85,101 +81,6 @@ function Insurance() {
       setshowOTp(false)
     }
   }
-
-  // function AlertOtp() {
-  //   Swal.fire({
-  //     title: 'Adhar Verification',
-  //     html:'<div class="insurance-otp"> ' +
-  //     '<input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-  //     '</div>',
-  //     focusConfirm: true,
-  //     inputAttributes: {
-  //         autocapitalize: 'off',
-  //         autocorrect: 'off',
-  //         type:'number'
-  //       },
-  //     preConfirm: () => {
-  //       otpData()
-  //         const requestOptions = {
-  //           method: 'POST',
-  //           headers: { 'Content-Type': 'application/json' },
-  //           body: JSON.stringify(Step1Data)
-  //         }
-  //         fetch('http://jaffar.com:8081/insurance/ajx/aadhar-otp-self', requestOptions)
-  //           .then(response => response.json())
-  //             setStep('step2')
-  //             setactive2(true)
-  //     }
-  //   })
-  // }
-    
-
-  // const Captcha = document.getElementById('captcha').value
-    // const updateData = newData => {
-    //   setStep1Data({...Step1Data, ...newData})
-    // }
-
-  // function SubmitData() {
-  //   setStep1Data(myValue => ({
-  //     ...myValue,
-  //     ...updateValueSubmit
-  //   })) 
-  // }
-  // function OtpData() {
-  //   updateValueSubmit = {
-  //     Capt:"",
-  //     asnr_aadhar:data2,
-  //     asnr_mobile_no:"9878765678",
-  //     asnr_policy_no:"7977878",
-  //     asnr_company_name :"indiafirst",
-  //     ajx_typ:"",
-  //     aadhar_otp:"453672",
-  //     ajx_typ:"otp_check_self"
-  //   }
-  //    setStep1Data(myValue => ({
-  //      ...myValue,
-  //      ...updateValueSubmit
-  //    })) 
-  // }
-  // function setSubmitData (callback) {
-  //   let updateValueSubmit = {}
-  //   updateValueSubmit = {
-  //     Capt:"",
-  //     asnr_aadhar:document.getElementById('adharNumber').value,
-  //     asnr_mobile_no:"9878765678",
-  //     asnr_policy_no:"7977878",
-  //     asnr_company_name :"indiafirst",
-  //     ajx_typ:"",
-  //     aadhar_otp:"453672",
-  //     ajx_typ:"check_policy"
-  //   } 
-  //      setStep1Data(myValue => ({
-  //     ...myValue,
-  //   ...updateValueSubmit
-  //   })) 
-  //   callback()
-  // }
-     //   const AdharNumber = document.getElementById('adharNumber').value.toString()
-    // const PolicyNumber = document.getElementById('policyNumber').value.toString()
-   
-    // const MobileNumber = document.getElementById('mobileNumber').value.toString()
-  
-    // try {
-    //   axios({
-    //     method: "post",
-    //     url: "http://jaffar.com:8081/insurance/ajx/insurance-funding-new",
-    //     data:Step1Data,
-    //     headers: { "Content-Type": "application/json"}
-    //   })
-    
-    // } catch (error) {
-    //   alert(error)
-    // }
 
     const otpData = () => {
       const OtpData = document.getElementById('otpData').value.toString()
@@ -283,8 +184,7 @@ function Insurance() {
       const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json' },
-        body: MyValue,
-        redirect: 'follow'
+        body: MyValue
       }
       setOtpStep(true)
       fetch('https://indiafirstapi.1clickcapital.com/policy/check', requestOptions)
@@ -309,65 +209,6 @@ function Insurance() {
           toCheckValid() ? Submit(updatedObj) : alert('Please Enter Valid Detail')
       }
     }
-//854851711588
-  // function handleClick () {
-  //   setOtpStep(true)
-  //   fetch("http://192.168.0.181:8080/jaffar_servlet/jaffar_serv")
-  //   .then(res => res.json())
-  //   .then(
-  //     (result) => {
-  //       setIsLoading(true)
-  //       setData(result)
-  //       AlertOtp()
-  //       setOtpStep(false)
-       
-  //     },
-  //     (error) => {
-  //       setIsLoading(false)
-  //       setErr(error)
-  //       setOtpStep(false)
-  //     }
-      
-
-  //   )
-  // }
-
-//   const handleClick = async () => {
-//     setIsLoading(true)
-//     if (isLoading) {
-//       console.log('helllo')
-//       return <Spinner/>
-//     }
-//   try {
-//     const response = await fetch('http://192.168.0.130:8080/jaffar_servlet/jaffar_serv', {
-//       method: 'GET',
-//       headers: {
-//         Accept: 'application/json'
-//       }
-//     })
-
-//     if (!response.ok) {
-//       throw new Error(`Error! status: ${response.status}`)
-//     }
-//     const result = await response.json()
-//     setData(result)
-  
-//     AlertOtp()
-//   } catch (err) {
-//     setErr(err.message)
-//   } finally {
-//     setIsLoading(false)
-   
-//   }
-// const userdata = `=${this.state.fname}&last_name=${this.state.lname}&company_name=${this.state.companyName}&email=${this.state.email}&mobile=${this.state.contact}&designation=${this.state.desig}&city=${this.state.city}&product_name=1_Click_Payroll&campaign=website`
-
-// }
-  // if (step === 'step4') {
-  //   document.getElementById('4').style.backgroundColor = "red"
-  // } else {
-  //   document.getElementById('4').style.backgroundColor = "white"
-  // }
-
   function toggle1() {
     setModal1(!modal1)
     if (modal1 === false) {
@@ -400,38 +241,6 @@ function Insurance() {
     MobileNumber:MobileNumber1
   }))
  }
-
-//   function AlertOtp() {
-    
-//         Swal.fire({
-//         title: 'Adhar Verification',
-//         html:' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-//         ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-//         ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-//         ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-//         ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>' +
-//         ' <input  autocomplete="off" class="swal2-input" maxlength="1"/>',
-//         focusConfirm: true,
-//         inputAttributes: {
-//             autocapitalize: 'off',
-//             autocorrect: 'off',
-//             type:'number'
-//           },
-//         preConfirm: () => {
-//             setStep('step2')
-//             setactive2(true)
-//         }
-//       })
-//  }
-// console.log(isLoading)
-// console.log(err)
-//  console.log(data)
-//  if (err) {
-//   return <div>Error: {err.message}</div>
-// } else if (!isLoading) {
-//   return <div><Spinner/></div>
-// } else {
-
   return (
     <div className="card">
         <div className="Insurance-step">{
